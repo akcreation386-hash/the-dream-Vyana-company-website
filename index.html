@@ -90,7 +90,7 @@
     align-items:center;
     justify-content:center;
 
-    background-image:url("images/view1.jpeg");
+    background-image:url("images/backgroud.jpeg");
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
@@ -242,47 +242,311 @@
     letter-spacing:2px;
 }
   /* ===== PACKAGES ===== */
-  .pkg-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:26px;}
-  .pkg-card{
-    background:var(--card); border-radius:var(--radius); overflow:hidden;
-    box-shadow:var(--shadow); transition:transform .35s ease, box-shadow .35s ease;
-    border:1px solid var(--line);
-  }
-  .eyebrow{
-    color: #f5c002;   /* White */
-    text-align: center;
+  .pkg-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:28px;
 }
-  .pkg-card:hover{transform:translateY(-8px);}
-  .pkg-img{height:190px; position:relative; overflow:hidden;}
-  .pkg-img svg{width:100%; height:100%;}
-  .pkg-badge{position:absolute; top:14px; left:14px; background:rgba(16,31,60,0.85); color:var(--gold-light); font-size:10.5px; letter-spacing:0.12em; text-transform:uppercase; padding:6px 12px; border-radius:2px;}
-  .pkg-body{padding:22px 22px 24px;}
-  .pkg-body h3{font-size:22px; margin-bottom:6px;}
-  .pkg-meta{display:flex; align-items:center; gap:8px; color:var(--text-muted); font-size:12.5px; margin-bottom:14px;}
-  .pkg-meta .dot{width:3px; height:3px; border-radius:50%; background:var(--text-muted);}
-  .pkg-footer{display:flex; align-items:center; justify-content:space-between; padding-top:14px; border-top:1px dashed var(--line);}
-  .pkg-price strong{font-family:'Cormorant Garamond',serif; font-size:24px; color:var(--navy);}
-  .pkg-price span{font-size:11px; color:var(--text-muted); display:block;}
-  .pkg-book{font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; font-weight:600; color:var(--gold); border-bottom:1px solid var(--gold); padding-bottom:2px;}
-  .pkg-book:hover{color:var(--navy);}
 
+.pkg-card{
+    position:relative;
+    background:var(--card);
+    border-radius:18px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+    transition:all .45s ease;
+}
+
+/* Hover Effect */
+.pkg-card:hover{
+
+    transform:translateY(-12px) scale(1.02);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.25);
+
+}
+
+/* Shine Animation */
+
+.pkg-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:rgba(255,255,255,.25);
+
+    transform:skewX(-25deg);
+
+    transition:.8s;
+
+    z-index:2;
+
+}
+
+.pkg-card:hover::before{
+
+    left:170%;
+
+}
+
+/* Image */
+
+.pkg-img{
+
+    height:190px;
+
+    overflow:hidden;
+
+}
+
+.pkg-img img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.6s;
+
+}
+
+.pkg-card:hover .pkg-img img{
+
+    transform:scale(1.12);
+
+}
+
+/* Badge */
+
+.pkg-badge{
+
+    position:absolute;
+
+    top:15px;
+
+    left:15px;
+
+    background:#081b3a;
+
+    color:#FFD700;
+
+    padding:8px 15px;
+
+    border-radius:20px;
+
+    font-size:11px;
+
+    z-index:3;
+
+}
+
+/* Body */
+
+.pkg-body{
+
+    padding:22px;
+
+}
+
+.pkg-body h3{
+
+    margin-bottom:8px;
+
+}
+
+/* Footer */
+
+.pkg-footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:18px;
+
+}
+
+/* Price */
+
+.pkg-price strong{
+
+    font-size:28px;
+
+    color:#081b3a;
+
+}
+
+.pkg-price span{
+
+    display:block;
+
+    color:#777;
+
+    font-size:12px;
+
+}
+
+/* Premium Button */
+
+.pkg-book{
+
+    display:inline-block;
+
+    padding:10px 22px;
+
+    background:linear-gradient(135deg,#FFD700,#F4B400);
+
+    color:#081b3a;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    transition:.35s;
+
+    box-shadow:0 8px 20px rgba(255,215,0,.25);
+
+}
+
+/* Button Hover */
+
+.pkg-book:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 30px rgba(255,215,0,.45);
+
+    color:#000;
+
+}
+
+/* Button Click */
+
+.pkg-book:active{
+
+    transform:scale(.95);
+
+}
   /* ===== DESTINATIONS ===== */
-  .dest-section{background:var(--navy); color:#fdf9ee;}
-  .dest-section .eyebrow{color:var(--gold-light);}
-  .dest-section .eyebrow::before{background:var(--gold-light);}
-  .dest-section .section-head h2{color:#fdf9ee;}
-  .dest-section .section-head p{color:rgba(253,249,238,0.65);}
-  .dest-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:2px; background:rgba(255,255,255,0.1);}
-  .dest-card{
-    position:relative; aspect-ratio:1/1.05; overflow:hidden; background:var(--navy-deep);
-    display:flex; align-items:flex-end; padding:22px;
-  }
-  .dest-card svg{position:absolute; inset:0; width:100%; height:100%;}
-  .dest-card .dest-label{position:relative; z-index:2;}
-  .dest-card .dest-label h4{font-family:'Cormorant Garamond',serif; font-size:22px; color:#fff;}
-  .dest-card .dest-label span{font-size:11px; letter-spacing:0.08em; color:var(--gold-light); text-transform:uppercase;}
-  .dest-card::after{content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,20,40,0) 40%, rgba(10,20,40,0.85) 100%);}
+  /* ===== DESTINATIONS ===== */
+.dest-section{
+    position: relative;
+    padding: 100px 0;
+    color: #fff;
+    background: url("images/destination-bg.jpg") center center/cover no-repeat;
+    overflow: hidden;
+}
 
+/* Dark overlay so text is readable */
+.dest-section::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 20, 45, 0.65);
+    z-index: 0;
+}
+
+/* Content overlay ke upar rahe */
+.dest-section .container{
+    position: relative;
+    z-index: 1;
+}
+.dest-section{
+    position: relative;
+    padding:100px 0;
+    color:#fff;
+    background:url("images/Beach Desktop Wallpapers.jpeg") center center/cover fixed no-repeat;
+}
+
+.dest-section .eyebrow{
+    color:var(--gold-light);
+}
+
+.dest-section .eyebrow::before{
+    background:var(--gold-light);
+}
+
+.dest-section .section-head h2{
+    color:#fff;
+}
+
+.dest-section .section-head p{
+    color:rgba(255,255,255,.7);
+}
+
+.dest-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:2px;
+}
+
+.dest-card{
+    position:relative;
+    aspect-ratio:1/1.05;
+    overflow:hidden;
+    display:block;
+    text-decoration:none;
+}
+
+.dest-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:.6s ease;
+}
+
+.dest-card:hover img{
+    transform:scale(1.1);
+}
+
+.dest-card::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top,
+    rgba(0,0,0,.75),
+    rgba(0,0,0,.15),
+    transparent);
+}
+
+.dest-label{
+    position:absolute;
+    left:20px;
+    bottom:20px;
+    z-index:2;
+}
+
+.dest-label h4{
+    color:#fff;
+    font-size:24px;
+    margin-bottom:5px;
+    font-family:'Cormorant Garamond',serif;
+}
+
+.dest-label span{
+    color:#FFD700;
+    font-size:12px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
   /* ===== SERVICES ===== */
   .svc-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:26px;}
   .svc-card{
@@ -299,7 +563,7 @@
   .why-wrap{display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; align-items:center;}
   .why-visual{position:relative;}
   .why-visual .frame{border:1px solid var(--gold); position:absolute; inset:-18px; z-index:0; border-radius:var(--radius);}
-  .why-visual svg{position:relative; z-index:1; border-radius:var(--radius); box-shadow:var(--shadow);}
+  .why-visual img{position:relative; z-index:1; border-radius:var(--radius); box-shadow:var(--shadow);}
   .why-list{display:flex; flex-direction:column; gap:30px;}
   .why-item{display:flex; gap:20px;}
   .why-num{font-family:'Cormorant Garamond',serif; font-size:34px; color:var(--gold); min-width:52px;}
@@ -307,6 +571,50 @@
   .why-item p{font-size:14.5px; color:var(--text-muted);}
 
   /* ===== TESTIMONIALS ===== */
+  /* Card Animation */
+.testi-card:hover{
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 20px 45px rgba(0,0,0,.35);
+}
+/* Stars Glow */
+.stars{
+    color:#FFD700;
+    transition:.4s;
+}
+
+.testi-card:hover .stars{
+    letter-spacing:3px;
+    text-shadow:0 0 15px gold;
+}
+/* Avatar Animation */
+.testi-avatar{
+    transition:.5s;
+}
+
+.testi-card:hover .testi-avatar{
+    transform:rotate(360deg) scale(1.15);
+    background:#00e5ff;
+    color:#000;
+}
+/* Text Animation */
+
+.testi-card p,
+.testi-card strong,
+.testi-card span{
+    transition:.4s;
+}
+
+.testi-card:hover p{
+    transform:translateY(-4px);
+}
+
+.testi-card:hover strong{
+    color:#FFD700;
+}
+
+.testi-card:hover span{
+    color:#fff;
+}
   .testi-section{background:var(--pine); background:radial-gradient(120% 140% at 20% 0%, #234f43 0%, #14332a 60%, #0f2921 100%); color:#fdf9ee;}
   .testi-section .eyebrow{color:var(--gold-light);}
   .testi-section .eyebrow::before{background:var(--gold-light);}
@@ -376,13 +684,43 @@
   .contact-row .ci svg{width:17px; height:17px; stroke:var(--gold-light);}
   .contact-row strong{display:block; font-size:14px; margin-bottom:2px;}
   .contact-row span, .contact-row a{font-size:13.5px; color:rgba(253,249,238,0.72);}
-  .contact-form{padding:50px 44px;}
-  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:18px;}
-  .field label{display:block; font-size:11.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted); margin-bottom:8px;}
-  .field input, .field textarea{
-    width:100%; border:1px solid var(--line); background:#fbfaf5; padding:13px 14px;
-    font-family:'Jost',sans-serif; font-size:14px; border-radius:2px; color:var(--navy);
-  }
+  /* Contact Section */
+.contact-wrap{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+}
+
+/* Left Side */
+.contact-info{
+    background:#081b3a;
+    color:#fff;
+    padding:50px 40px;
+}
+
+/* Right Side Image */
+.contact-image{
+    width:100%;
+    height:100%;
+    min-height:520px;
+    overflow:hidden;
+    position:relative;
+}
+
+.contact-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform .6s ease;
+}
+
+/* Hover Zoom */
+.contact-wrap:hover .contact-image img{
+    transform:scale(1.08);
+}
   .field input:focus, .field textarea:focus{outline:none; border-color:var(--gold);}
   .field.full{margin-bottom:18px;}
   .field textarea{resize:vertical; min-height:110px;}
@@ -638,6 +976,107 @@
       .typewriter-cursor{ animation:none; }
       .btn-pulse{ animation:none; }
   }
+  /* ================= POPUP ================= */
+
+.popup{
+
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.65);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.4s;
+
+    z-index:99999;
+
+}
+
+.popup.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.popup-box{
+
+    width:480px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    position:relative;
+
+    transform:scale(.8);
+
+    transition:.4s;
+
+}
+
+.popup.show .popup-box{
+
+    transform:scale(1);
+
+}
+
+.popup-box h2{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+.popup-box input,
+
+.popup-box textarea{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-bottom:15px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+}
+
+.popup-box textarea{
+
+    height:120px;
+
+    resize:none;
+
+}
+
+.closePopup{
+
+    position:absolute;
+
+    right:20px;
+
+    top:15px;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+}
   
 </style>
 </head>
@@ -656,14 +1095,14 @@
     <nav>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
-        <li><a href="about.html">Packages</a></li>
+        <li><a href="#packages">Packages</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
     <div class="nav-cta">
-      <a href="#contact" class="btn btn-navy">Plan My Trip</a>
+      <a href="#" class="btn btn-gold openPopup">Plan My Trip</a>
     </div>
     <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
@@ -692,10 +1131,10 @@
         <div class="hero-actions">
             <a href="#packages" class="btn btn-gold">Explore Packages</a>
 
-            <a href="#contact" class="btn btn-outline">
+            <a href="#" class="btn btn-gold openPopup">
                 Contact Us
             </a>
-        </div>
+          </div>
 
     </div>
 
@@ -704,19 +1143,19 @@
 
         <div class="gallery-track">
 
-            <img src="images/8k ipad wellpaper.jpeg">
-            <img src="images/Beach Desktop Wallpapers.jpeg">
-            <img src="images/download (12).jpeg">
-            <img src="images/Landscape Nature Forest - Free photo on Pixabay.jpeg">
-            <img src="images/nezuko.jpeg">
+            <img src="images\dubai.jpeg">
+            <img src="images\shimla.jpeg">
+            <img src="images\gliding.jpeg">
+            <img src="images\manali.jpeg">
+            <img src="images\Beach Desktop Wallpapers.jpeg">
 
             <!-- Repeat -->
 
-            <img src="images/8k ipad wellpaper.jpeg">
-            <img src="images//Beach Desktop Wallpapers.jpeg">
-            <img src="images/download (12).jpeg">
-            <img src="images/Landscape Nature Forest - Free photo on Pixabay.jpeg">
-            <img src="images/nezuko.jpeg">
+            <img src="images\dubai.jpeg">
+            <img src="images\shimla.jpeg">
+            <img src="images\gliding.jpeg">
+            <img src="images\manali.jpeg">
+            <img src="images\Beach Desktop Wallpapers.jpeg">
         </div>
 
     </div>
@@ -737,88 +1176,60 @@
 
       <div class="pkg-card reveal">
         <div class="pkg-img">
-          <svg viewBox="0 0 300 190" xmlns="http://www.w3.org/2000/svg">
-            <rect width="300" height="190" fill="#dcebf5"/>
-            <circle cx="240" cy="45" r="26" fill="#e8c979"/>
-            <path d="M0 150 L70 70 L120 120 L160 60 L230 150 Z" fill="#7ea0c4"/>
-            <path d="M40 150 L90 100 L130 150 Z" fill="#5c82ab"/>
-            <rect y="150" width="300" height="40" fill="#eef6fb"/>
-          </svg>
+        <img src="images\kerala.jpeg" alt="Travel Banner" class="hero-image">
           <span class="pkg-badge">Bestseller</span>
         </div>
         <div class="pkg-body">
-          <h3>Swiss Alps Retreat</h3>
-          <div class="pkg-meta"><span>Switzerland</span><span class="dot"></span><span>6 Days · 5 Nights</span></div>
+          <h3>Kerala Tour Package 6 Nights 7 Days - Family Package</h3>
+          <div class="pkg-meta"><span>India</span><span class="dot"></span><span>7 Days · 6 Nights</span></div>
           <div class="pkg-footer">
             <div class="pkg-price"><strong>₹1,24,999</strong><span>per person</span></div>
-            <a href="#contact" class="pkg-book">Book Now →</a>
+            <a href="#contact" class="btn openPopup">Book Now →</a>
           </div>
         </div>
       </div>
 
       <div class="pkg-card reveal">
         <div class="pkg-img">
-          <svg viewBox="0 0 300 190" xmlns="http://www.w3.org/2000/svg">
-            <rect width="300" height="190" fill="#0f2a45"/>
-            <circle cx="80" cy="150" r="60" fill="#f2b23c" opacity="0.9"/>
-            <rect y="150" width="300" height="40" fill="#0a3d5c"/>
-            <path d="M180 150 L180 90" stroke="#e8c979" stroke-width="3"/>
-            <path d="M180 90 C 165 78 150 82 145 92 C 160 88 172 90 180 90 Z" fill="#123a2f"/>
-            <path d="M180 90 C 195 75 212 79 218 90 C 202 86 190 88 180 90 Z" fill="#1a4d3d"/>
-            <path d="M230 100 L230 150" stroke="#e8c979" stroke-width="3"/>
-            <path d="M230 100 C 218 90 205 93 200 102 C 213 99 222 100 230 100 Z" fill="#123a2f"/>
-          </svg>
+           <img src="images\rajasthan.jpeg" alt="Travel Banner" class="hero-image">
           <span class="pkg-badge">Honeymoon</span>
         </div>
         <div class="pkg-body">
-          <h3>Maldives Overwater</h3>
-          <div class="pkg-meta"><span>Maldives</span><span class="dot"></span><span>5 Days · 4 Nights</span></div>
+          <h3>Rajasthan Tour Package 05 Nights 06 Days - Family Package</h3>
+          <div class="pkg-meta"><span>Rajasthan</span><span class="dot"></span><span>6 Days · 5 Nights</span></div>
           <div class="pkg-footer">
-            <div class="pkg-price"><strong>₹1,58,000</strong><span>per person</span></div>
-            <a href="#contact" class="pkg-book">Book Now →</a>
+            <div class="pkg-price"><strong>₹40000</strong><span>per person</span></div>
+            <a href="#contact"class="btn openPopup">Book Now →</a>
           </div>
         </div>
       </div>
 
       <div class="pkg-card reveal">
         <div class="pkg-img">
-          <svg viewBox="0 0 300 190" xmlns="http://www.w3.org/2000/svg">
-            <rect width="300" height="190" fill="#f4ede0"/>
-            <path d="M0 160 L60 90 L110 140 L150 80 L200 140 L260 100 L300 160 Z" fill="#c98c4a"/>
-            <path d="M40 160 L90 120 L120 160 Z" fill="#a8703a"/>
-            <rect y="160" width="300" height="30" fill="#e7dcc4"/>
-            <rect x="130" y="60" width="18" height="30" fill="#8a4a2c"/>
-            <path d="M110 60 L160 60 L139 30 Z" fill="#d4a94a"/>
-          </svg>
+            <img src="images\kashmir.jpeg" alt="Travel Banner" class="hero-image">
           <span class="pkg-badge">Adventure</span>
         </div>
         <div class="pkg-body">
-          <h3>Bali Island Escape</h3>
+          <h3>Kashmir Tour Package 6 Night 7Days - Family Package</h3>
           <div class="pkg-meta"><span>Indonesia</span><span class="dot"></span><span>7 Days · 6 Nights</span></div>
           <div class="pkg-footer">
             <div class="pkg-price"><strong>₹89,499</strong><span>per person</span></div>
-            <a href="#contact" class="pkg-book">Book Now →</a>
+            <a href="#contact"class="btn openPopup">Book Now →</a>
           </div>
         </div>
       </div>
 
       <div class="pkg-card reveal">
         <div class="pkg-img">
-          <svg viewBox="0 0 300 190" xmlns="http://www.w3.org/2000/svg">
-            <rect width="300" height="190" fill="#e4eef3"/>
-            <path d="M0 150 L60 60 L100 110 L150 40 L210 130 L260 90 L300 150 Z" fill="#b7c8d6"/>
-            <path d="M100 150 L140 95 L180 150 Z" fill="#94aabd"/>
-            <path d="M150 40 L160 55 L140 55 Z" fill="#fff"/>
-            <rect y="150" width="300" height="40" fill="#d7e6ee"/>
-          </svg>
+            <img src="images\andman.jpeg" alt="Travel Banner" class="hero-image">
           <span class="pkg-badge">Trending</span>
         </div>
         <div class="pkg-body">
-          <h3>Kashmir Valley Trail</h3>
-          <div class="pkg-meta"><span>India</span><span class="dot"></span><span>5 Days · 4 Nights</span></div>
+          <h3>Andaman Tour Package 05 Nights 06 Days - Family Package</h3>
+          <div class="pkg-meta"><span>India</span><span class="dot"></span><span>6 Days · 5 Nights</span></div>
           <div class="pkg-footer">
             <div class="pkg-price"><strong>₹42,999</strong><span>per person</span></div>
-            <a href="#contact" class="pkg-book">Book Now →</a>
+            <a href="#contact" class="btn openPopup">Book Now →</a>
           </div>
         </div>
       </div>
@@ -827,51 +1238,83 @@
   </div>
 </section>
 
-<!-- ===================== POPULAR DESTINATIONS ===================== -->
 <section class="dest-section">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow center">Popular Destinations</div>
-      <h2>Where our travellers go next</h2>
-      <p>From snow-capped peaks to sun-warmed shores — pick a place, and we'll handle the plan.</p>
-    </div>
-    <div class="dest-grid reveal-stagger">
+    <div class="container">
 
-      <a href="#" class="dest-card reveal">
-        <svg viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice"><rect width="300" height="300" fill="#2a3f63"/><path d="M0 220 L90 100 L150 180 L200 90 L300 220 Z" fill="#3a5580"/></svg>
-        <div class="dest-label"><h4>Manali</h4><span>India</span></div>
-      </a>
-      <a href="#" class="dest-card reveal">
-        <svg viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice"><rect width="300" height="300" fill="#144a63"/><circle cx="220" cy="90" r="40" fill="#e8c979" opacity="0.85"/></svg>
-        <div class="dest-label"><h4>Santorini</h4><span>Greece</span></div>
-      </a>
-      <a href="#" class="dest-card reveal">
-        <svg viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice"><rect width="300" height="300" fill="#5c3a24"/><path d="M0 230 L100 90 L160 160 L220 70 L300 230 Z" fill="#7a5232"/></svg>
-        <div class="dest-label"><h4>Dubai</h4><span>UAE</span></div>
-      </a>
-      <a href="#" class="dest-card reveal">
-        <svg viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice"><rect width="300" height="300" fill="#1a4a3e"/><path d="M0 240 L90 150 L150 210 L230 130 L300 240 Z" fill="#256250"/></svg>
-        <div class="dest-label"><h4>Bali</h4><span>Indonesia</span></div>
-      </a>
-      <a href="#" class="dest-card reveal">
-        <svg viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice"><rect width="300" height="300" fill="#31314f"/><rect x="80" y="60" width="18" height="180" fill="#4a4a72"/><rect x="120" y="100" width="18" height="140" fill="#4a4a72"/><rect x="160" y="40" width="18" height="200" fill="#4a4a72"/></svg>
-        <div class="dest-label"><h4>Paris</h4><span>France</span></div>
-      </a>
-      <a href="#" class="dest-card reveal">
-        <svg viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice"><rect width="300" height="300" fill="#0f3b52"/><circle cx="150" cy="220" r="120" fill="#12506f"/></svg>
-        <div class="dest-label"><h4>Maldives</h4><span>South Asia</span></div>
-      </a>
-      <a href="#" class="dest-card reveal">
-        <svg viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice"><rect width="300" height="300" fill="#3a2a1a"/><path d="M0 240 L100 60 L160 150 L220 90 L300 240 Z" fill="#5a4028"/></svg>
-        <div class="dest-label"><h4>Ladakh</h4><span>India</span></div>
-      </a>
-      <a href="#" class="dest-card reveal">
-        <svg viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice"><rect width="300" height="300" fill="#402848"/><rect x="60" y="120" width="180" height="120" fill="#5c3a63"/></svg>
-        <div class="dest-label"><h4>Kyoto</h4><span>Japan</span></div>
-      </a>
+        <div class="section-head reveal">
+            <div class="eyebrow center">Popular Destinations</div>
+            <h2>Where our travellers go next</h2>
+            <p>From snow-capped peaks to sun-warmed shores — pick a place, and we'll handle the plan.</p>
+        </div>
 
+        <div class="dest-grid reveal-stagger">
+
+            <a href="#" class="dest-card reveal">
+                <img src="images\manali2.jpeg" alt="Manali">
+                <div class="dest-label">
+                    <h4>Manali</h4>
+                    <span>India</span>
+                </div>
+            </a>
+
+            <a href="#" class="dest-card reveal">
+                <img src="images\santorini.jpeg" alt="Santorini">
+                <div class="dest-label">
+                    <h4>Santorini</h4>
+                    <span>Greece</span>
+                </div>
+            </a>
+
+            <a href="#" class="dest-card reveal">
+                <img src="images\dubai2.jpeg" alt="Dubai">
+                <div class="dest-label">
+                    <h4>Dubai</h4>
+                    <span>UAE</span>
+                </div>
+            </a>
+
+            <a href="#" class="dest-card reveal">
+                <img src="images\bali.jpeg" alt="Bali">
+                <div class="dest-label">
+                    <h4>Bali</h4>
+                    <span>Indonesia</span>
+                </div>
+            </a>
+
+            <a href="#" class="dest-card reveal">
+                <img src="images\paris2.jpeg" alt="Paris">
+                <div class="dest-label">
+                    <h4>Paris</h4>
+                    <span>France</span>
+                </div>
+            </a>
+
+            <a href="#" class="dest-card reveal">
+                <img src="images\maldives.jpeg" alt="Maldives">
+                <div class="dest-label">
+                    <h4>Maldives</h4>
+                    <span>South Asia</span>
+                </div>
+            </a>
+
+            <a href="#" class="dest-card reveal">
+                <img src="images\ladakh.jpeg" alt="Ladakh">
+                <div class="dest-label">
+                    <h4>Ladakh</h4>
+                    <span>India</span>
+                </div>
+            </a>
+
+            <a href="#" class="dest-card reveal">
+                <img src="images\kyoto.jpeg" alt="Kyoto">
+                <div class="dest-label">
+                    <h4>Kyoto</h4>
+                    <span>Japan</span>
+                </div>
+            </a>
+
+        </div>
     </div>
-  </div>
 </section>
 
 <!-- ===================== SERVICES ===================== -->
@@ -926,16 +1369,7 @@
     <div class="why-wrap">
       <div class="why-visual">
         <div class="frame"></div>
-        <svg viewBox="0 0 460 520" xmlns="http://www.w3.org/2000/svg">
-          <rect width="460" height="520" fill="#e9eef3"/>
-          <path d="M0 380 L120 200 L200 300 L280 160 L460 380 Z" fill="#c3d2df"/>
-          <path d="M60 380 L150 260 L220 380 Z" fill="#a7bccd"/>
-          <circle cx="360" cy="110" r="46" fill="#e8c979"/>
-          <g fill="#1f4a3e">
-            <path d="M60 400 L74 360 L88 400 Z"/>
-            <path d="M85 400 L99 355 L113 400 Z"/>
-          </g>
-        </svg>
+       <img src="images\whychooseus.jpeg" alt="why choose us">
       </div>
       <div>
         <div class="eyebrow">Why Choose Us</div>
@@ -965,43 +1399,86 @@
 
 <!-- ===================== TESTIMONIALS ===================== -->
 <section class="testi-section">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow center">Traveller Stories</div>
-      <h2>Loved by dreamers, trusted by travellers</h2>
-      <p>Real trips, real feedback from the people we've sent around the world.</p>
+    <div class="container">
+
+        <div class="section-head reveal">
+            <div class="eyebrow center">Traveller Stories</div>
+            <h2>Loved by dreamers, trusted by travellers</h2>
+            <p>Real trips, real feedback from the people we've sent around the world.</p>
+        </div>
+
+        <div class="testi-grid reveal-stagger">
+
+            <!-- Review 1 -->
+            <a href="https://www.google.com/maps" target="_blank" class="testi-card reveal">
+
+                <div class="stars">★★★★★</div>
+
+                <p>
+                    "Our Maldives trip was planned down to the smallest detail.
+                    Every transfer, every check-in — flawless."
+                </p>
+
+                <div class="testi-person">
+                    <div class="testi-avatar">R</div>
+
+                    <div>
+                        <strong>Riya Kapoor</strong><br>
+                        <span>Delhi, India</span>
+                    </div>
+                </div>
+
+            </a>
+
+            <!-- Review 2 -->
+            <a href="https://www.google.com/search?q=travel+reviews"
+                target="_blank"
+                class="testi-card reveal">
+
+                <div class="stars">★★★★★</div>
+
+                <p>
+                    "The Kashmir itinerary felt personal, not templated.
+                    Our guide knew every valley by name."
+                </p>
+
+                <div class="testi-person">
+                    <div class="testi-avatar">A</div>
+
+                    <div>
+                        <strong>Aman Sharma</strong><br>
+                        <span>Chandigarh, India</span>
+                    </div>
+                </div>
+
+            </a>
+
+            <!-- Review 3 -->
+            <a href="https://www.google.com/travel"
+                target="_blank"
+                class="testi-card reveal">
+
+                <div class="stars">★★★★★</div>
+
+                <p>
+                    "Booked our Bali honeymoon through Dream Vyana —
+                    support answered at 2am when our flight changed."
+                </p>
+
+                <div class="testi-person">
+                    <div class="testi-avatar">N</div>
+
+                    <div>
+                        <strong>Neha &amp; Arjun</strong><br>
+                        <span>Mumbai, India</span>
+                    </div>
+                </div>
+
+            </a>
+
+        </div>
+
     </div>
-    <div class="testi-grid reveal-stagger">
-
-      <div class="testi-card reveal">
-        <div class="stars">★★★★★</div>
-        <p>"Our Maldives trip was planned down to the smallest detail. Every transfer, every check-in — flawless."</p>
-        <div class="testi-person">
-          <div class="testi-avatar">R</div>
-          <div><strong>Riya Kapoor</strong><span>Delhi, India</span></div>
-        </div>
-      </div>
-
-      <div class="testi-card reveal">
-        <div class="stars">★★★★★</div>
-        <p>"The Kashmir itinerary felt personal, not templated. Our guide knew every valley by name."</p>
-        <div class="testi-person">
-          <div class="testi-avatar">A</div>
-          <div><strong>Aman Sharma</strong><span>Chandigarh, India</span></div>
-        </div>
-      </div>
-
-      <div class="testi-card reveal">
-        <div class="stars">★★★★★</div>
-        <p>"Booked our Bali honeymoon through Dream Vyana — support answered at 2am when our flight changed."</p>
-        <div class="testi-person">
-          <div class="testi-avatar">N</div>
-          <div><strong>Neha & Arjun</strong><span>Mumbai, India</span></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
 </section>
 
 <!-- ===================== GALLERY ===================== -->
@@ -1103,21 +1580,9 @@
         </div>
       </div>
 
-      <form class="contact-form" onsubmit="return false;">
-        <div class="form-row">
-          <div class="field"><label for="cf-name">Full Name</label><input id="cf-name" type="text" placeholder="Your name" required></div>
-          <div class="field"><label for="cf-email">Email</label><input id="cf-email" type="email" placeholder="you@email.com" required></div>
-        </div>
-        <div class="form-row">
-          <div class="field"><label for="cf-phone">Phone</label><input id="cf-phone" type="tel" placeholder="+91 00000 00000"></div>
-          <div class="field"><label for="cf-dest">Destination</label><input id="cf-dest" type="text" placeholder="Where do you want to go?"></div>
-        </div>
-        <div class="field full">
-          <label for="cf-msg">Message</label>
-          <textarea id="cf-msg" placeholder="Tell us about your dream trip..."></textarea>
-        </div>
-        <button type="submit" class="btn btn-navy">Send Message</button>
-      </form>
+      <div class="contact-image">
+    <img src="images/contact.jpg" alt="Dream Vyana">
+</div>
     </div>
   </div>
 </section>
@@ -1169,7 +1634,37 @@
     </div>
   </div>
 </footer>
+<!-- ===================== BOOKING POPUP ===================== -->
 
+<div id="bookingPopup" class="popup">
+
+    <div class="popup-box">
+
+        <span class="closePopup">&times;</span>
+
+        <h2>Plan Your Dream Trip</h2>
+
+        <form id="bookingForm">
+
+            <input type="text" placeholder="Full Name" required>
+
+            <input type="email" placeholder="Email Address" required>
+
+            <input type="tel" placeholder="Phone Number" required>
+
+            <input type="text" placeholder="Destination">
+
+            <textarea placeholder="Tell us about your trip..."></textarea>
+
+            <button type="submit" class="btn btn-gold">
+                Send Request
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
 <script>
   // mobile nav toggle
   const toggle = document.querySelector('.nav-toggle');
@@ -1262,9 +1757,41 @@
         ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
         btn.appendChild(ripple);
         setTimeout(function(){ ripple.remove(); }, 650);
+        const popup = document.getElementById("bookingPopup");
+
+const closePopup = document.querySelector(".closePopup");
+
+document.querySelectorAll(".openPopup").forEach(btn=>{
+
+btn.addEventListener("click",function(e){
+
+e.preventDefault();
+
+popup.classList.add("show");
+
+});
+
+});
+
+closePopup.onclick=function(){
+
+popup.classList.remove("show");
+
+}
+
+window.onclick=function(e){
+
+if(e.target==popup){
+
+popup.classList.remove("show");
+
+}
+
+}
       });
     });
   })();
 </script>
+
 </body>
 </html>
