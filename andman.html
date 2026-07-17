@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andaman Tour Package (06 Nights / 07 Days) — The Dream Vyana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#101f3c;
+    --navy-deep:#0a1428;
+    --gold:#d7b640;
+    --gold-light:#e8c979;
+    --cream:#faf6ec;
+    --card:#ffffff;
+    --pine:#1f4a3e;
+    --text-muted:#5c6172;
+    --line:#e7ddc7;
+    --radius:4px;
+    --shadow: 0 20px 50px -25px rgba(16,31,60,0.35);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Jost', sans-serif;
+    color:var(--navy);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:'Cormorant Garamond', serif; font-weight:600; letter-spacing:0.01em;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .container{max-width:1180px; margin:0 auto; padding:0 32px;}
+  
+  .eyebrow{
+    display:flex; align-items:center; gap:14px;
+    font-size:12.5px; letter-spacing:0.32em; text-transform:uppercase;
+    color:var(--gold); font-weight:600; margin-bottom:16px;
+  }
+  .eyebrow::before{content:''; height:1px; width:36px; background:var(--gold); opacity:0.6;}
+  
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    padding:12px 28px; border-radius:30px; font-size:13px;
+    letter-spacing:0.14em; text-transform:uppercase; font-weight:700;
+    cursor:pointer; border:1px solid transparent; transition:all .3s ease;
+  }
+  .btn-gold{
+    background:linear-gradient(135deg,var(--gold-light),var(--gold)); 
+    color:var(--navy-deep);
+    box-shadow:0 8px 20px rgba(255,215,0,.25);
+  }
+  .btn-gold:hover{
+    transform:translateY(-2px); 
+    box-shadow:0 15px 30px rgba(255,215,0,.45);
+    color: #000;
+  }
+
+  /* ===== NAVBAR ===== */
+  .navbar{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(250,246,236,0.92); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:12px 32px; max-width:1180px; margin:0 auto;}
+  .nav-logo{display:flex; align-items:center; gap:12px;}
+  .nav-logo img{height:52px; width:auto;}
+  .nav-logo .brand-text{display:flex; flex-direction:column; line-height:1.1;}
+  .nav-logo .brand-text .b1{font-family:'Cormorant Garamond',serif; font-size:19px; font-weight:600; color:var(--navy);}
+  .nav-logo .brand-text .b2{font-size:9px; letter-spacing:0.22em; color:var(--gold); text-transform:uppercase;}
+  .nav-links{display:flex; align-items:center; gap:38px; list-style:none;}
+  .nav-links a{font-size:13px; letter-spacing:0.06em; text-transform:uppercase; font-weight:500; color:var(--navy); position:relative; padding:4px 0;}
+  .nav-links a::after{content:''; position:absolute; left:0; bottom:-2px; width:0; height:1px; background:var(--gold); transition:width .3s ease;}
+  .nav-links a:hover::after{width:100%;}
+  .nav-toggle{display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none;}
+  .nav-toggle span{width:24px; height:2px; background:var(--navy);}
+
+  /* ===== PAGE HEADER ===== */
+  .page-header {
+    background: linear-gradient(rgba(16,31,60,0.85), rgba(10,20,40,0.9)), url('images/andman.jpeg') center/cover no-repeat fixed;
+    padding: 180px 0 100px;
+    text-align: center;
+    color: #fff;
+  }
+  .page-header h1 { font-size: clamp(34px, 5vw, 52px); margin-bottom: 12px; font-weight: 700; }
+  .page-header p { color: var(--gold-light); font-size: 16px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; }
+
+  /* ===== DETAILS GRID LAYOUT ===== */
+  .details-section { padding: 80px 0; }
+  .details-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+  }
+
+  /* Quick Info Cards */
+  .quick-info-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    background: var(--card);
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid var(--line);
+    margin-bottom: 40px;
+  }
+  .info-item h4 { font-size: 14px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+  .info-item p { font-size: 20px; font-weight: 600; color: var(--navy); }
+
+  /* Content Containers */
+  .details-block {
+    background: var(--card);
+    padding: 35px;
+    border-radius: 16px;
+    border: 1px solid var(--line);
+    margin-bottom: 30px;
+  }
+  .details-block h2 { font-size: 28px; margin-bottom: 20px; color: var(--navy); border-bottom: 1px solid var(--cream); padding-bottom: 10px; }
+  .details-block p { color: var(--text-muted); font-size: 16px; line-height: 1.8; }
+
+  /* ===== PREMIUM CAROUSEL SLIDER ===== */
+  .gallery-slider-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-top: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  }
+  .slider-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .slide {
+    min-width: 100%;
+    height: 100%;
+  }
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(16, 31, 60, 0.75);
+    color: var(--gold-light);
+    border: 1px solid var(--gold);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    z-index: 10;
+    transition: all 0.3s ease;
+    user-select: none;
+  }
+  .slider-btn:hover {
+    background: var(--gold);
+    color: var(--navy);
+    transform: translateY(-50%) scale(1.05);
+  }
+  .slider-btn.prev { left: 20px; }
+  .slider-btn.next { right: 20px; }
+  
+  .slide-counter {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(16, 31, 60, 0.85);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    border: 1px solid rgba(215, 182, 64, 0.4);
+    z-index: 10;
+  }
+
+  /* Timeline / Itinerary Custom UI */
+  .timeline { position: relative; padding: 10px 0; margin-top: 20px; }
+  .timeline::before {
+    content: ''; position: absolute; top: 0; left: 20px; height: 100%; width: 1px;
+    background: var(--line);
+  }
+  .timeline-event { position: relative; padding-left: 50px; margin-bottom: 35px; }
+  .timeline-event:last-child { margin-bottom: 0; }
+  .timeline-day {
+    position: absolute; left: 0; top: 2px;
+    width: 40px; height: 40px; background: var(--navy); color: var(--gold);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700; border: 3px solid var(--cream);
+    z-index: 2;
+  }
+  .timeline-content {
+    background: var(--cream); padding: 20px; border-radius: 12px;
+    border-left: 4px solid var(--gold);
+  }
+  .timeline-content h3 { font-size: 18px; margin-bottom: 8px; color: var(--navy); font-family: 'Jost', sans-serif; font-weight: 600; }
+  .timeline-content p { font-size: 14.5px; color: var(--text-muted); }
+
+  /* Inc / Exc Grids */
+  .inc-exc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+  .inc-box ul, .exc-box ul { list-style: none; }
+  .inc-box li, .exc-box li { position: relative; padding-left: 28px; margin-bottom: 12px; font-size: 15px; }
+  .inc-box li::before {
+    content: '✓'; position: absolute; left: 0; color: var(--pine); font-weight: bold; font-size: 16px;
+  }
+  .exc-box li::before {
+    content: '✕'; position: absolute; left: 0; color: #cc3333; font-weight: bold; font-size: 14px;
+  }
+
+  /* Sidebar Sticky Conversion Widget */
+  .sidebar-sticky { position: sticky; top: 110px; }
+  .booking-side-card {
+    background: var(--navy);
+    color: #fff;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    text-align: center;
+  }
+  .booking-side-card .price-tag { margin: 15px 0 25px; }
+  .booking-side-card .price-tag h3 { font-size: 42px; color: var(--gold-light); font-weight: 700; }
+  .booking-side-card .price-tag span { color: rgba(255,255,255,0.6); font-size: 13px; letter-spacing: 1px; text-transform: uppercase; }
+  .booking-side-card ul { text-align: left; margin-bottom: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;}
+  .booking-side-card li { display: flex; justify-content: space-between; font-size: 14.5px; margin-bottom: 12px; color: rgba(255,255,255,0.85); }
+  .booking-side-card li strong { color: #fff; }
+
+  /* ===== BOOKING MODAL POPUP ===== */
+  .popup{
+    position:fixed; top:0; left:0; width:100%; height:100%;
+    background:rgba(0,0,0,.65); display:flex; justify-content:center; align-items:center;
+    opacity:0; visibility:hidden; transition:.35s ease; z-index:999999;
+  }
+  .popup.show{ opacity:1; visibility:visible; }
+  .popup-box{
+    width:95%; max-width:650px; background:#fff; border-radius:16px;
+    padding:25px; position:relative; transform:scale(.9); transition:.35s ease;
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+  }
+  .popup.show .popup-box{ transform:scale(1); }
+  .popup-box h2{ margin-bottom: 16px; text-align:center; font-size:24px; color:#222; }
+  .popup-form-row{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .popup-box input, .popup-box select, .popup-box textarea{
+    width:100%; padding:11px 14px; margin-bottom:12px; border:1px solid #d9d9d9;
+    border-radius:8px; font-size:15px; font-family:inherit; outline:none; transition:.3s;
+  }
+  .popup-box input:focus, .popup-box select:focus, .popup-box textarea:focus{
+    border-color:var(--gold); box-shadow:0 0 0 3px rgba(215,182,64,.15);
+  }
+  .popup-box textarea{ min-height:80px; resize:none; }
+  .popup-box .btn { width: 100%; justify-content: center; padding: 12px; }
+  .closePopup{ position:absolute; top:12px; right:18px; font-size:28px; cursor:pointer; color:#666; transition:.3s; }
+  .closePopup:hover{ color:var(--gold); transform:rotate(90deg); }
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--navy-deep); color:rgba(253,249,238,0.75); padding:70px 0 30px;}
+  .footer-grid{display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:40px; padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,0.1);}
+  .footer-brand p{font-size:13.5px; color:rgba(253,249,238,0.55); max-width:280px;}
+  .footer-col h4{font-family:'Cormorant Garamond',serif; font-size:18px; color:#fdf9ee; margin-bottom:18px;}
+  .footer-col ul{list-style:none;}
+  .footer-col li{margin-bottom:11px;}
+  .footer-col a{font-size:13.5px; color:rgba(253,249,238,0.62);}
+  .footer-col a:hover { color: var(--gold-light); }
+  .footer-bottom{text-align:center; padding-top:25px; font-size:12.5px; color:rgba(253,249,238,0.45);}
+
+  @media(max-width:992px){
+    .nav-links{display:none;}
+    .nav-toggle{display:flex;}
+    .details-grid { grid-template-columns: 1fr; }
+    .sidebar-sticky { position: static; margin-top: 20px; }
+  }
+  @media(max-width:768px) {
+    .inc-exc-grid { grid-template-columns: 1fr; }
+    .quick-info-strip { grid-template-columns: 1fr; text-align: center; }
+    .gallery-slider-container { height: 260px; }
+  }
+  body{ animation: pageIn .5s ease; }
+  @keyframes pageIn{ from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+</style>
+</head>
+<body>
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="The Dream Vyana logo">
+      <span class="brand-text">
+        <span class="b1">The Dream Vyana</span>
+        <span class="b2">Turning Dreams Into Destinations</span>
+      </span>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a href="#" class="btn btn-gold openPopup">Plan My Trip</a>
+    </div>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ===================== PAGE HEADER ===================== -->
+<section class="page-header">
+  <div class="container">
+    <div class="eyebrow" style="justify-content: center; margin-bottom: 5px;">Magical Archipelago</div>
+    <h1>Andaman Holiday Package</h1>
+    <p>06 Nights / 07 Days Family Special</p>
+  </div>
+</section>
+
+<!-- ===================== PACKAGE DETAILS LAYOUT ===================== -->
+<section class="details-section">
+  <div class="container">
+    <div class="details-grid">
+      
+      <!-- Left Column: Details & Itinerary -->
+      <div class="main-content-flow">
+        
+        <!-- Quick Stats Strip -->
+        <div class="quick-info-strip">
+          <div class="info-item">
+            <h4>Duration</h4>
+            <p>6 Nights / 7 Days</p>
+          </div>
+          <div class="info-item">
+            <h4>Location</h4>
+            <p>Andaman Islands</p>
+          </div>
+          <div class="info-item">
+            <h4>Ferry Style</h4>
+            <p>High-Speed Catamaran</p>
+          </div>
+        </div>
+
+        <!-- INFINITE GALLERY SLIDER BLOCK -->
+        <div class="details-block" style="padding-bottom: 25px;">
+          <h2>Tour Highlights Gallery</h2>
+          <div class="gallery-slider-container">
+            <div class="slider-btn prev" onclick="moveSlide(-1)">◀</div>
+            <div class="slider-btn next" onclick="moveSlide(1)">▶</div>
+            <div class="slide-counter" id="slide-counter">1 / 4</div>
+            
+            <div class="slider-wrapper" id="slider-wrapper">
+              <div class="slide"><img src="images/andman.jpeg" alt="Pristine Andaman Sea"></div>
+              <div class="slide"><img src="images/Beach Desktop Wallpapers.jpeg" alt="Radhanagar Beach White Sand"></div>
+              <div class="slide"><img src="images/photo1.jpeg" alt="Neil Island Corals"></div>
+              <div class="slide"><img src="images/photo2.jpeg" alt="Port Blair Cruise Terminal"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="details-block">
+          <h2>Package Description</h2>
+          <p>
+            Discover the enchanting beauty of the Andaman Islands! This extensively curated 6 Nights / 7 Days family package allows you to explore pristine white sandy beaches, swim in crystal-clear turquoise waters, and witness the vibrant marine life that will leave you spellbound.
+          </p>
+          <p style="margin-top: 15px;">
+            From rich historical insights at Port Blair's heritage sites to high-speed catamaran cruises linking the hidden beaches of Neil Island, the global wonders of Havelock's Radhanagar Beach, and the exotic underwater ecosystems of Jolly Buoy or Red Skin Island—this loop ensures a comprehensive tropical experience.
+          </p>
+        </div>
+
+        <!-- Timeline Itinerary -->
+        <div class="details-block">
+          <h2>Day-Wise Detailed Itinerary</h2>
+          <div class="timeline">
+            
+            <!-- Day 1 -->
+            <div class="timeline-event">
+              <div class="timeline-day">D1</div>
+              <div class="timeline-content">
+                <h3>Arrival in Port Blair & Viper Island Excursion</h3>
+                <p>Welcome to Port Blair! Upon arrival, receive a smooth transfer to your pre-booked hotel. In the afternoon, embark on an excursion to the historical Viper Island, uncovering early heritage. In the evening, enjoy a brilliant sunset view at Corbyn's Cove Beach. Overnight stay in Port Blair.</p>
+              </div>
+            </div>
+
+            <!-- Day 2 -->
+            <div class="timeline-event">
+              <div class="timeline-day">D2</div>
+              <div class="timeline-content">
+                <h3>High-Speed Catamaran to Neil Island</h3>
+                <p>After an early breakfast, hop onto a high-speed catamaran cruise heading straight to Neil Island. The afternoon is free to explore the tropical property. In the evening, head out to Neil Island's pristine coastlines and visit Laxmanpur Beach to experience one of the most magnificent beach sunsets in India. Overnight stay in Neil Island.</p>
+              </div>
+            </div>
+
+            <!-- Day 3 -->
+            <div class="timeline-event">
+              <div class="timeline-day">D3</div>
+              <div class="timeline-content">
+                <h3>Neil Island Exploration & Ferry to Havelock</h3>
+                <p>After breakfast, visit the iconic Sitapur and Bharatpur Beaches on Neil Island, famous for white sands and optional beach sports. In the afternoon, board the cruise towards Havelock Island. Check into your beach resort and spend a relaxing evening. Overnight stay in Havelock Island.</p>
+              </div>
+            </div>
+
+            <!-- Day 4 -->
+            <div class="timeline-event">
+              <div class="timeline-day">D4</div>
+              <div class="timeline-content">
+                <h3>Elephant Beach Cruise & Snorkeling</h3>
+                <p>Proceed to Elephant Beach after breakfast, renowned globally for thrilling water adventures. This package includes an immersive snorkeling excursion in the warm, ultra-transparent, liquid-blue waters off Elephant Beach to view spectacular shallow reefs. Overnight stay in Havelock Island.</p>
+              </div>
+            </div>
+
+            <!-- Day 5 -->
+            <div class="timeline-event">
+              <div class="timeline-day">D5 --></div>
+              <div class="timeline-content">
+                <h3>Radhanagar Beach & Return to Port Blair</h3>
+                <p>Spend your morning relaxing or beach hopping around the world-famous Radhanagar Beach. Its emerald waters and powdery shores are perfect for family photographs. In the afternoon, catch the return catamaran back to Port Blair. Check-in and relax. Overnight stay in Port Blair.</p>
+              </div>
+            </div>
+
+            <!-- Day 6 -->
+            <div class="timeline-event">
+              <div class="timeline-day">D6</div>
+              <div class="timeline-content">
+                <h3>Jolly Buoy / Red Skin Island Expedition</h3>
+                <p>Early morning, head to the Phoenix Bay Jetty to catch a ferry towards the Mahatma Gandhi Marine National Park ecosystem at Jolly Buoy or Red Skin Island (approx. 29 km away). Dive deep into pristine coral fields via snorkeling, glass-bottom boat rides, or scuba diving (optional). Return to Port Blair for your final evening. Overnight stay in Port Blair.</p>
+              </div>
+            </div>
+
+            <!-- Day 7 -->
+            <div class="timeline-event">
+              <div class="timeline-day">D7</div>
+              <div class="timeline-content">
+                <h3>Port Blair City Tour & Departure</h3>
+                <p>After breakfast, explore Port Blair's urban heritage by visiting the Anthropological Museum, Cellular Jail, and the local handicraft emporiums. Afterwards, get transferred to the airport for your flight home with beautiful tropical memories.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Inclusions & Exclusions -->
+        <div class="details-block">
+          <h2>Inclusions & Exclusions</h2>
+          <div class="inc-exc-grid">
+            <div class="inc-box">
+              <h4 style="color: var(--pine); font-size: 16px; margin-bottom: 15px; font-weight:700;">What's Included</h4>
+              <ul>
+                <li>Premium Accommodation in Selected Hotels</li>
+                <li>Daily Breakfast and Buffet Dinner (MAP Plan)</li>
+                <li>High-speed Catamaran inter-island cruise tickets</li>
+                <li>1 Complimentary Snorkeling session at Elephant Beach</li>
+                <li>All private AC vehicle sightseeing and transfers</li>
+                <li>All fuel, tolls, state taxes, and driver charges</li>
+              </ul>
+            </div>
+            <div class="exc-box">
+              <h4 style="color: #cc3333; font-size: 16px; margin-bottom: 15px; font-weight:700;">What's Excluded</h4>
+              <ul>
+                <li>Airfare / Main rail fare to Port Blair</li>
+                <li>Optional scuba diving or extra glass-bottom boat rides</li>
+                <li>Camera charges and monument entry tickets</li>
+                <li>Personal expenses (Laundry, tips, additional meals)</li>
+                <li>Any item not mentioned specifically under Inclusions</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Sticky Pricing & Action Widget -->
+      <div class="sidebar-sticky">
+        <div class="booking-side-card">
+          <div class="eyebrow" style="color: var(--gold-light); justify-content: center; letter-spacing: 2px;">Fixed Package Price</div>
+          <div class="price-tag">
+            <h3>₹42,000</h3>
+            <span>per person / Twin Sharing</span>
+          </div>
+          <ul>
+            <li>Hotels Class: <strong>Deluxe & Premium Beach Resorts</strong></li>
+            <li>Transport Type: <strong>Private AC Vehicle</strong></li>
+            <li>Cruise Style: <strong>Premium High-Speed Catamaran</strong></li>
+            <li>Meals Strategy: <strong>MAPAI (Breakfast + Dinner)</strong></li>
+          </ul>
+          <button class="btn btn-gold openPopup" style="width: 100%; justify-content: center;">Enquire / Book Loop</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3 style="color:#fff; font-size:24px; margin-bottom:15px;">The Dream Vyana</h3>
+        <p>Turning your dreams into unforgettable destinations. Handcrafted premium travel experiences with transparent rates.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home Base</a></li>
+          <li><a href="packages.html">All Packages</a></li>
+          <li><a href="index.html#contact">Get In Touch</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Reach Us</h4>
+        <ul>
+          <li>Solan, Himachal Pradesh, India</li>
+          <li>hello@thedreamvyana.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 The Dream Vyana. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== BOOKING POPUP ===================== -->
+<div id="bookingPopup" class="popup">
+  <div class="popup-box">
+    <span class="closePopup">&times;</span>
+    <h2>Plan Your Andaman Journey</h2>
+    <form id="bookingForm">
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <input type="text" value="Andaman Tour Package (06 Nights / 07 Days)" readonly style="background: var(--cream); font-weight:600;">
+
+      <div class="popup-form-row">
+        <select name="duration" required>
+          <option value="6-nights-7-days">6 Nights / 7 Days</option>
+        </select>
+        <select name="persons" required>
+          <option value="">No. of Persons</option>
+          <option value="1">1 Person</option>
+          <option value="2">2 Persons</option>
+          <option value="3">3 Persons</option>
+          <option value="4">4 Persons</option>
+          <option value="5plus">5+ Persons</option>
+        </select>
+      </div>
+
+      <select name="budget" required>
+        <option value="35k-45k">₹35,000 - ₹45,000</option>
+        <option value="45k-above">Above ₹45,000</option>
+      </select>
+
+      <textarea placeholder="Tell us if you want extra watersports custom added, specific arrival dates, or resort customizations..."></textarea>
+      <button type="submit" class="btn btn-gold">Send Custom Request</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Slider Gallery Logic
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  const totalSlides = slides.length;
+  const sliderWrapper = document.getElementById('slider-wrapper');
+  const counterBadge = document.getElementById('slide-counter');
+
+  function updateCounter() {
+    counterBadge.textContent = `${currentSlide + 1} / ${totalSlides}`;
+  }
+
+  function moveSlide(direction) {
+    currentSlide += direction;
+    
+    // Infinite loop circular transitions logic
+    if (currentSlide >= totalSlides) {
+      currentSlide = 0;
+    } else if (currentSlide < 0) {
+      currentSlide = totalSlides - 1;
+    }
+    
+    sliderWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+    updateCounter();
+  }
+  
+  updateCounter();
+
+  // Popup Window Actions Setup
+  const popup = document.getElementById('bookingPopup');
+  const closeBtn = document.querySelector('.closePopup');
+
+  document.body.addEventListener('click', function(e) {
+    if (e.target && e.target.classList.contains('openPopup')) {
+      e.preventDefault();
+      popup.classList.add('show');
+    }
+  });
+
+  closeBtn.addEventListener('click', () => {
+    popup.classList.remove('show');
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === popup) {
+      popup.classList.remove('show');
+    }
+  });
+
+  // Mobile nav toggler setup
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');
+  if(toggle){
+    toggle.addEventListener('click', () => {
+      const open = links.style.display === 'flex';
+      links.style.display = open ? 'none' : 'flex';
+      links.style.cssText += open ? '' : 'position:fixed;top:76px;left:0;right:0;background:#faf6ec;flex-direction:column;padding:24px 32px;gap:20px;border-bottom:1px solid #e7ddc7;';
+    });
+  }
+</script>
+</body>
+</html>
