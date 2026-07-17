@@ -112,6 +112,11 @@
     cursor: pointer;
     outline: none;
   }
+  
+  .back-btn-container {
+    margin-bottom: 25px;
+    display: none;
+  }
 
   /* ===== PACKAGES GRID ===== */
   .packages-container { padding: 60px 0 100px; }
@@ -133,6 +138,11 @@
     transform: translateY(-10px);
     box-shadow: 0 20px 45px rgba(16,31,60,0.15);
   }
+  
+  .pkg-card.region-folder {
+    cursor: pointer;
+  }
+  
   .pkg-img { height: 220px; overflow: hidden; position: relative; }
   .pkg-img img { width: 100%; height: 100%; object-fit: cover; transition: .6s; }
   .pkg-badge {
@@ -151,10 +161,8 @@
   .pkg-price strong { font-size: 24px; color: var(--navy); }
   .pkg-price span { display: block; color: var(--text-muted); font-size: 12px; }
 
-  /* ===== POPUP FOR BOOKING ===== */
- /* ================= POPUP ================= */
-
-.popup{
+  /* ================= POPUP ================= */
+  .popup{
     position:fixed;
     top:0;
     left:0;
@@ -164,20 +172,16 @@
     display:flex;
     justify-content:center;
     align-items:center;
-
     opacity:0;
     visibility:hidden;
     transition:.35s ease;
-
     z-index:999999;
-}
-
-.popup.show{
+  }
+  .popup.show{
     opacity:1;
     visibility:visible;
-}
-
-.popup-box{
+  }
+  .popup-box{
     width:95%;
     max-width:650px;
     background:#fff;
@@ -185,149 +189,79 @@
     padding:20px 22px;
     position:relative;
     box-sizing:border-box;
-
     overflow:hidden;
     box-shadow:0 20px 60px rgba(0,0,0,.25);
-
     transform:scale(.9);
     transition:.35s ease;
-}
-
-.popup.show .popup-box{
+  }
+  .popup.show .popup-box{
     transform:scale(1);
-}
-
-/* Heading */
-
-.popup-box h2{
+  }
+  .popup-box h2{
     margin:0 0 16px;
     text-align:center;
     font-size:24px;
     color:#222;
-}
-
-/* Form Layout */
-
-.popup-form-row{
+  }
+  .popup-form-row{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:10px;
-}
-
-/* Inputs */
-
-.popup-box input,
-.popup-box select,
-.popup-box textarea{
+  }
+  .popup-box input,
+  .popup-box select,
+  .popup-box textarea{
     width:100%;
     padding:10px 14px;
     margin-bottom:10px;
-
     border:1px solid #d9d9d9;
     border-radius:8px;
-
     font-size:15px;
     font-family:inherit;
-
     box-sizing:border-box;
     outline:none;
-
     transition:.3s;
-}
-
-.popup-box input:focus,
-.popup-box select:focus,
-.popup-box textarea:focus{
-
+  }
+  .popup-box input:focus,
+  .popup-box select:focus,
+  .popup-box textarea:focus{
     border-color:#d7b640;
     box-shadow:0 0 0 3px rgba(215,182,64,.15);
-
-}
-
-.popup-box textarea{
-
+  }
+  .popup-box textarea{
     min-height:70px;
     resize:none;
-
-}
-
-.popup-box input::placeholder,
-.popup-box textarea::placeholder{
-
+  }
+  .popup-box input::placeholder,
+  .popup-box textarea::placeholder{
     color:#888;
-
-}
-
-/* Full Width */
-
-.popup-box textarea,
-.popup-box button,
-.popup-box .btn{
-
+  }
+  .popup-box textarea,
+  .popup-box button,
+  .popup-box .btn{
     grid-column:1/-1;
-
-}
-
-/* Button */
-
-.popup-box .btn,
-.popup-box button,
-.popup-box input[type="submit"]{
-
+  }
+  .popup-box .btn,
+  .popup-box button,
+  .popup-box input[type="submit"]{
     width:100%;
     padding:12px;
     margin-top:5px;
-
-}
-
-/* Close */
-
-.closePopup{
-
+  }
+  .closePopup{
     position:absolute;
     top:10px;
     right:16px;
-
     font-size:28px;
     cursor:pointer;
-
     color:#666;
-
     transition:.3s;
-
-}
-
-.closePopup:hover{
-
+  }
+  .closePopup:hover{
     color:#d7b640;
     transform:rotate(90deg);
+  }
 
-}
-
-/* Mobile */
-
-@media(max-width:768px){
-
-    .popup-box{
-
-        width:95%;
-        padding:18px;
-
-    }
-
-    .popup-form-row{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .popup-box h2{
-
-        font-size:22px;
-
-    }
-
-}
   /* ===== FOOTER ===== */
   footer{background: var(--navy-deep); color:rgba(253,249,238,0.75); padding: 70px 0 20px;}
   .footer-grid{display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:40px; padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,0.1);}
@@ -337,30 +271,25 @@
 
   @media (max-width: 1024px) { .pkg-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 768px) {
+    .popup-box{ width:95%; padding:18px; }
+    .popup-form-row{ grid-template-columns:1fr; }
+    .popup-box h2{ font-size:22px; }
     .pkg-grid { grid-template-columns: 1fr; }
     .filter-wrapper { flex-direction: column; align-items: stretch; }
     .nav-links { display: none; }
     .nav-toggle { display: flex; }
     .footer-grid { grid-template-columns: 1fr; }
   }
+
   /* ===== PAGE TRANSITION ===== */
-
-body{
+  body{
     animation: pageIn .5s ease;
-}
-
-@keyframes pageIn{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-@media (max-width:992px){
-
+  }
+  @keyframes pageIn{
+    from{ opacity:0; transform:translateY(20px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
+  @media (max-width:992px){
     .nav-links{
         position:absolute;
         top:100%;
@@ -373,20 +302,59 @@ body{
         gap:20px;
         padding:25px 0;
         border-top:1px solid #ddd;
-
         opacity:0;
         visibility:hidden;
         transform:translateY(-15px);
         transition:.35s;
     }
-
     .nav-links.active{
         opacity:1;
         visibility:visible;
         transform:translateY(0);
     }
-
+  }
+  /* NAV DROPDOWN */
+.nav-dropdown{ position:relative; }
+.dropdown-toggle{ display:flex; align-items:center; gap:5px; cursor:pointer; }
+.dropdown-toggle .caret{ font-size:10px; transition:transform .25s ease; }
+.nav-dropdown.open .dropdown-toggle .caret{ transform:rotate(180deg); }
+.dropdown-menu{
+    position:absolute; top:calc(100% + 14px); left:50%;
+    transform:translateX(-50%) translateY(8px);
+    background:#fff; border:1px solid var(--line,#e7ddc7); border-radius:6px;
+    min-width:170px; box-shadow:0 18px 40px -18px rgba(16,31,60,0.35);
+    list-style:none; padding:8px 0; opacity:0; visibility:hidden;
+    transition:opacity .22s ease, transform .22s ease, visibility .22s ease; z-index:200;
 }
+.nav-dropdown:hover .dropdown-menu, .nav-dropdown.open .dropdown-menu{
+    opacity:1; visibility:visible; transform:translateX(-50%) translateY(0);
+}
+.dropdown-menu li{ list-style:none; }
+.dropdown-menu a{
+    display:block; padding:10px 20px; font-size:12.5px; text-transform:none;
+    color:var(--navy,#101f3c); white-space:nowrap;
+}
+.dropdown-menu a:hover{ background:rgba(201,152,47,0.12); color:var(--gold,#c9982f); }
+.dropdown-menu a::after{ display:none; }
+.pkg-card.pkg-hidden{ display:none !important; }
+.pkg-filter-note{ text-align:center; font-size:13px; color:var(--text-muted,#5c6172); margin-top:-30px; margin-bottom:34px; }
+.pkg-filter-note button{ border:none; background:none; color:var(--gold,#c9982f); font-weight:600; cursor:pointer; text-decoration:underline; font-size:13px; margin-left:6px; }
+
+/* TEAM SECTION */
+.team-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:26px; }
+.team-card{ background:#fff; border:1px solid var(--line,#e7ddc7); border-radius:6px; padding:34px 22px; text-align:center; transition:all .3s ease; }
+.team-card:hover{ transform:translateY(-6px); box-shadow:0 20px 50px -25px rgba(16,31,60,0.35); border-color:var(--gold,#c9982f); }
+.team-avatar{ width:84px; height:84px; margin:0 auto 20px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond', serif; font-size:30px; font-weight:700; color:#fff; background:linear-gradient(135deg, var(--gold,#c9982f), var(--navy,#101f3c)); }
+.team-card h3{ font-size:19px; margin-bottom:4px; }
+.team-role{ font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold,#c9982f); font-weight:600; margin-bottom:12px; display:block; }
+.team-card p{ font-size:13.5px; color:var(--text-muted,#5c6172); }
+
+@media(max-width:980px){
+  .dropdown-menu{ position:static; transform:none; opacity:1; visibility:visible; box-shadow:none; border:none; background:rgba(16,31,60,0.03); max-height:0; overflow:hidden; padding:0; transition:max-height .3s ease, padding .3s ease; }
+  .nav-dropdown.open .dropdown-menu{ max-height:200px; padding:6px 0 6px 14px; }
+  .team-grid{ grid-template-columns:repeat(2,1fr); }
+}
+@media(max-width:560px){ .team-grid{ grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -402,13 +370,20 @@ body{
       </span>
     </a>
     <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="packages.html" style="color:var(--gold)">Packages</a></li>
-        <li><a href="index.html#services">Services</a></li>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-      </ul>
+     <ul class="nav-links">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="#service">Service</a></li>
+  <li class="nav-dropdown">
+    <a  class="dropdown-toggle">Package <span class="caret">&#9662;</span></a>
+    <ul class="dropdown-menu">
+      <li><a href="packages.html?region=international" class="filter-link" data-cat="international">International</a></li>
+      <li><a href="packages.html?region=domestic" class="filter-link" data-cat="domestic">Domestic</a></li>
+    </ul>
+  </li>
+  <li><a href="#team">Team</a></li>
+  <li><a href="#about">About</a></li>
+  <li><a href="#contact">Contact</a></li>
+</ul>
     </nav>
     <div class="nav-cta">
       <a href="#" class="btn btn-gold openPopup">Plan My Trip</a>
@@ -430,14 +405,18 @@ body{
   <div class="container">
     <div class="filter-wrapper">
       <div class="filter-groups">
+        <!-- Dropdown me ab regions ke alawa pure domestic aur international categories bhi handle ho skti hain -->
         <select class="filter-select" id="destination-filter">
           <option value="all">All Regions</option>
-          <option value="rajasthan">Rajasthan / Delhi</option>
-          <option value="uttarakhand">Uttarakhand</option>
-          <option value="kerala">Kerala</option>
-          <option value="leh">Leh Ladakh</option>
-          <option value="kashmir">Kashmir</option>
-          <option value="goa">Goa</option>
+          <option value="domestic">Show All Domestic</option>
+          <option value="international">Show All International</option>
+          <option value="rajasthan">-- Rajasthan / Delhi</option>
+          <option value="uttarakhand">-- Uttarakhand / Shimla</option>
+          <option value="kerala">-- Kerala</option>
+          <option value="leh">-- Leh Ladakh</option>
+          <option value="kashmir">-- Kashmir</option>
+          <option value="goa">-- Goa</option>
+          <option value="andaman">-- Andaman</option>
         </select>
         
         <select class="filter-select" id="type-filter">
@@ -449,7 +428,7 @@ body{
         </select>
       </div>
       <div style="color: var(--text-muted); font-size: 14px;">
-        Total Packages Available: <span id="total-count">24</span>
+        Total Items: <span id="total-count">0</span>
       </div>
     </div>
   </div>
@@ -458,10 +437,136 @@ body{
 <!-- ===================== PACKAGES GRID ===================== -->
 <section class="packages-container">
   <div class="container">
+    
+    <div class="back-btn-container" id="back-btn-container">
+      <button class="btn btn-gold" id="back-to-regions-btn">← View All Folders</button>
+    </div>
+
     <div class="pkg-grid" id="package-grid">
 
-      <!-- 1. Andaman 6N/7D -->
-      <div class="pkg-card" data-region="all" data-type="family">
+      <!-- ============================================================= -->
+      <!-- SECTION 1: MAIN REGION FOLDERS (With Domestic/International type tags) -->
+      <!-- ============================================================= -->
+
+      <!-- 1. Andaman Folder (International) -->
+      <div class="pkg-card region-folder" data-folder-target="andaman" data-folder-type="international">
+        <div class="pkg-img">
+          <img src="images/andman.png" alt="Andaman">
+          <span class="pkg-badge">Explore</span>
+        </div>
+        <div class="pkg-body">
+          <h3>Andaman Islands Tour Packages</h3>
+          <div class="pkg-meta"><span>Tropical Paradise</span><span class="dot"></span><span>Premium Packages</span></div>
+          <div class="pkg-footer">
+            <div class="pkg-price"><strong>From ₹42,000</strong><span>Click to explore</span></div>
+            <button class="btn btn-gold">View All</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Leh Ladakh Folder (Domestic) -->
+      <div class="pkg-card region-folder" data-folder-target="leh" data-folder-type="domestic">
+        <div class="pkg-img">
+          <img src="images/ladakh.png" alt="Leh Ladakh">
+          <span class="pkg-badge">Explore</span>
+        </div>
+        <div class="pkg-body">
+          <h3>Leh Ladakh Tour Packages</h3>
+          <div class="pkg-meta"><span>Adventure & Hills</span><span class="dot"></span><span>Bike & Family Tours</span></div>
+          <div class="pkg-footer">
+            <div class="pkg-price"><strong>From ₹15,800</strong><span>Click to explore</span></div>
+            <button class="btn btn-gold">View All</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Kashmir Folder (Domestic) -->
+      <div class="pkg-card region-folder" data-folder-target="kashmir" data-folder-type="domestic">
+        <div class="pkg-img">
+          <img src="images/kashmir.png" alt="Kashmir">
+          <span class="pkg-badge">Explore</span>
+        </div>
+        <div class="pkg-body">
+          <h3>Kashmir Heaven Tour Packages</h3>
+          <div class="pkg-meta"><span>Paradise on Earth</span><span class="dot"></span><span>Honeymoon & Family</span></div>
+          <div class="pkg-footer">
+            <div class="pkg-price"><strong>From ₹18,500</strong><span>Click to explore</span></div>
+            <button class="btn btn-gold">View All</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Uttarakhand / Shimla Folder (Domestic) -->
+      <div class="pkg-card region-folder" data-folder-target="uttarakhand" data-folder-type="domestic">
+        <div class="pkg-img">
+          <img src="images/uttarakhand.png" alt="Shimla Uttarakhand">
+          <span class="pkg-badge">Explore</span>
+        </div>
+        <div class="pkg-body">
+          <h3>Shimla & Uttarakhand Packages</h3>
+          <div class="pkg-meta"><span>Lakes & Snow Mountains</span><span class="dot"></span><span>Char Dham & Hill Stations</span></div>
+          <div class="pkg-footer">
+            <div class="pkg-price"><strong>From ₹9,800</strong><span>Click to explore</span></div>
+            <button class="btn btn-gold">View All</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Kerala Folder (Domestic) -->
+      <div class="pkg-card region-folder" data-folder-target="kerala" data-folder-type="domestic">
+        <div class="pkg-img">
+          <img src="images/kerala.png" alt="Kerala">
+          <span class="pkg-badge">Explore</span>
+        </div>
+        <div class="pkg-body">
+          <h3>Kerala Backwaters Tour Packages</h3>
+          <div class="pkg-meta"><span>God's Own Country</span><span class="dot"></span><span>Nature & Romance</span></div>
+          <div class="pkg-footer">
+            <div class="pkg-price"><strong>From ₹16,500</strong><span>Click to explore</span></div>
+            <button class="btn btn-gold">View All</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Goa Folder (Domestic) -->
+      <div class="pkg-card region-folder" data-folder-target="goa" data-folder-type="domestic">
+        <div class="pkg-img">
+          <img src="images/goapooster.png" alt="Goa">
+          <span class="pkg-badge">Explore</span>
+        </div>
+        <div class="pkg-body">
+          <h3>Goa Beach Vacation Packages</h3>
+          <div class="pkg-meta"><span>Beaches & Fun</span><span class="dot"></span><span>Relaxation & Family</span></div>
+          <div class="pkg-footer">
+            <div class="pkg-price"><strong>From ₹8,500</strong><span>Click to explore</span></div>
+            <button class="btn btn-gold">View All</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Rajasthan Folder (Domestic) -->
+      <div class="pkg-card region-folder" data-folder-target="rajasthan" data-folder-type="domestic">
+        <div class="pkg-img">
+          <img src="images/rajasthan.png" alt="Rajasthan">
+          <span class="pkg-badge">Explore</span>
+        </div>
+        <div class="pkg-body">
+          <h3>Grand Rajasthan Heritage Tours</h3>
+          <div class="pkg-meta"><span>Culture & Forts</span><span class="dot"></span><span>Royal Journey</span></div>
+          <div class="pkg-footer">
+            <div class="pkg-price"><strong>From ₹11,500</strong><span>Click to explore</span></div>
+            <button class="btn btn-gold">View All</button>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ============================================================= -->
+      <!-- SECTION 2: ACTUAL DETAILED PACKAGES -->
+      <!-- ============================================================= -->
+
+      <!-- Andaman Packages -->
+      <div class="pkg-card actual-package" data-actual-region="andaman" data-main-type="international" data-type="family">
         <div class="pkg-img">
           <img src="images/andman.jpeg" alt="Andaman">
           <span class="pkg-badge">15% Off</span>
@@ -471,239 +576,15 @@ body{
           <div class="pkg-meta"><span>Andaman Islands</span><span class="dot"></span><span>7 Days · 6 Nights</span></div>
           <div class="pkg-footer">
             <div class="pkg-price"><strong>₹42,000</strong><span>per person</span></div>
-            <a href="andman.html" class="btn btn-gold">Book Now</a>
+            <button class="btn btn-gold openPopup">Book Now</button>
           </div>
         </div>
       </div>
 
-      <!-- 2. Golden Triangle with Dunes 5N/6D -->
-      <div class="pkg-card" data-region="rajasthan" data-type="family">
+      <!-- Leh Ladakh Packages -->
+      <div class="pkg-card actual-package" data-actual-region="leh" data-main-type="domestic" data-type="family">
         <div class="pkg-img">
-          <img src="images/rajasthan.jpeg" alt="Rajasthan">
-          <span class="pkg-badge">25% Off</span>
-        </div>
-        <div class="pkg-body">
-          <h3>Golden Triangle Tour with Dunes 05 Nights 06 Days</h3>
-          <div class="pkg-meta"><span>Rajasthan</span><span class="dot"></span><span>6 Days · 5 Nights</span></div>
-          <div class="pkg-footer">
-            <div class="pkg-price"><strong>₹19,500</strong><span>On Request</span></div>
-         <a href="Golden Triangle Tour with Dunes 05 Nights 06 Day.html" class="btn btn-gold">Book Now</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3. Golden Triangle With Pushkar 6N/7D -->
-      <div class="pkg-card" data-region="rajasthan" data-type="family">
-        <div class="pkg-img">
-          <img src="images/rajasthan.jpeg" alt="Pushkar">
-          <span class="pkg-badge">25% Off</span>
-        </div>
-        <div class="pkg-body">
-          <h3>Golden Triangle Tour With Pushkar 06 Nights 07 Days</h3>
-          <div class="pkg-meta"><span>Rajasthan</span><span class="dot"></span><span>7 Days · 6 Nights</span></div>
-          <div class="pkg-footer">
-            <div class="pkg-price"><strong>₹23,400</strong><span>On Request</span></div>
-            <a href="Golden Triangle Tour With Pushkar 06 Nights 07 Days.html" class="btn btn-gold">Book Now</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 4. Rajasthan Travel 12N/13D -->
-      <div class="pkg-card" data-region="rajasthan" data-type="family">
-        <div class="pkg-img">
-          <img src="images/rajasthan.jpeg" alt="Rajasthan Heritage">
-          <span class="pkg-badge">25% Off</span>
-        </div>
-        <div class="pkg-body">
-          <h3>Grand Rajasthan Travel Plan 12 Nights 13 Days</h3>
-          <div class="pkg-meta"><span>Rajasthan</span><span class="dot"></span><span>13 Days · 12 Nights</span></div>
-          <div class="pkg-footer">
-            <div class="pkg-price"><strong>₹44,999</strong><span>On Request</span></div>
-            <a href="Grand Rajasthan Travel Plan 12 Nights 13 Days.html" class="btn btn-gold">Book Now</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 5. Delhi Agra Jaipur Trip 3N/4D -->
-      <div class="pkg-card" data-region="rajasthan" data-type="family">
-        <div class="pkg-img">
-          <img src="images/rajasthan.jpeg" alt="Golden Triangle Short">
-          <span class="pkg-badge">25% Off</span>
-        </div>
-        <div class="pkg-body">
-          <h3>Delhi Agra Jaipur Trip 03 Nights 04 Days</h3>
-          <div class="pkg-meta"><span>Rajasthan / Delhi</span><span class="dot"></span><span>4 Days · 3 Nights</span></div>
-          <div class="pkg-footer">
-            <div class="pkg-price"><strong>₹11,500</strong><span>On Request</span></div>
-             <a href="kerala-honeymoon-package.html" class="btn btn-gold">Book Now</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 6. Char Dham Yatra 8N/9D -->
-      <div class="pkg-card" data-region="uttarakhand" data-type="pilgrimage">
-        <div class="pkg-img">
-          <img src="images/gliding.jpeg" alt="Char Dham">
-          <span class="pkg-badge">25% Off</span>
-        </div>
-        <div class="pkg-body">
-          <h3>Sacred Char Dham Yatra Packages 8 Nights 9 Days</h3>
-          <div class="pkg-meta"><span>Uttarakhand</span><span class="dot"></span><span>9 Days · 8 Nights</span></div>
-          <div class="pkg-footer">
-            <div class="pkg-price"><strong>₹28,500</strong><span>On Request</span></div>
-           <a href="kerala-honeymoon-package.html" class="btn btn-gold">Book Now</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 7. Trip to Mussoorie 3N/4D -->
-      <div class="pkg-card" data-region="uttarakhand" data-type="family">
-        <div class="pkg-img">
-          <img src="images/shimla.jpeg" alt="Mussoorie">
-          <span class="pkg-badge">25% Off</span>
-        </div>
-        <div class="pkg-body">
-          <h3>Trip to Mussoorie (Lal Tibba & Kempty) 3 Nights 4 Days</h3>
-          <div class="pkg-meta"><span>Uttarakhand</span><span class="dot"></span><span>4 Days · 3 Nights</span></div>
-          <div class="pkg-footer">
-            <div class="pkg-price"><strong>₹10,200</strong><span>On Request</span></div>
-           <a href="kerala-honeymoon-package.html" class="btn btn-gold">Book Now</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 8. Nainital Tour Packages 3N/4D -->
-      <div class="pkg-card" data-region="uttarakhand" data-type="family">
-        <div class="pkg-img">
-          <img src="images/shimla.jpeg" alt="Nainital Lakes">
-          <span class="pkg-badge">25% Off</span>
-        </div>
-        <div class="pkg-body">
-          <h3>Nainital Lake Tour Packages 3 Nights / 4 Days</h3>
-          <div class="pkg-meta"><span>Uttarakhand</span><span class="dot"></span><span>4 Days · 3 Nights</span></div>
-          <div class="pkg-footer">
-            <div class="pkg-price"><strong>₹9,800</strong><span>On Request</span></div>
-           <a href="kerala-honeymoon-package.html" class="btn btn-gold">Book Now</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 9. Nainital Tour with Jim Corbett 3N/4D -->
-      <div class="pkg-card" data-region="uttarakhand" data-type="adventure">
-        <div class="pkg-img">
-          <img src="images/gliding.jpeg" alt="Corbett">
-          <span class="pkg-badge">25% Off</span>
-        </div>
-        <div class="pkg-body">
-          <h3>Nainital Tour with Jim Corbett from Delhi 3N/4D</h3>
-          <div class="pkg-meta"><span>Uttarakhand</span><span class="dot"></span><span>4 Days · 3 Nights</span></div>
-          <div class="pkg-footer">
-            <div class="pkg-price"><strong>₹14,500</strong><span>On Request</span></div>
-            <a href="kerala-honeymoon-package.html" class="btn btn-gold">Book Now</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 10. Trip to Nainital 4N/5D -->
-      <div class="pkg-card" data-region="uttarakhand" data-type="honeymoon">
-        <div class="pkg-img">
-          <img src="images/shimla.jpeg" alt="Nainital Honeymoon">
-          <span class="pkg-badge">25% Off</span>
-        </div>
-        <div class="pkg-body">
-          <h3>Trip to Nainital Honeymoon Package 4 Nights / 5 Days</h3>
-          <div class="pkg-meta"><span>Uttarakhand</span><span class="dot"></span><span>5 Days · 4 Nights</span></div>
-          <div class="pkg-footer">
-            <div class="pkg-price"><strong>₹12,999</strong><span>On Request</span></div>
-           <a href="kerala-honeymoon-package.html" class="btn btn-gold">Book Now</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 11. Auli Tour Packages 5N/6D -->
-      <div class="pkg-card" data-region="uttarakhand" data-type="adventure">
-        <div class="pkg-img">
-          <img src="images/gliding.jpeg" alt="Auli Skiing">
-          <span class="pkg-badge">25% Off</span>
-        </div>
-        <div class="pkg-body">
-          <h3>Auli Tour Packages From Delhi 5 Nights / 6 Days</h3>
-          <div class="pkg-meta"><span>Uttarakhand</span><span class="dot"></span><span>6 Days · 5 Nights</span></div>
-          <div class="pkg-footer">
-            <div class="pkg-price"><strong>₹18,500</strong><span>On Request</span></div>
-             <a href="kerala-honeymoon-package.html" class="btn btn-gold">Book Now</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 12. Uttarakhand Tour Packages 7N/8D -->
-      <div class="pkg-card" data-region="uttarakhand" data-type="family">
-        <div class="pkg-img">
-          <img src="images/shimla.jpeg" alt="Uttarakhand Ultimate">
-          <span class="pkg-badge">25% Off</span>
-        </div>
-        <div class="pkg-body">
-          <h3>Uttarakhand Best Tour Packages 7 Nights / 8 Days</h3>
-          <div class="pkg-meta"><span>Uttarakhand</span><span class="dot"></span><span>8 Days · 7 Nights</span></div>
-          <div class="pkg-footer">
-            <div class="pkg-price"><strong>₹23,400</strong><span>On Request</span></div>
-            <a href="kerala-honeymoon-package.html" class="btn btn-gold">Book Now</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 13. Kerala Tour Packages 11N/12D -->
-      <div class="pkg-card" data-region="kerala" data-type="family">
-        <div class="pkg-img">
-          <img src="images/kerala.jpeg" alt="Kerala Mega">
-          <span class="pkg-badge">25% Off</span>
-        </div>
-        <div class="pkg-body">
-          <h3>Grand Kerala Tour Packages 11 Night /12 Days</h3>
-          <div class="pkg-meta"><span>Kerala</span><span class="dot"></span><span>12 Days · 11 Nights</span></div>
-          <div class="pkg-footer">
-            <div class="pkg-price"><strong>₹38,500</strong><span>On Request</span></div>
-            <a href="kerala-honeymoon-package.html" class="btn btn-gold">Book Now</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 14. Kerala Trip Package 9N/10D -->
-      <div class="pkg-card" data-region="kerala" data-type="family">
-        <div class="pkg-img">
-          <img src="images/kerala.jpeg" alt="Kerala 10 Days">
-          <span class="pkg-badge">25% Off</span>
-        </div>
-        <div class="pkg-body">
-          <h3>Kerala Trip Package 9 Night 10 Days Journey</h3>
-          <div class="pkg-meta"><span>Kerala</span><span class="dot"></span><span>10 Days · 9 Nights</span></div>
-          <div class="pkg-footer">
-            <div class="pkg-price"><strong>₹31,200</strong><span>On Request</span></div>
-            <a href="kerala-honeymoon-package.html" class="btn btn-gold">Book Now</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 15. Kerala Honeymoon Packages 4N/5D -->
-      <div class="pkg-card" data-region="kerala" data-type="honeymoon">
-        <div class="pkg-img">
-          <img src="images/kerala.jpeg" alt="Kerala Honeymoon">
-          <span class="pkg-badge">25% Off</span>
-        </div>
-        <div class="pkg-body">
-          <h3>Kerala Romantic Honeymoon Packages 4 Night/ 5 Days</h3>
-          <div class="pkg-meta"><span>Kerala</span><span class="dot"></span><span>5 Days · 4 Nights</span></div>
-          <div class="pkg-footer">
-            <div class="pkg-price"><strong>₹16,500</strong><span>On Request</span></div>
-            <a href="kerala-honeymoon-package.html" class="btn btn-gold">Book Now</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 16. Leh Ladakh Bike Trip 3N/4D -->
-      <div class="pkg-card" data-region="leh" data-type="adventure">
-        <div class="pkg-img">
-          <img src="images/ladakh.jpeg" alt="Ladakh Bike">
+          <img src="images/ladakh2.jpg" alt="Ladakh Bike">
           <span class="pkg-badge">25% Off</span>
         </div>
         <div class="pkg-body">
@@ -711,15 +592,13 @@ body{
           <div class="pkg-meta"><span>Leh Ladakh</span><span class="dot"></span><span>4 Days · 3 Nights</span></div>
           <div class="pkg-footer">
             <div class="pkg-price"><strong>₹15,800</strong><span>On Request</span></div>
-           <a href="kerala-honeymoon-package.html" class="btn btn-gold">Book Now</a>
+            <button class="btn btn-gold openPopup">Book Now</button>
           </div>
         </div>
       </div>
-
-      <!-- 17. Leh Ladakh Tour Packages 11N/12D -->
-      <div class="pkg-card" data-region="leh" data-type="family">
+      <div class="pkg-card actual-package" data-actual-region="leh" data-main-type="domestic" data-type="family">
         <div class="pkg-img">
-          <img src="images/ladakh.jpeg" alt="Leh 12 Days">
+          <img src="images/ladakh3.jpg" alt="Leh 12 Days">
           <span class="pkg-badge">25% Off</span>
         </div>
         <div class="pkg-body">
@@ -727,13 +606,11 @@ body{
           <div class="pkg-meta"><span>Leh Ladakh</span><span class="dot"></span><span>12 Days · 11 Nights</span></div>
           <div class="pkg-footer">
             <div class="pkg-price"><strong>₹42,000</strong><span>On Request</span></div>
-           <a href="kerala-honeymoon-package.html" class="btn btn-gold">Book Now</a>
+            <button class="btn btn-gold openPopup">Book Now</button>
           </div>
         </div>
       </div>
-
-      <!-- 18. Leh Ladakh Trip 9N/10D -->
-      <div class="pkg-card" data-region="leh" data-type="adventure">
+      <div class="pkg-card actual-package" data-actual-region="leh" data-main-type="domestic" data-type="family">
         <div class="pkg-img">
           <img src="images/ladakh.jpeg" alt="Ladakh Deep">
           <span class="pkg-badge">25% Off</span>
@@ -743,15 +620,15 @@ body{
           <div class="pkg-meta"><span>Leh Ladakh</span><span class="dot"></span><span>10 Days · 9 Nights</span></div>
           <div class="pkg-footer">
             <div class="pkg-price"><strong>₹34,500</strong><span>On Request</span></div>
-            <a href="kerala-honeymoon-package.html" class="btn btn-gold">Book Now</a>
+            <button class="btn btn-gold openPopup">Book Now</button>
           </div>
         </div>
       </div>
 
-      <!-- 19. Kashmir Tourism 6N/7D -->
-      <div class="pkg-card" data-region="kashmir" data-type="family">
+      <!-- Kashmir Packages -->
+      <div class="pkg-card actual-package" data-actual-region="kashmir" data-main-type="domestic" data-type="family">
         <div class="pkg-img">
-          <img src="images/kashmir.jpeg" alt="Kashmir 7 Days">
+          <img src="images/kasmir2.jpg" alt="Kashmir 7 Days">
           <span class="pkg-badge">25% Off</span>
         </div>
         <div class="pkg-body">
@@ -759,13 +636,11 @@ body{
           <div class="pkg-meta"><span>Kashmir</span><span class="dot"></span><span>7 Days · 6 Nights</span></div>
           <div class="pkg-footer">
             <div class="pkg-price"><strong>₹21,500</strong><span>On Request</span></div>
-            <a href="kerala-honeymoon-package.html" class="btn btn-gold">Book Now</a>
+            <button class="btn btn-gold openPopup">Book Now</button>
           </div>
         </div>
       </div>
-
-      <!-- 20. Jammu & Kashmir Tourism 8N/9D -->
-      <div class="pkg-card" data-region="kashmir" data-type="family">
+      <div class="pkg-card actual-package" data-actual-region="kashmir" data-main-type="domestic" data-type="family">
         <div class="pkg-img">
           <img src="images/kashmir.jpeg" alt="J&K 9 Days">
           <span class="pkg-badge">25% Off</span>
@@ -775,15 +650,13 @@ body{
           <div class="pkg-meta"><span>Kashmir</span><span class="dot"></span><span>9 Days · 8 Nights</span></div>
           <div class="pkg-footer">
             <div class="pkg-price"><strong>₹27,000</strong><span>On Request</span></div>
-            <a href="kerala-honeymoon-package.html" class="btn btn-gold">Book Now</a>
+            <button class="btn btn-gold openPopup">Book Now</button>
           </div>
         </div>
       </div>
-
-      <!-- 21. Kashmir Honeymoon Packages 4N/5D -->
-      <div class="pkg-card" data-region="kashmir" data-type="honeymoon">
+      <div class="pkg-card actual-package" data-actual-region="kashmir" data-main-type="domestic" data-type="family">
         <div class="pkg-img">
-          <img src="images/kashmir.jpeg" alt="Kashmir Honeymoon">
+          <img src="images/kashmir3.jpg" alt="Kashmir Honeymoon">
           <span class="pkg-badge">25% Off</span>
         </div>
         <div class="pkg-body">
@@ -791,15 +664,159 @@ body{
           <div class="pkg-meta"><span>Kashmir</span><span class="dot"></span><span>5 Days · 4 Nights</span></div>
           <div class="pkg-footer">
             <div class="pkg-price"><strong>₹18,500</strong><span>On Request</span></div>
-            <a href="kerala-honeymoon-package.html" class="btn btn-gold">Book Now</a>
+            <button class="btn btn-gold openPopup">Book Now</button>
           </div>
         </div>
       </div>
 
-      <!-- 22. Family Holiday Packages in Goa 3N/4D -->
-      <div class="pkg-card" data-region="goa" data-type="family">
+      <!-- Uttarakhand / Shimla Packages -->
+      <div class="pkg-card actual-package" data-actual-region="uttarakhand" data-main-type="domestic" data-type="family">
         <div class="pkg-img">
-          <img src="images/Beach Desktop Wallpapers.jpeg" alt="Goa Family">
+          <img src="images/uttarakhand.jpg" alt="Char Dham">
+          <span class="pkg-badge">25% Off</span>
+        </div>
+        <div class="pkg-body">
+          <h3>Sacred Char Dham Yatra Packages 8 Nights 9 Days</h3>
+          <div class="pkg-meta"><span>Uttarakhand</span><span class="dot"></span><span>9 Days · 8 Nights</span></div>
+          <div class="pkg-footer">
+            <div class="pkg-price"><strong>₹28,500</strong><span>On Request</span></div>
+            <button class="btn btn-gold openPopup">Book Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="pkg-card actual-package" data-actual-region="uttarakhand" data-main-type="domestic" data-type="family">
+        <div class="pkg-img">
+          <img src="images/uttarakhanf.jpg"alt="Mussoorie">
+          <span class="pkg-badge">25% Off</span>
+        </div>
+        <div class="pkg-body">
+          <h3>Trip to Mussoorie (Lal Tibba & Kempty) 3 Nights 4 Days</h3>
+          <div class="pkg-meta"><span>Uttarakhand</span><span class="dot"></span><span>4 Days · 3 Nights</span></div>
+          <div class="pkg-footer">
+            <div class="pkg-price"><strong>₹10,200</strong><span>On Request</span></div>
+            <button class="btn btn-gold openPopup">Book Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="pkg-card actual-package" data-actual-region="uttarakhand" data-main-type="domestic" data-type="family">
+        <div class="pkg-img">
+          <img src="images/uttarakhand6.jpg" alt="Nainital Lakes">
+          <span class="pkg-badge">25% Off</span>
+        </div>
+        <div class="pkg-body">
+          <h3>Nainital Lake Tour Packages 3 Nights / 4 Days</h3>
+          <div class="pkg-meta"><span>Uttarakhand</span><span class="dot"></span><span>4 Days · 3 Nights</span></div>
+          <div class="pkg-footer">
+            <div class="pkg-price"><strong>₹9,800</strong><span>On Request</span></div>
+            <button class="btn btn-gold openPopup">Book Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="pkg-card actual-package" data-actual-region="uttarakhand" data-main-type="domestic" data-type="family">
+        <div class="pkg-img">
+          <img src="images/uk1.jpg" alt="Corbett">
+          <span class="pkg-badge">25% Off</span>
+        </div>
+        <div class="pkg-body">
+          <h3>Nainital Tour with Jim Corbett from Delhi 3N/4D</h3>
+          <div class="pkg-meta"><span>Uttarakhand</span><span class="dot"></span><span>4 Days · 3 Nights</span></div>
+          <div class="pkg-footer">
+            <div class="pkg-price"><strong>₹14,500</strong><span>On Request</span></div>
+            <button class="btn btn-gold openPopup">Book Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="pkg-card actual-package" data-actual-region="uttarakhand" data-main-type="domestic" data-type="family">
+        <div class="pkg-img">
+          <img src="images/utterkhand4.jpg" alt="Nainital Honeymoon">
+          <span class="pkg-badge">25% Off</span>
+        </div>
+        <div class="pkg-body">
+          <h3>Trip to Nainital Honeymoon Package 4 Nights / 5 Days</h3>
+          <div class="pkg-meta"><span>Uttarakhand</span><span class="dot"></span><span>5 Days · 4 Nights</span></div>
+          <div class="pkg-footer">
+            <div class="pkg-price"><strong>₹12,999</strong><span>On Request</span></div>
+            <button class="btn btn-gold openPopup">Book Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="pkg-card actual-package" data-actual-region="uttarakhand" data-main-type="domestic" data-type="family">
+        <div class="pkg-img">
+          <img src="images/uk2.jpg" alt="Auli Skiing">
+          <span class="pkg-badge">25% Off</span>
+        </div>
+        <div class="pkg-body">
+          <h3>Auli Tour Packages From Delhi 5 Nights / 6 Days</h3>
+          <div class="pkg-meta"><span>Uttarakhand</span><span class="dot"></span><span>6 Days · 5 Nights</span></div>
+          <div class="pkg-footer">
+            <div class="pkg-price"><strong>₹18,500</strong><span>On Request</span></div>
+            <button class="btn btn-gold openPopup">Book Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="pkg-card actual-package" data-actual-region="uttarakhand" data-main-type="domestic" data-type="family">
+        <div class="pkg-img">
+          <img src="images/uk3.jpg" alt="Uttarakhand Ultimate">
+          <span class="pkg-badge">25% Off</span>
+        </div>
+        <div class="pkg-body">
+          <h3>Uttarakhand Best Tour Packages 7 Nights / 8 Days</h3>
+          <div class="pkg-meta"><span>Uttarakhand</span><span class="dot"></span><span>8 Days · 7 Nights</span></div>
+          <div class="pkg-footer">
+            <div class="pkg-price"><strong>₹23,400</strong><span>On Request</span></div>
+            <button class="btn btn-gold openPopup">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kerala Packages -->
+      <div class="pkg-card actual-package" data-actual-region="kerala" data-main-type="domestic" data-type="family">
+        <div class="pkg-img">
+          <img src="images/kerala1.jpg" alt="Kerala Mega">
+          <span class="pkg-badge">25% Off</span>
+        </div>
+        <div class="pkg-body">
+          <h3>Grand Kerala Tour Packages 11 Night /12 Days</h3>
+          <div class="pkg-meta"><span>Kerala</span><span class="dot"></span><span>12 Days · 11 Nights</span></div>
+          <div class="pkg-footer">
+            <div class="pkg-price"><strong>₹38,500</strong><span>On Request</span></div>
+            <button class="btn btn-gold openPopup">Book Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="pkg-card actual-package" data-actual-region="kerala" data-main-type="domestic" data-type="family">
+        <div class="pkg-img">
+          <img src="images/kerala2.jpg" alt="Kerala 10 Days">
+          <span class="pkg-badge">25% Off</span>
+        </div>
+        <div class="pkg-body">
+          <h3>Kerala Trip Package 9 Night 10 Days Journey</h3>
+          <div class="pkg-meta"><span>Kerala</span><span class="dot"></span><span>10 Days · 9 Nights</span></div>
+          <div class="pkg-footer">
+            <div class="pkg-price"><strong>₹31,200</strong><span>On Request</span></div>
+            <button class="btn btn-gold openPopup">Book Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="pkg-card actual-package" data-actual-region="kerala" data-main-type="domestic" data-type="family">
+        <div class="pkg-img">
+          <img src="images/kerala4.jpg" alt="Kerala Honeymoon">
+          <span class="pkg-badge">25% Off</span>
+        </div>
+        <div class="pkg-body">
+          <h3>Kerala Romantic Honeymoon Packages 4 Night/ 5 Days</h3>
+          <div class="pkg-meta"><span>Kerala</span><span class="dot"></span><span>5 Days · 4 Nights</span></div>
+          <div class="pkg-footer">
+            <div class="pkg-price"><strong>₹16,500</strong><span>On Request</span></div>
+            <button class="btn btn-gold openPopup">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Goa Packages -->
+      <div class="pkg-card actual-package" data-actual-region="goa" data-main-type="domestic" data-type="family">
+        <div class="pkg-img">
+          <img src="images/goa1.jpg" alt="Goa Family">
           <span class="pkg-badge">25% Off</span>
         </div>
         <div class="pkg-body">
@@ -807,15 +824,13 @@ body{
           <div class="pkg-meta"><span>Goa</span><span class="dot"></span><span>4 Days · 3 Nights</span></div>
           <div class="pkg-footer">
             <div class="pkg-price"><strong>₹11,200</strong><span>On Request</span></div>
-          <a href="kerala-honeymoon-package.html" class="btn btn-gold">Book Now</a>
+            <button class="btn btn-gold openPopup">Book Now</button>
           </div>
         </div>
       </div>
-
-      <!-- 23. Trip to Goa 2N/3D -->
-      <div class="pkg-card" data-region="goa" data-type="adventure">
+      <div class="pkg-card actual-package" data-actual-region="goa" data-main-type="domestic" data-type="family">
         <div class="pkg-img">
-          <img src="images/Beach Desktop Wallpapers.jpeg" alt="Goa Short">
+          <img src="images/goa2.jpg" alt="Goa Short">
           <span class="pkg-badge">Hot Deal</span>
         </div>
         <div class="pkg-body">
@@ -823,15 +838,13 @@ body{
           <div class="pkg-meta"><span>Goa</span><span class="dot"></span><span>3 Days · 2 Nights</span></div>
           <div class="pkg-footer">
             <div class="pkg-price"><strong>₹8,500</strong><span>On Request</span></div>
-            <a href="kerala-honeymoon-package.html" class="btn btn-gold">Book Now</a>
+            <button class="btn btn-gold openPopup">Book Now</button>
           </div>
         </div>
       </div>
-
-      <!-- 24. Goa Packages for Family 6N/7D -->
-      <div class="pkg-card" data-region="goa" data-type="family">
+      <div class="pkg-card actual-package" data-actual-region="goa" data-main-type="domestic" data-type="family">
         <div class="pkg-img">
-          <img src="images/Beach Desktop Wallpapers.jpeg" alt="Goa 7 Days">
+          <img src="images/goa3.jpg" alt="Goa 7 Days">
           <span class="pkg-badge">25% Off</span>
         </div>
         <div class="pkg-body">
@@ -839,7 +852,65 @@ body{
           <div class="pkg-meta"><span>Goa</span><span class="dot"></span><span>7 Days · 6 Nights</span></div>
           <div class="pkg-footer">
             <div class="pkg-price"><strong>₹21,999</strong><span>On Request</span></div>
-            <a href="kerala-honeymoon-package.html" class="btn btn-gold">Book Now</a>
+            <button class="btn btn-gold openPopup">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rajasthan Packages -->
+      <div class="pkg-card actual-package" data-actual-region="rajasthan" data-main-type="domestic" data-type="family">
+        <div class="pkg-img">
+          <img src="images/rajsthan1dunes.jpg" alt="Rajasthan">
+          <span class="pkg-badge">25% Off</span>
+        </div>
+        <div class="pkg-body">
+          <h3>Golden Triangle Tour with Dunes 05 Nights 06 Days</h3>
+          <div class="pkg-meta"><span>Rajasthan</span><span class="dot"></span><span>6 Days · 5 Nights</span></div>
+          <div class="pkg-footer">
+            <div class="pkg-price"><strong>₹19,500</strong><span>On Request</span></div>
+            <button class="btn btn-gold openPopup">Book Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="pkg-card actual-package" data-actual-region="rajasthan" data-main-type="domestic" data-type="family">
+        <div class="pkg-img">
+          <img src="images/rajasthanpush.jpg" alt="Pushkar">
+          <span class="pkg-badge">25% Off</span>
+        </div>
+        <div class="pkg-body">
+          <h3>Golden Triangle Tour With Pushkar 06 Nights 07 Days</h3>
+          <div class="pkg-meta"><span>Rajasthan</span><span class="dot"></span><span>7 Days · 6 Nights</span></div>
+          <div class="pkg-footer">
+            <div class="pkg-price"><strong>₹23,400</strong><span>On Request</span></div>
+            <button class="btn btn-gold openPopup">Book Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="pkg-card actual-package" data-actual-region="rajasthan" data-main-type="domestic" data-type="family">
+        <div class="pkg-img">
+          <img src="images/rajasthan.jpg" alt="Rajasthan Heritage">
+          <span class="pkg-badge">25% Off</span>
+        </div>
+        <div class="pkg-body">
+          <h3>Grand Rajasthan Travel Plan 12 Nights 13 Days</h3>
+          <div class="pkg-meta"><span>Rajasthan</span><span class="dot"></span><span>13 Days · 12 Nights</span></div>
+          <div class="pkg-footer">
+            <div class="pkg-price"><strong>₹44,999</strong><span>On Request</span></div>
+            <button class="btn btn-gold openPopup">Book Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="pkg-card actual-package" data-actual-region="rajasthan" data-main-type="domestic" data-type="family">
+        <div class="pkg-img">
+          <img src="images/rajasthan.jpeg" alt="Golden Triangle Short">
+          <span class="pkg-badge">25% Off</span>
+        </div>
+        <div class="pkg-body">
+          <h3>Delhi Agra Jaipur Trip 03 Nights 04 Days</h3>
+          <div class="pkg-meta"><span>Rajasthan / Delhi</span><span class="dot"></span><span>4 Days · 3 Nights</span></div>
+          <div class="pkg-footer">
+            <div class="pkg-price"><strong>₹11,500</strong><span>On Request</span></div>
+            <button class="btn btn-gold openPopup">Book Now</button>
           </div>
         </div>
       </div>
@@ -847,7 +918,7 @@ body{
     </div>
 
     <!-- Load More Button Section -->
-    <div class="load-more-container" id="load-more-btn-div">
+    <div class="load-more-container" id="load-more-btn-div" style="display: none;">
       <button class="btn btn-gold" id="load-more-btn">Load More Packages</button>
     </div>
 
@@ -857,52 +928,50 @@ body{
 <!-- ===================== ENQUIRY POPUP ===================== -->
 <div class="popup" id="bookingPopup">
   <div class="popup-box">
-    <span class="closePopup">&times</span>
+    <span class="closePopup">&times;</span>
     <h2>Plan My Custom Trip</h2>
-   <form id="bookingForm">
-            <input type="text" placeholder="Full Name" required>
-            <input type="email" placeholder="Email Address" required>
-            <input type="tel" placeholder="Phone Number" required>
-            <input type="text" placeholder="Destination">
+    <form id="bookingForm">
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <input type="text" placeholder="Destination">
 
-            <div class="popup-form-row">
-                <select name="duration" required>
-                    <option value="">Trip Duration</option>
-                    <option value="1-3-days">1 - 3 Days</option>
-                    <option value="4-6-days">4 - 6 Days</option>
-                    <option value="1-week">1 Week</option>
-                    <option value="2-weeks">2 Weeks</option>
-                    <option value="3-weeks-plus">3+ Weeks</option>
-                </select>
+      <div class="popup-form-row">
+        <select name="duration" required>
+          <option value="">Trip Duration</option>
+          <option value="1-3-days">1 - 3 Days</option>
+          <option value="4-6-days">4 - 6 Days</option>
+          <option value="1-week">1 Week</option>
+          <option value="2-weeks">2 Weeks</option>
+          <option value="3-weeks-plus">3+ Weeks</option>
+        </select>
 
-                <select name="persons" required>
-                    <option value="">No. of Persons</option>
-                    <option value="1">1 Person</option>
-                    <option value="2">2 Persons</option>
-                    <option value="3">3 Persons</option>
-                    <option value="4">4 Persons</option>
-                    <option value="5plus">5+ Persons</option>
-                </select>
-            </div>
+        <select name="persons" required>
+          <option value="">No. of Persons</option>
+          <option value="1">1 Person</option>
+          <option value="2">2 Persons</option>
+          <option value="3">3 Persons</option>
+          <option value="4">4 Persons</option>
+          <option value="5plus">5+ Persons</option>
+        </select>
+      </div>
 
-            <select name="budget" required>
-                <option value="">Select Budget Range</option>
-                <option value="10k-20k">₹10,000 - ₹20,000</option>
-                <option value="20k-30k">₹20,000 - ₹30,000</option>
-                <option value="30k-40k">₹30,000 - ₹40,000</option>
-                <option value="40k-50k">₹40,000 - ₹50,000</option>
-                <option value="50k-60k">₹50,000 - ₹60,000</option>
-                <option value="60k-70k">₹60,000 - ₹70,000</option>
-                <option value="70k-80k">₹70,000 - ₹80,000</option>
-                <option value="80k-90k">₹80,000 - ₹90,000</option>
-                <option value="90k-above">₹90,000 & Above</option>
-            </select>
+      <select name="budget" required>
+        <option value="">Select Budget Range</option>
+        <option value="10k-20k">₹10,000 - ₹20,000</option>
+        <option value="20k-30k">₹20,000 - ₹30,000</option>
+        <option value="30k-40k">₹30,000 - ₹40,000</option>
+        <option value="40k-50k">₹40,000 - ₹50,000</option>
+        <option value="50k-60k">₹50,000 - ₹60,000</option>
+        <option value="60k-70k">₹60,000 - ₹70,000</option>
+        <option value="70k-80k">₹70,000 - ₹80,000</option>
+        <option value="80k-90k">₹80,000 - ₹90,000</option>
+        <option value="90k-above">₹90,000 & Above</option>
+      </select>
 
-            <textarea placeholder="Tell us about your trip..."></textarea>
-            <button type="submit" class="btn btn-gold">
-                Send Request
-            </button>
-        </form>
+      <textarea placeholder="Tell us about your trip..."></textarea>
+      <button type="submit" class="btn btn-gold">Send Request</button>
+    </form>
   </div>
 </div>
 
@@ -931,7 +1000,7 @@ body{
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy 2026 The Dream Vyana. All Rights Reserved.</p>
+      <p>&copy; 2026 The Dream Vyana. All Rights Reserved.</p>
     </div>
   </div>
 </footer>
@@ -958,119 +1027,180 @@ body{
     }
   });
 
-  // Mined Filter and 9-Card Load More Mechanism
+  // State Filtering Engine
   const regionFilter = document.getElementById('destination-filter');
   const typeFilter = document.getElementById('type-filter');
   const loadMoreBtn = document.getElementById('load-more-btn');
   const loadMoreDiv = document.getElementById('load-more-btn-div');
   const countSpan = document.getElementById('total-count');
+  const backBtnContainer = document.getElementById('back-btn-container');
+  const backToRegionsBtn = document.getElementById('back-to-regions-btn');
   
+  let currentView = 'folders'; 
+  let activeSelectedFilter = 'all'; // can be 'all', 'domestic', 'international', or target specific like 'leh'
   let cardsToShow = 9;
-  let filteredCards = [];
 
-  function applyFiltersAndLimits() {
-    const regionValue = regionFilter.value;
+  function renderView() {
+    const folders = document.querySelectorAll('.region-folder');
+    const packages = document.querySelectorAll('.actual-package');
     const typeValue = typeFilter.value;
-    const allCards = document.querySelectorAll('.pkg-card');
     
-    filteredCards = [];
+    // Check if the current filter state requires entering dynamic specific sub-packages list
+    const specificRegions = ['rajasthan', 'uttarakhand', 'kerala', 'leh', 'kashmir', 'goa', 'andaman'];
+    if (specificRegions.includes(activeSelectedFilter)) {
+      currentView = 'packages';
+    }
 
-    // 1. Separate cards matching current dropdown filter criteria
-    allCards.forEach(card => {
-      const matchRegion = (regionValue === 'all' || card.getAttribute('data-region') === regionValue);
-      const matchType = (typeValue === 'all' || card.getAttribute('data-type') === typeValue);
-
-      if (matchRegion && matchType) {
-        filteredCards.push(card);
-      } else {
-        card.style.display = 'none';
-      }
-    });
-
-    // 2. Count updates dynamically
-    countSpan.textContent = filteredCards.length;
-
-    // 3. Render and slice up to current visual capacity limits (initially 9 cards)
-    filteredCards.forEach((card, index) => {
-      if (index < cardsToShow) {
-        card.style.display = 'block';
-      } else {
-        card.style.display = 'none';
-      }
-    });
-
-    // 4. Handle visibility threshold state transitions for the lazy loading trigger button
-    if (filteredCards.length <= cardsToShow) {
+    if (currentView === 'folders') {
+      backBtnContainer.style.display = 'none';
       loadMoreDiv.style.display = 'none';
-    } else {
-      loadMoreDiv.style.display = 'block';
+      packages.forEach(pkg => pkg.style.display = 'none');
+      
+      let visibleFoldersCount = 0;
+      folders.forEach(folder => {
+        const folderTarget = folder.getAttribute('data-folder-target');
+        const folderType = folder.getAttribute('data-folder-type'); // 'domestic' / 'international'
+        
+        // Logical cross validation check for folder layout visibility
+        const matchMainScope = (activeSelectedFilter === 'all' || activeSelectedFilter === 'domestic' || activeSelectedFilter === 'international');
+        const matchSpecificType = (activeSelectedFilter === 'all' || folderType === activeSelectedFilter);
+
+        if (matchMainScope && matchSpecificType) {
+          folder.style.display = 'block';
+          visibleFoldersCount++;
+        } else {
+          folder.style.display = 'none';
+        }
+      });
+      countSpan.textContent = visibleFoldersCount;
+    } 
+    else if (currentView === 'packages') {
+      folders.forEach(folder => folder.style.display = 'none');
+      backBtnContainer.style.display = 'block';
+      
+      let matchingPackages = [];
+      packages.forEach(pkg => {
+        const pkgRegion = pkg.getAttribute('data-actual-region');
+        const pkgMainType = pkg.getAttribute('data-main-type'); // 'domestic' / 'international'
+        const pkgType = pkg.getAttribute('data-type');
+        
+        // Logic handling if user filtered by broad context (domestic) vs precise folder destination (leh)
+        let matchRegion = false;
+        if (activeSelectedFilter === 'all') {
+          matchRegion = true;
+        } else if (activeSelectedFilter === 'domestic' || activeSelectedFilter === 'international') {
+          matchRegion = (pkgMainType === activeSelectedFilter);
+        } else {
+          matchRegion = (pkgRegion === activeSelectedFilter);
+        }
+        
+        const matchType = (typeValue === 'all' || pkgType === typeValue);
+        
+        if (matchRegion && matchType) {
+          matchingPackages.push(pkg);
+        } else {
+          pkg.style.display = 'none';
+        }
+      });
+      
+      countSpan.textContent = matchingPackages.length;
+      
+      matchingPackages.forEach((pkg, index) => {
+        if (index < cardsToShow) {
+          pkg.style.display = 'block';
+        } else {
+          pkg.style.display = 'none';
+        }
+      });
+      
+      if (matchingPackages.length <= cardsToShow) {
+        loadMoreDiv.style.display = 'none';
+      } else {
+        loadMoreDiv.style.display = 'block';
+      }
     }
   }
 
-  // Load More logic setup
-  loadMoreBtn.addEventListener('click', () => {
-    cardsToShow += 9; // expands current frame capacity index limits by batches of 9 cards sequentially
-    applyFiltersAndLimits();
+  // Click handler targets for entry points into folders
+  document.querySelectorAll('.region-folder').forEach(folder => {
+    folder.addEventListener('click', () => {
+      const targetRegion = folder.getAttribute('data-folder-target');
+      activeSelectedFilter = targetRegion;
+      regionFilter.value = targetRegion; 
+      currentView = 'packages';
+      cardsToShow = 9;
+      renderView();
+    });
   });
 
-  // Reset counters to defaults whenever filter selections update
-  function resetAndApply() {
+  backToRegionsBtn.addEventListener('click', () => {
+    currentView = 'folders';
+    activeSelectedFilter = 'all';
+    regionFilter.value = 'all';
+    renderView();
+  });
+
+  regionFilter.addEventListener('change', (e) => {
+    activeSelectedFilter = e.target.value;
+    if (activeSelectedFilter === 'all' || activeSelectedFilter === 'domestic' || activeSelectedFilter === 'international') {
+      currentView = 'folders';
+    } else {
+      currentView = 'packages';
+    }
     cardsToShow = 9;
-    applyFiltersAndLimits();
+    renderView();
+  });
+
+  typeFilter.addEventListener('change', () => {
+    cardsToShow = 9;
+    renderView();
+  });
+
+  loadMoreBtn.addEventListener('click', () => {
+    cardsToShow += 9;
+    renderView();
+  });
+
+  // URL Query String Parameter Parsing stack setup handler 
+  const params = new URLSearchParams(window.location.search);
+  const regionParam = params.get("region"); // looks for 'domestic' or 'international'
+  if (regionParam && (regionParam === 'domestic' || regionParam === 'international')) {
+    activeSelectedFilter = regionParam;
+    regionFilter.value = regionParam;
+    currentView = 'folders'; 
   }
 
-  regionFilter.addEventListener('change', resetAndApply);
-  typeFilter.addEventListener('change', resetAndApply);
+  // Render on initial boot sequence state loop
+  renderView();
 
-  // Kickstart on init stack cycle execution 
-  resetAndApply();
+  window.addEventListener("load",()=>{
+      document.body.classList.add("page-loaded");
+  });
 
+  document.querySelectorAll("a").forEach(link=>{
+      const href=link.getAttribute("href");
+      if(
+          href &&
+          !href.startsWith("#") &&
+          !href.startsWith("javascript") &&
+          !link.hasAttribute("target")
+      ){
+          link.addEventListener("click",function(e){
+              e.preventDefault();
+              document.body.classList.remove("page-loaded");
+              document.body.classList.add("page-exit");
+              setTimeout(()=>{
+                  window.location.href=href;
+              },650);
+          });
+      }
+  });
 
-window.addEventListener("load",()=>{
-
-    document.body.classList.add("page-loaded");
-
-});
-
-document.querySelectorAll("a").forEach(link=>{
-
-    const href=link.getAttribute("href");
-
-    if(
-        href &&
-        !href.startsWith("#") &&
-        !href.startsWith("javascript") &&
-        !link.hasAttribute("target")
-    ){
-
-        link.addEventListener("click",function(e){
-
-            e.preventDefault();
-
-            document.body.classList.remove("page-loaded");
-            document.body.classList.add("page-exit");
-
-            setTimeout(()=>{
-
-                window.location.href=href;
-
-            },650);
-
-        });
-
-    }
-
-});
-
-const toggle = document.querySelector(".nav-toggle");
-const menu = document.querySelector(".nav-links");
-
-toggle.addEventListener("click", () => {
-    menu.classList.toggle("active");
-});
-</script>
-
-</script>
+  const toggle = document.querySelector(".nav-toggle");
+  const menu = document.querySelector(".nav-links");
+  toggle.addEventListener("click", () => {
+      menu.classList.toggle("active");
+  });
 </script>
 </body>
 </html>
