@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — The Dream Vyana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#101f3c;
+    --navy-deep:#0a1428;
+    --gold:#d7b640;
+    --gold-light:#e8c979;
+    --cream:#faf6ec;
+    --card:#ffffff;
+    --pine:#1f4a3e;
+    --text-muted:#5c6172;
+    --line:#e7ddc7;
+    --radius:4px;
+    --shadow: 0 20px 50px -25px rgba(16,31,60,0.35);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Jost', sans-serif;
+    color:var(--navy);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    animation: pageIn .5s ease;
+  }
+  @keyframes pageIn{ from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+  h1,h2,h3,h4{font-family:'Cormorant Garamond', serif; font-weight:600; letter-spacing:0.01em;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .container{max-width:1180px; margin:0 auto; padding:0 32px;}
+  .eyebrow{
+    display:flex; align-items:center; gap:14px;
+    font-size:12.5px; letter-spacing:0.32em; text-transform:uppercase;
+    color:var(--gold); font-weight:600; margin-bottom:16px;
+  }
+  .eyebrow::before, .eyebrow.center::after{content:''; height:1px; width:36px; background:var(--gold); opacity:0.6;}
+  .eyebrow.center{justify-content:center;}
+  .section-head{text-align:center; max-width:640px; margin:0 auto 56px;}
+  .section-head h2{font-size:clamp(30px,4vw,44px); color:var(--navy); margin-bottom:14px;}
+  .section-head p{color:var(--text-muted); font-size:16px;}
+  section{padding:96px 0;}
+  .btn{
+    position:relative; overflow:hidden;
+    display:inline-flex; align-items:center; gap:10px;
+    padding:15px 34px; border-radius:2px; font-size:13.5px;
+    letter-spacing:0.14em; text-transform:uppercase; font-weight:600;
+    cursor:pointer; border:1px solid transparent; transition:all .3s ease;
+  }
+  .btn-gold{background:linear-gradient(135deg,var(--gold-light),var(--gold)); color:var(--navy-deep);}
+  .btn-gold:hover{transform:translateY(-2px); box-shadow:0 14px 28px -10px rgba(201,152,47,0.55);}
+  .btn-outline{border-color:rgba(255,255,255,0.55); color:#fff;}
+  .btn-outline:hover{background:rgba(255,255,255,0.12); border-color:#fff;}
+  .btn-navy{background:var(--navy); color:#fdf9ee;}
+  .btn-navy:hover{background:var(--navy-deep); transform:translateY(-2px);}
+  .btn-pulse{ animation:btn-pulse-anim 0.45s ease-out; }
+  @keyframes btn-pulse-anim{ 0%{transform:scale(1);} 35%{transform:scale(0.93);} 100%{transform:scale(1);} }
+  .btn-ripple{ position:absolute; border-radius:50%; background:rgba(255,255,255,0.55); transform:scale(0); animation:btn-ripple-anim 0.6s ease-out forwards; pointer-events:none; }
+  @keyframes btn-ripple-anim{ to{ transform:scale(3); opacity:0; } }
+
+  /* ===== NAVBAR ===== */
+  .navbar{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(250,246,236,0.92); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:12px 32px; max-width:1180px; margin:0 auto;}
+  .nav-logo{display:flex; align-items:center; gap:12px;}
+  .nav-logo img{height:52px; width:auto;}
+  .nav-logo .brand-text{display:flex; flex-direction:column; line-height:1.1;}
+  .nav-logo .brand-text .b1{font-family:'Cormorant Garamond',serif; font-size:19px; font-weight:600; color:var(--navy);}
+  .nav-logo .brand-text .b2{font-size:9px; letter-spacing:0.22em; color:var(--gold); text-transform:uppercase;}
+  .nav-links{display:flex; align-items:center; gap:38px; list-style:none;}
+  .nav-links a{font-size:13px; letter-spacing:0.06em; text-transform:uppercase; font-weight:500; color:var(--navy); position:relative; padding:4px 0;}
+  .nav-links a::after{content:''; position:absolute; left:0; bottom:-2px; width:0; height:1px; background:var(--gold); transition:width .3s ease;}
+  .nav-links a:hover::after, .nav-links a.active::after{width:100%;}
+  .nav-links a.active{color:var(--gold);}
+  .nav-cta{display:flex; align-items:center; gap:22px;}
+  .nav-cta .btn{padding:11px 24px; font-size:11.5px;}
+  .nav-toggle{display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none;}
+  .nav-toggle span{width:24px; height:2px; background:var(--navy);}
+
+  /* NAV DROPDOWN */
+  .nav-dropdown{ position:relative; }
+  .dropdown-toggle{ display:flex; align-items:center; gap:5px; cursor:pointer; }
+  .dropdown-toggle .caret{ font-size:10px; transition:transform .25s ease; }
+  .nav-dropdown.open .dropdown-toggle .caret{ transform:rotate(180deg); }
+  .dropdown-menu{
+    position:absolute; top:calc(100% + 14px); left:50%;
+    transform:translateX(-50%) translateY(8px);
+    background:#fff; border:1px solid var(--line); border-radius:6px;
+    min-width:170px; box-shadow:0 18px 40px -18px rgba(16,31,60,0.35);
+    list-style:none; padding:8px 0; opacity:0; visibility:hidden;
+    transition:opacity .22s ease, transform .22s ease, visibility .22s ease; z-index:200;
+  }
+  .nav-dropdown:hover .dropdown-menu, .nav-dropdown.open .dropdown-menu{
+    opacity:1; visibility:visible; transform:translateX(-50%) translateY(0);
+  }
+  .dropdown-menu li{ list-style:none; }
+  .dropdown-menu a{ display:block; padding:10px 20px; font-size:12.5px; text-transform:none; color:var(--navy); white-space:nowrap; }
+  .dropdown-menu a:hover{ background:rgba(201,152,47,0.12); color:var(--gold); }
+  .dropdown-menu a::after{ display:none; }
+
+  /* ===== PAGE HERO (inner page banner) ===== */
+  .page-hero{
+    position:relative;
+    padding:180px 0 90px;
+    background:radial-gradient(120% 140% at 20% 0%, #16294c 0%, #102a5dbc 55%, var(--navy-deep) 100%);
+    text-align:center;
+    overflow:hidden;
+  }
+  .page-hero::after{
+    content:'';
+    position:absolute; inset:0;
+    background-image:url("images/about bg.png");
+    background-size:cover; background-position:center;
+    opacity:0.18; mix-blend-mode:overlay;
+  }
+  .page-hero .container{position:relative; z-index:2;}
+  .page-hero .eyebrow{justify-content:center; color:var(--gold-light);}
+  .page-hero .eyebrow::before{background:var(--gold-light);}
+  .page-hero h1{color:#fff; font-size:clamp(36px,5vw,58px); margin-bottom:16px;}
+  .page-hero p{color:rgba(255,255,255,0.72); max-width:560px; margin:0 auto;}
+  .breadcrumb{display:flex; justify-content:center; gap:8px; margin-top:22px; font-size:13px; color:rgba(255,255,255,0.55); letter-spacing:0.04em;}
+  .breadcrumb a{color:var(--gold-light);}
+  .breadcrumb a:hover{text-decoration:underline;}
+
+  /* ===== ABOUT INTRO ===== */
+  .about-wrap{display:grid; grid-template-columns:0.9fr 1.1fr; gap:64px; align-items:center;}
+  .about-visual{position:relative;}
+  .about-visual .frame{border:1px solid var(--gold); position:absolute; inset:-18px; z-index:0; border-radius:var(--radius);}
+  .about-visual img{position:relative; z-index:1; border-radius:var(--radius); box-shadow:var(--shadow); width:100%; height:520px; object-fit:cover;}
+  .about-badge{
+    position:absolute; z-index:2; bottom:-28px; right:-28px;
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:22px 26px; box-shadow:var(--shadow); display:flex; align-items:center; gap:16px;
+  }
+  .about-badge img{width:44px; height:44px; object-fit:contain;}
+  .about-badge strong{display:block; font-family:'Cormorant Garamond',serif; font-size:26px; color:var(--navy);}
+  .about-badge span{font-size:12px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em;}
+  .about-copy p{color:var(--text-muted); font-size:15.5px; margin-bottom:18px;}
+  .about-copy p:last-child{margin-bottom:0;}
+  .about-stats{display:flex; gap:44px; margin-top:36px; padding-top:32px; border-top:1px solid var(--line);}
+  .about-stats strong{display:block; font-family:'Cormorant Garamond',serif; font-size:36px; color:var(--navy);}
+  .about-stats span{font-size:12.5px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em;}
+
+  /* ===== MISSION / VISION ===== */
+  .mv-section{background:var(--card); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .mv-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:30px;}
+  .mv-card{
+    background:var(--cream); border:1px solid var(--line); border-radius:var(--radius);
+    padding:44px 38px; transition:all .3s ease; position:relative;
+  }
+  .mv-card:hover{border-color:var(--gold); box-shadow:var(--shadow); transform:translateY(-6px);}
+  .mv-icon{width:64px; height:64px; margin-bottom:24px; border-radius:50%; background:linear-gradient(135deg,#fdf6e3,#f3e3bb); display:flex; align-items:center; justify-content:center;}
+  .mv-icon img{width:30px; height:30px; object-fit:contain;}
+  .mv-card h3{font-size:24px; margin-bottom:12px;}
+  .mv-card p{font-size:15px; color:var(--text-muted);}
+
+  /* ===== WHY / VALUES ===== */
+  .why-wrap{display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; align-items:center;}
+  .why-visual{position:relative;}
+  .why-visual .frame{border:1px solid var(--gold); position:absolute; inset:-18px; z-index:0; border-radius:var(--radius);}
+  .why-visual img{position:relative; z-index:1; border-radius:var(--radius); box-shadow:var(--shadow); width:100%; height:460px; object-fit:cover;}
+  .why-list{display:flex; flex-direction:column; gap:30px;}
+  .why-item{display:flex; gap:20px;}
+  .why-num{font-family:'Cormorant Garamond',serif; font-size:34px; color:var(--gold); min-width:52px;}
+  .why-item h3{font-size:20px; margin-bottom:6px;}
+  .why-item p{font-size:14.5px; color:var(--text-muted);}
+
+  /* ===== CTA BANNER ===== */
+  .cta-section{
+    background:radial-gradient(120% 140% at 20% 0%, #234f43 0%, #14332a 60%, #0f2921 100%);
+    color:#fdf9ee; text-align:center;
+  }
+  .cta-section h2{color:#fdf9ee; font-size:clamp(28px,4vw,42px); margin-bottom:16px;}
+  .cta-section p{color:rgba(253,249,238,0.7); max-width:520px; margin:0 auto 32px;}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--navy-deep); color:rgba(253,249,238,0.75); padding-top:70px;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1.2fr; gap:40px; padding-bottom:50px; border-bottom:1px solid rgba(255,255,255,0.1);}
+  .footer-brand img{height:50px; margin-bottom:16px;}
+  .footer-brand p{font-size:13.5px; color:rgba(253,249,238,0.55); max-width:280px; margin-bottom:20px;}
+  .social-row{display:flex; gap:10px;}
+  .social-row a{width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,0.25); display:flex; align-items:center; justify-content:center; transition:all .3s ease;}
+  .social-row a:hover{background:var(--gold); border-color:var(--gold);}
+  .social-row img{width:15px; height:15px;}
+  .footer-col h4{font-family:'Cormorant Garamond',serif; font-size:18px; color:#fdf9ee; margin-bottom:18px;}
+  .footer-col ul{list-style:none;}
+  .footer-col li{margin-bottom:11px;}
+  .footer-col a{font-size:13.5px; color:rgba(253,249,238,0.62);}
+  .footer-col a:hover{color:var(--gold-light);}
+  .footer-bottom{display:flex; justify-content:space-between; align-items:center; padding:26px 0; font-size:12.5px; color:rgba(253,249,238,0.45);}
+  .footer-bottom a{color:rgba(253,249,238,0.45);}
+
+  /* ===== POPUP ===== */
+  .popup{ position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.65); display:flex; justify-content:center; align-items:center; opacity:0; visibility:hidden; transition:.35s ease; z-index:999999; }
+  .popup.show{ opacity:1; visibility:visible; }
+  .popup-box{ background:#fff; width:460px; max-width:92%; border-radius:12px; padding:30px; position:relative; box-shadow:0 25px 60px rgba(0,0,0,.35); }
+  .popup-box h2{ margin-bottom:18px; font-size:26px; color:var(--navy); }
+  #bookingForm{ display:grid; gap:14px; }
+  .popup-form-row{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .popup-box input, .popup-box select, .popup-box textarea{
+    width:100%; padding:12px 14px; border:1px solid #d9d9d9; border-radius:8px; font-size:15px; font-family:inherit; box-sizing:border-box; outline:none; transition:.3s;
+  }
+  .popup-box input:focus, .popup-box select:focus, .popup-box textarea:focus{ border-color:var(--gold); box-shadow:0 0 0 3px rgba(215,182,64,.15); }
+  .popup-box textarea{ min-height:70px; resize:none; }
+  .popup-box input::placeholder, .popup-box textarea::placeholder{ color:#888; }
+  .popup-box .btn{ width:100%; padding:12px; margin-top:5px; }
+  .closePopup{ position:absolute; top:10px; right:16px; font-size:28px; cursor:pointer; color:#666; transition:.3s; }
+  .closePopup:hover{ color:var(--gold); transform:rotate(90deg); }
+
+  /* ================= SCROLL REVEAL ================= */
+  .reveal{ opacity:0; transform:translateY(40px); transition:opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1); will-change:opacity, transform; }
+  .reveal.is-visible{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){ .reveal{ opacity:1 !important; transform:none !important; transition:none !important; } }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{ outline:2px solid var(--gold); outline-offset:2px; }
+  @media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important;} }
+
+  /* ===== RESPONSIVE ===== */
+  @media(max-width:980px){
+    .nav-links{display:none;}
+    .nav-toggle{display:flex;}
+    .about-wrap{grid-template-columns:1fr;}
+    .why-wrap{grid-template-columns:1fr;}
+    .mv-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media(max-width:768px){
+    .page-hero{padding:150px 0 70px;}
+    .about-badge{position:static; margin-top:20px; display:inline-flex;}
+    .about-stats{flex-wrap:wrap; gap:26px;}
+    section{padding:64px 0;}
+    .footer-grid{grid-template-columns:1fr;}
+    .footer-bottom{flex-direction:column; gap:10px; text-align:center;}
+    .popup-form-row{grid-template-columns:1fr;}
+  }
+  @media(max-width:560px){
+    .why-visual img, .about-visual img{height:320px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="The Dream Vyana logo">
+      <span class="brand-text">
+        <span class="b1">The Dream Vyana</span>
+        <span class="b2">Turning Dreams Into Destinations</span>
+      </span>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Services.html">Service</a></li>
+        <li class="nav-dropdown">
+          <a class="dropdown-toggle">Package <span class="caret">&#9662;</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="packages.html?region=international" class="filter-link" data-cat="international">International</a></li>
+            <li><a href="packages.html?region=domestic" class="filter-link" data-cat="domestic">Domestic</a></li>
+          </ul>
+        </li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a href="#" class="btn btn-gold openPopup">Plan My Trip</a>
+    </div>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ===================== PAGE HERO ===================== -->
+<section class="page-hero">
+  <div class="container">
+    <div class="eyebrow center">About The Dream Vyana</div>
+    <h1>Turning Dreams <em style="color:var(--gold-light); font-style:italic;">Into Destinations</em></h1>
+    <p>A trusted travel company crafting seamless, personal, and unforgettable journeys across India and around the world.</p>
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>About Us</span></div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT INTRO ===================== -->
+<section id="about-intro">
+  <div class="container">
+    <div class="about-wrap">
+      <div class="about-visual reveal">
+        <div class="frame"></div>
+        <img src="images/abou1.jpg" alt="The Dream Vyana travel planning">
+       
+      </div>
+      <div class="about-copy reveal">
+        <div class="eyebrow">About The Dream Vyana</div>
+        <h2 style="font-size:clamp(28px,3.6vw,40px); margin-bottom:20px;">Trusted travel planning, built around you</h2>
+        <p>The Dream Vyana is a trusted travel company dedicated to creating unforgettable journeys across India and around the world. We specialize in customized tour packages, flight bookings, hotel reservations, visa assistance, transportation, and complete travel planning.</p>
+        <p>Whether you're traveling with family, friends, your partner, or a corporate group, we ensure every trip is seamless, comfortable, and memorable.</p>
+        <p>Our commitment is to provide personalized service, transparent pricing, and exceptional travel experiences that turn every journey into a lifetime memory.</p>
+        <div class="about-stats">
+          <div>
+            <strong>500+</strong>
+            <span>Happy Travellers</span>
+          </div>
+          <div>
+            <strong>50+</strong>
+            <span>Destinations</span>
+          </div>
+          <div>
+            <strong>24/7</strong>
+            <span>Support</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MISSION & VISION ===================== -->
+<section class="mv-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow center">What Drives Us</div>
+      <h2>Our Mission &amp; Vision</h2>
+      <p>The two ideas that shape every itinerary, every booking, and every conversation with our travellers.</p>
+    </div>
+    <div class="mv-grid reveal-stagger">
+      <div class="mv-card reveal">
+        <div class="mv-icon">
+          <img src="images/mission.jpg" alt="Mission icon">
+        </div>
+        <h3>Our Mission</h3>
+        <p>Our mission is to make travel simple, affordable, and unforgettable by delivering personalized travel experiences with excellent service, trusted support, and carefully planned itineraries. We strive to help every traveler explore new destinations with confidence, comfort, and peace of mind.</p>
+      </div>
+      <div class="mv-card reveal">
+        <div class="mv-icon">
+          <img src="images/vision.jpg" alt="Vision icon">
+        </div>
+        <h3>Our Vision</h3>
+        <p>Our vision is to become one of India's most trusted and customer-focused travel companies by delivering world-class travel services, inspiring people to explore new destinations, and creating unforgettable memories through every journey. We aim to make travel accessible, hassle-free, and enjoyable for everyone under The Dream Vyana brand.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY CHOOSE US ===================== -->
+<section id="values">
+  <div class="container">
+    <div class="why-wrap">
+      <div class="why-visual reveal">
+        <div class="frame"></div>
+        <img src="images/whychooseus.jpeg" alt="Why choose The Dream Vyana">
+      </div>
+      <div>
+        <div class="eyebrow">Why Choose Us</div>
+        <h2 style="font-size:clamp(28px,3.6vw,40px); margin-bottom:34px;">Travel planning, done the honest way</h2>
+        <div class="why-list reveal-stagger">
+          <div class="why-item reveal">
+            <div class="why-num">01</div>
+            <div><h3>Best Price Guarantee</h3><p>Transparent pricing with no hidden fees — the quote you see is the price you pay.</p></div>
+          </div>
+          <div class="why-item reveal">
+            <div class="why-num">02</div>
+            <div><h3>24/7 Traveller Support</h3><p>A real person on call throughout your trip, wherever you are in the world.</p></div>
+          </div>
+          <div class="why-item reveal">
+            <div class="why-num">03</div>
+            <div><h3>Expert Local Guides</h3><p>Itineraries built with people who actually know the destination inside out.</p></div>
+          </div>
+          <div class="why-item reveal">
+            <div class="why-num">04</div>
+            <div><h3>Secure Booking</h3><p>Encrypted payments and verified partners at every hotel, cab and flight.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA ===================== -->
+<section class="cta-section">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow center">Ready When You Are</div>
+      <h2>Let's plan your next dream trip</h2>
+      <p>Tell us where you want to go, and our travel desk will handle the rest — flights, stays, transfers and every detail in between.</p>
+      <a href="#" class="btn btn-gold openPopup">Plan My Trip</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="The Dream Vyana logo">
+        <p>The Dream Vyana plans journeys across mountains, coastlines and cities — turning every dream destination into a real itinerary.</p>
+        <div class="social-row">
+          <a href="#" aria-label="Instagram"><img src="images/instagram.png" alt="Instagram"></a>
+          <a href="#" aria-label="Facebook"><img src="images/facebook.png" alt="Facebook"></a>
+          <a href="#" aria-label="Twitter"><img src="images/twitter.png" alt="Twitter"></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="packages.html">Packages</a></li>
+          <li><a href="Services.html">Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="Services.html">Hotel Booking</a></li>
+          <li><a href="Services.html">Flight Booking</a></li>
+          <li><a href="Services.html">Cab Service</a></li>
+          <li><a href="Services.html">Tour Packages</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+          <li><a href="mailto:hello@thedreamvyana.com">hello@thedreamvyana.com</a></li>
+          <li><a href="https://wa.me/919876543210">WhatsApp Us</a></li>
+          <li><a href="index.html#contact">Sundernager , Himachal Pradesh</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 The Dream Vyana. All rights reserved.</span>
+      <span><a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== BOOKING POPUP ===================== -->
+<div id="bookingPopup" class="popup">
+  <div class="popup-box">
+    <span class="closePopup">&times;</span>
+    <h2>Plan Your Dream Trip</h2>
+    <form id="bookingForm">
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <input type="text" placeholder="Destination">
+      <div class="popup-form-row">
+        <select name="duration" required>
+          <option value="">Trip Duration</option>
+          <option value="1-3-days">1 - 3 Days</option>
+          <option value="4-6-days">4 - 6 Days</option>
+          <option value="1-week">1 Week</option>
+          <option value="2-weeks">2 Weeks</option>
+          <option value="3-weeks-plus">3+ Weeks</option>
+        </select>
+        <select name="persons" required>
+          <option value="">No. of Persons</option>
+          <option value="1">1 Person</option>
+          <option value="2">2 Persons</option>
+          <option value="3">3 Persons</option>
+          <option value="4">4 Persons</option>
+          <option value="5plus">5+ Persons</option>
+        </select>
+      </div>
+      <select name="budget" required>
+        <option value="">Select Budget Range</option>
+        <option value="10k-20k">₹10,000 - ₹20,000</option>
+        <option value="20k-30k">₹20,000 - ₹30,000</option>
+        <option value="30k-40k">₹30,000 - ₹40,000</option>
+        <option value="40k-50k">₹40,000 - ₹50,000</option>
+        <option value="50k-60k">₹50,000 - ₹60,000</option>
+        <option value="60k-70k">₹60,000 - ₹70,000</option>
+        <option value="70k-80k">₹70,000 - ₹80,000</option>
+        <option value="80k-90k">₹80,000 - ₹90,000</option>
+        <option value="90k-above">₹90,000 &amp; Above</option>
+      </select>
+      <textarea placeholder="Tell us about your trip..."></textarea>
+      <button type="submit" class="btn btn-gold">Send Request</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  // mobile nav toggle
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');
+  if(toggle){
+    toggle.addEventListener('click', () => {
+      const open = links.style.display === 'flex';
+      links.style.display = open ? 'none' : 'flex';
+      links.style.cssText += open ? '' : 'position:fixed;top:76px;left:0;right:0;background:#faf6ec;flex-direction:column;padding:24px 32px;gap:20px;border-bottom:1px solid #e7ddc7;';
+    });
+  }
+
+  // dropdown toggle on mobile tap
+  document.querySelectorAll('.nav-dropdown').forEach(function(dd){
+    var toggleEl = dd.querySelector('.dropdown-toggle');
+    if(toggleEl){
+      toggleEl.addEventListener('click', function(e){
+        e.preventDefault();
+        dd.classList.toggle('open');
+      });
+    }
+  });
+
+  // scroll reveal
+  (function(){
+    var staggerContainers = document.querySelectorAll('.reveal-stagger');
+    staggerContainers.forEach(function(container){
+      var items = container.querySelectorAll(':scope > .reveal');
+      items.forEach(function(el, i){ el.style.transitionDelay = (i * 0.12) + 's'; });
+    });
+    var revealEls = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var observer = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){ entry.target.classList.add('is-visible'); }
+          else{ entry.target.classList.remove('is-visible'); }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+      revealEls.forEach(function(el){ observer.observe(el); });
+    } else {
+      revealEls.forEach(function(el){ el.classList.add('is-visible'); });
+    }
+  })();
+
+  // button click ripple animation
+  (function () {
+    document.querySelectorAll('.btn').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        btn.classList.remove('btn-pulse');
+        void btn.offsetWidth;
+        btn.classList.add('btn-pulse');
+        var rect = btn.getBoundingClientRect();
+        var ripple = document.createElement('span');
+        var size = Math.max(rect.width, rect.height) * 1.2;
+        ripple.className = 'btn-ripple';
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = (e.clientX - rect.left - size/2) + 'px';
+        ripple.style.top = (e.clientY - rect.top - size/2) + 'px';
+        btn.appendChild(ripple);
+        setTimeout(function(){ ripple.remove(); }, 650);
+      });
+    });
+  })();
+
+  // booking popup
+  document.addEventListener("DOMContentLoaded", function(){
+    const popup = document.querySelector(".popup");
+    const closePopup = document.querySelector(".closePopup");
+    document.querySelectorAll(".openPopup").forEach(function(btn){
+      btn.addEventListener("click", function(e){
+        e.preventDefault();
+        popup.classList.add("show");
+      });
+    });
+    closePopup.addEventListener("click", function(){ popup.classList.remove("show"); });
+    popup.addEventListener("click", function(e){ if(e.target === popup){ popup.classList.remove("show"); } });
+    document.addEventListener("keydown", function(e){ if(e.key === "Escape"){ popup.classList.remove("show"); } });
+  });
+
+  window.addEventListener("load", () => { document.body.classList.add("page-loaded"); });
+</script>
+</body>
+</html>

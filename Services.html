@@ -1426,6 +1426,124 @@ transform:translateY(0px);
 .tailored-card:hover .tailored-icon {
     transform: translateY(-5px);
 }
+
+/* ==========================================
+   THE DREAM VYANA - SERVICES SECTION STYLES
+   ========================================== */
+
+/* Main container and grid layout */
+.services-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+    font-family: Arial, sans-serif;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* Card layout matching your structure */
+.pkg-card.service-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eeeeee;
+}
+
+/* Hover decoration effects */
+.pkg-card.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Image styling wrapper */
+.pkg-card.service-card .pkg-img {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.pkg-card.service-card .pkg-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.pkg-card.service-card:hover .pkg-img img {
+    transform: scale(1.08);
+}
+
+/* Body and meta text formatting */
+.pkg-card.service-card .pkg-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.pkg-card.service-card .pkg-body h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.3rem;
+    color: #222222;
+    font-weight: 600;
+}
+
+.pkg-card.service-card .pkg-meta {
+    font-size: 0.85rem;
+    color: #888888;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+}
+
+/* Paragraph styling */
+.pkg-card.service-card .pkg-body p {
+    font-size: 0.9rem;
+    color: #555555;
+    line-height: 1.5;
+    margin: 0 0 20px 0;
+}
+
+/* Footer alignment to push button down */
+.pkg-card.service-card .pkg-footer {
+    margin-top: auto;
+    width: 100%;
+}
+
+/* Gold button adjustment to match your theme */
+.pkg-card.service-card .btn-gold {
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.pkg-card.service-card .btn-gold:active {
+    transform: scale(0.98);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 600px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* Mobile me single column ho jayega standard look ke liye */
+        gap: 20px;
+    }
+    
+    .services-container h2 {
+        font-size: 1.8rem;
+    }
+}
 </style>
 
 </head>
@@ -1452,7 +1570,7 @@ transform:translateY(0px);
     </ul>
   </li>
   <li><a href="team.html">Team</a></li>
-  <li><a href="#about">About</a></li>
+  <li><a href="about.html">About</a></li>
   <li><a href="#contact">Contact</a></li>
 </ul>
     </nav>
@@ -1688,6 +1806,248 @@ transform:translateY(0px);
 
   </div>
 </section>
+
+<!-- ==========================================
+     OUR SERVICES SECTION (With Image Codes)
+     ========================================== -->
+<div class="services-container" style="margin-top: 50px;">
+  <h2 class="section-title" style="text-align: center; margin-bottom: 30px; font-weight: bold;">Our Other Services – The Dream Vyana</h2>
+  
+  <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">
+    
+
+
+    <!-- 2. Train Booking -->
+    <div class="pkg-card service-card">
+      <div class="pkg-img">
+        <img src="images/train.jpg" alt="Train Booking" style="width: 100%; height: 180px; object-fit: cover;">
+      </div>
+      <div class="pkg-body">
+        <h3>Train Booking</h3>
+        <div class="pkg-meta"><span>Tatkal & Confirmed Tickets</span></div>
+        <p style="font-size: 0.9rem; color: #666; margin-top: 8px; line-height: 1.4;">Travel across India with ease. We help you secure confirmed tickets, Tatkal bookings, and the best travel options.</p>
+        <div class="pkg-footer" style="margin-top: 15px;">
+          <button class="btn btn-gold openPopup" style="width: 100%;">Enquire Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Volvo Bus Booking -->
+    <div class="pkg-card service-card">
+      <div class="pkg-img">
+        <img src="images/volvo.jpg" alt="Volvo Bus Booking" style="width: 100%; height: 180px; object-fit: cover;">
+      </div>
+      <div class="pkg-body">
+        <h3>Volvo Bus Booking</h3>
+        <div class="pkg-meta"><span>Premium & Luxury AC</span></div>
+        <p style="font-size: 0.9rem; color: #666; margin-top: 8px; line-height: 1.4;">Enjoy comfortable travel with premium Volvo and luxury bus bookings across major destinations. Safe & reliable.</p>
+        <div class="pkg-footer" style="margin-top: 15px;">
+          <button class="btn btn-gold openPopup" style="width: 100%;">Enquire Now</button>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- 5. Cab & Transport Services -->
+    <div class="pkg-card service-card">
+      <div class="pkg-img">
+        <img src="images/cabb.jpg" alt="Cab & Transport" style="width: 100%; height: 180px; object-fit: cover;">
+      </div>
+      <div class="pkg-body">
+        <h3>Cab & Transport Services</h3>
+        <div class="pkg-meta"><span>Airport Transfers & Sightseeing</span></div>
+        <p style="font-size: 0.9rem; color: #666; margin-top: 8px; line-height: 1.4;">Professional drivers and well-maintained vehicles ensure a safe and comfortable journey for intercity and local travel.</p>
+        <div class="pkg-footer" style="margin-top: 15px;">
+          <button class="btn btn-gold openPopup" style="width: 100%;">Enquire Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Honeymoon Packages -->
+    <div class="pkg-card service-card">
+      <div class="pkg-img">
+        <img src="images/honeymoon.jpg" alt="Honeymoon Packages" style="width: 100%; height: 180px; object-fit: cover;">
+      </div>
+      <div class="pkg-body">
+        <h3>Honeymoon Packages</h3>
+        <div class="pkg-meta"><span>Romantic & Luxury Stays</span></div>
+        <p style="font-size: 0.9rem; color: #666; margin-top: 8px; line-height: 1.4;">Celebrate your new beginning with romantic packages featuring candlelight dinners, scenic views, and premium stays.</p>
+        <div class="pkg-footer" style="margin-top: 15px;">
+          <button class="btn btn-gold openPopup" style="width: 100%;">Enquire Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. Family Trips -->
+    <div class="pkg-card service-card">
+      <div class="pkg-img">
+        <img src="images/family.jpg" alt="Family Trips" style="width: 100%; height: 180px; object-fit: cover;">
+      </div>
+      <div class="pkg-body">
+        <h3>Family Trips</h3>
+        <div class="pkg-meta"><span>Family-Friendly Destinations</span></div>
+        <p style="font-size: 0.9rem; color: #666; margin-top: 8px; line-height: 1.4;">Create lifelong memories with your loved ones through carefully planned vacations and comfortable accommodations.</p>
+        <div class="pkg-footer" style="margin-top: 15px;">
+          <button class="btn btn-gold openPopup" style="width: 100%;">Enquire Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. Friends Group Trips -->
+    <div class="pkg-card service-card">
+      <div class="pkg-img">
+        <img src="images/friends.jpg" alt="Friends Trips" style="width: 100%; height: 180px; object-fit: cover;">
+      </div>
+      <div class="pkg-body">
+        <h3>Friends Group Trips</h3>
+        <div class="pkg-meta"><span>Adventures & Nightlife</span></div>
+        <p style="font-size: 0.9rem; color: #666; margin-top: 8px; line-height: 1.4;">Travel with friends and enjoy road trips, sightseeing, and customized group tour packages at affordable prices.</p>
+        <div class="pkg-footer" style="margin-top: 15px;">
+          <button class="btn btn-gold openPopup" style="width: 100%;">Enquire Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. Corporate Tours -->
+    <div class="pkg-card service-card">
+      <div class="pkg-img">
+        <img src="images/corporate.jpg" alt="Corporate Tours" style="width: 100%; height: 180px; object-fit: cover;">
+      </div>
+      <div class="pkg-body">
+        <h3>Corporate Tours</h3>
+        <div class="pkg-meta"><span>MICE & Business Events</span></div>
+        <p style="font-size: 0.9rem; color: #666; margin-top: 8px; line-height: 1.4;">Professional travel solutions for business meetings, conferences, incentive tours, and complete corporate management.</p>
+        <div class="pkg-footer" style="margin-top: 15px;">
+          <button class="btn btn-gold openPopup" style="width: 100%;">Enquire Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10. Group Tours -->
+    <div class="pkg-card service-card">
+      <div class="pkg-img">
+        <img src="images/group.jpg" alt="Group Tours" style="width: 100%; height: 180px; object-fit: cover;">
+      </div>
+      <div class="pkg-body">
+        <h3>Group Tours</h3>
+        <div class="pkg-meta"><span>Customized Large Itineraries</span></div>
+        <p style="font-size: 0.9rem; color: #666; margin-top: 8px; line-height: 1.4;">Perfect for schools, colleges, office teams, and religious groups with seamless transportation and tour management.</p>
+        <div class="pkg-footer" style="margin-top: 15px;">
+          <button class="btn btn-gold openPopup" style="width: 100%;">Enquire Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11. Business Travel -->
+    <div class="pkg-card service-card">
+      <div class="pkg-img">
+        <img src="images/business.jpg" alt="Business Travel" style="width: 100%; height: 180px; object-fit: cover;">
+      </div>
+      <div class="pkg-body">
+        <h3>Business Travel</h3>
+        <div class="pkg-meta"><span>Flexible & Efficient Planning</span></div>
+        <p style="font-size: 0.9rem; color: #666; margin-top: 8px; line-height: 1.4;">Efficient travel planning for corporate professionals, including quick flights, business hotels, and easy transfers.</p>
+        <div class="pkg-footer" style="margin-top: 15px;">
+          <button class="btn btn-gold openPopup" style="width: 100%;">Enquire Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 12. Pilgrimage Tours -->
+    <div class="pkg-card service-card">
+      <div class="pkg-img">
+        <img src="images/pilgrimage.jpg" alt="Pilgrimage Tours" style="width: 100%; height: 180px; object-fit: cover;">
+      </div>
+      <div class="pkg-body">
+        <h3>Pilgrimage Tours</h3>
+        <div class="pkg-meta"><span>Sacred & Holy Darshans</span></div>
+        <p style="font-size: 0.9rem; color: #666; margin-top: 8px; line-height: 1.4;">Visit India's most sacred destinations with well-organized packages, comfortable transport, and quality stays.</p>
+        <div class="pkg-footer" style="margin-top: 15px;">
+          <button class="btn btn-gold openPopup" style="width: 100%;">Enquire Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 13. Adventure Tours -->
+    <div class="pkg-card service-card">
+      <div class="pkg-img">
+        <img src="images/adventure.jpg" alt="Adventure Tours" style="width: 100%; height: 180px; object-fit: cover;">
+      </div>
+      <div class="pkg-body">
+        <h3>Adventure Tours</h3>
+        <div class="pkg-meta"><span>Trekking, Camping & Rafting</span></div>
+        <p style="font-size: 0.9rem; color: #666; margin-top: 8px; line-height: 1.4;">Experience trekking, wildlife safaris, and thrilling outdoor adventures with complete safety arrangements.</p>
+        <div class="pkg-footer" style="margin-top: 15px;">
+          <button class="btn btn-gold openPopup" style="width: 100%;">Enquire Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 14. International Tour Packages -->
+    <div class="pkg-card service-card">
+      <div class="pkg-img">
+        <img src="images/international.jpg" alt="International Tour" style="width: 100%; height: 180px; object-fit: cover;">
+      </div>
+      <div class="pkg-body">
+        <h3>International Packages</h3>
+        <div class="pkg-meta"><span>Global Guided Tours</span></div>
+        <p style="font-size: 0.9rem; color: #666; margin-top: 8px; line-height: 1.4;">Explore the world's most beautiful destinations with customized global holiday packages and visa assistance.</p>
+        <div class="pkg-footer" style="margin-top: 15px;">
+          <button class="btn btn-gold openPopup" style="width: 100%;">Enquire Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 15. Domestic Tour Packages -->
+    <div class="pkg-card service-card">
+      <div class="pkg-img">
+        <img src="images/india.jpg" alt="Domestic Tour" style="width: 100%; height: 180px; object-fit: cover;">
+      </div>
+      <div class="pkg-body">
+        <h3>Domestic Tour Packages</h3>
+        <div class="pkg-meta"><span>Incredible India Tours</span></div>
+        <p style="font-size: 0.9rem; color: #666; margin-top: 8px; line-height: 1.4;">Discover India's incredible destinations with affordable holiday packages for families, couples, and groups.</p>
+        <div class="pkg-footer" style="margin-top: 15px;">
+          <button class="btn btn-gold openPopup" style="width: 100%;">Enquire Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 16. Visa Assistance -->
+    <div class="pkg-card service-card">
+      <div class="pkg-img">
+        <img src="images/visaa.jpg" alt="Visa Assistance" style="width: 100%; height: 180px; object-fit: cover;">
+      </div>
+      <div class="pkg-body">
+        <h3>Visa Assistance</h3>
+        <div class="pkg-meta"><span>Expert Documentation</span></div>
+        <p style="font-size: 0.9rem; color: #666; margin-top: 8px; line-height: 1.4;">Get complete support for tourist, business, student, and family visas with seamless expert application guidance.</p>
+        <div class="pkg-footer" style="margin-top: 15px;">
+          <button class="btn btn-gold openPopup" style="width: 100%;">Enquire Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 17. Travel Insurance -->
+    <div class="pkg-card service-card">
+      <div class="pkg-img">
+        <img src="images/insurance.jpg" alt="Travel Insurance" style="width: 100%; height: 180px; object-fit: cover;">
+      </div>
+      <div class="pkg-body">
+        <h3>Travel Insurance</h3>
+        <div class="pkg-meta"><span>Medical & Trip Coverage</span></div>
+        <p style="font-size: 0.9rem; color: #666; margin-top: 8px; line-height: 1.4;">Travel worry-free with comprehensive insurance covering medical emergencies, trip cancellations, and delays.</p>
+        <div class="pkg-footer" style="margin-top: 15px;">
+          <button class="btn btn-gold openPopup" style="width: 100%;">Enquire Now</button>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
 
 <!-- ===================== CTA STRIP ===================== -->
 <section class="svc-cta">
