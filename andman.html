@@ -288,6 +288,49 @@
   }
   body{ animation: pageIn .5s ease; }
   @keyframes pageIn{ from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+   /* NAV DROPDOWN */
+.nav-dropdown{ position:relative; }
+.dropdown-toggle{ display:flex; align-items:center; gap:5px; cursor:pointer; }
+.dropdown-toggle .caret{ font-size:10px; transition:transform .25s ease; }
+.nav-dropdown.open .dropdown-toggle .caret{ transform:rotate(180deg); }
+.dropdown-menu{
+    position:absolute; top:calc(100% + 14px); left:50%;
+    transform:translateX(-50%) translateY(8px);
+    background:#fff; border:1px solid var(--line,#e7ddc7); border-radius:6px;
+    min-width:170px; box-shadow:0 18px 40px -18px rgba(16,31,60,0.35);
+    list-style:none; padding:8px 0; opacity:0; visibility:hidden;
+    transition:opacity .22s ease, transform .22s ease, visibility .22s ease; z-index:200;
+}
+.nav-dropdown:hover .dropdown-menu, .nav-dropdown.open .dropdown-menu{
+    opacity:1; visibility:visible; transform:translateX(-50%) translateY(0);
+}
+.dropdown-menu li{ list-style:none; }
+.dropdown-menu a{
+    display:block; padding:10px 20px; font-size:12.5px; text-transform:none;
+    color:var(--navy,#101f3c); white-space:nowrap;
+}
+.dropdown-menu a:hover{ background:rgba(201,152,47,0.12); color:var(--gold,#c9982f); }
+.dropdown-menu a::after{ display:none; }
+.pkg-card.pkg-hidden{ display:none !important; }
+.pkg-filter-note{ text-align:center; font-size:13px; color:var(--text-muted,#5c6172); margin-top:-30px; margin-bottom:34px; }
+.pkg-filter-note button{ border:none; background:none; color:var(--gold,#c9982f); font-weight:600; cursor:pointer; text-decoration:underline; font-size:13px; margin-left:6px; }
+
+/* TEAM SECTION */
+.team-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:26px; }
+.team-card{ background:#fff; border:1px solid var(--line,#e7ddc7); border-radius:6px; padding:34px 22px; text-align:center; transition:all .3s ease; }
+.team-card:hover{ transform:translateY(-6px); box-shadow:0 20px 50px -25px rgba(16,31,60,0.35); border-color:var(--gold,#c9982f); }
+.team-avatar{ width:84px; height:84px; margin:0 auto 20px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond', serif; font-size:30px; font-weight:700; color:#fff; background:linear-gradient(135deg, var(--gold,#c9982f), var(--navy,#101f3c)); }
+.team-card h3{ font-size:19px; margin-bottom:4px; }
+.team-role{ font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold,#c9982f); font-weight:600; margin-bottom:12px; display:block; }
+.team-card p{ font-size:13.5px; color:var(--text-muted,#5c6172); }
+
+@media(max-width:980px){
+  .dropdown-menu{ position:static; transform:none; opacity:1; visibility:visible; box-shadow:none; border:none; background:rgba(16,31,60,0.03); max-height:0; overflow:hidden; padding:0; transition:max-height .3s ease, padding .3s ease; }
+  /* .open class ke saath-saath mobile me :hover par bhi max-height active kar di */
+  .nav-dropdown.open .dropdown-menu, .nav-dropdown:hover .dropdown-menu { max-height:200px; padding:6px 0 6px 14px; }
+  .team-grid{ grid-template-columns:repeat(2,1fr); }
+}
+@media(max-width:560px){ .team-grid{ grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -296,20 +339,27 @@
 <header class="navbar">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <img src="images/logo.png" alt="The Dream Vyana logo">
+      <img src="images\logo.png" alt="The Dream Vyana logo">
       <span class="brand-text">
         <span class="b1">The Dream Vyana</span>
         <span class="b2">Turning Dreams Into Destinations</span>
       </span>
     </a>
     <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="packages.html">Packages</a></li>
-        <li><a href="index.html#services">Services</a></li>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-      </ul>
+     <ul class="nav-links">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="#service">Service</a></li>
+  <li class="nav-dropdown">
+    <a  class="dropdown-toggle">Package <span class="caret">&#9662;</span></a>
+    <ul class="dropdown-menu">
+      <li><a href="packages.html?region=international" class="filter-link" data-cat="international">International</a></li>
+      <li><a href="packages.html?region=domestic" class="filter-link" data-cat="domestic">Domestic</a></li>
+    </ul>
+  </li>
+  <li><a href="team.html">Team</a></li>
+  <li><a href="#about">About</a></li>
+  <li><a href="#contact">Contact</a></li>
+</ul>
     </nav>
     <div class="nav-cta">
       <a href="#" class="btn btn-gold openPopup">Plan My Trip</a>

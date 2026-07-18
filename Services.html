@@ -1,0 +1,1965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Services — The Dream Vyana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#101f3c;
+    --navy-deep:#0a1428;
+    --gold:#d7b640;
+    --gold-light:#e8c979;
+    --cream:#faf6ec;
+    --card:#ffffff;
+    --pine:#1f4a3e;
+    --text-muted:#5c6172;
+    --line:#e7ddc7;
+    --radius:4px;
+    --shadow: 0 20px 50px -25px rgba(16,31,60,0.35);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Jost', sans-serif;
+    color:var(--navy);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:'Cormorant Garamond', serif; font-weight:600; letter-spacing:0.01em;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .container{max-width:1180px; margin:0 auto; padding:0 32px;}
+  .eyebrow{
+    display:flex; align-items:center; gap:14px;
+    font-size:12.5px; letter-spacing:0.32em; text-transform:uppercase;
+    color:var(--gold); font-weight:600; margin-bottom:16px;
+  }
+  .eyebrow::before, .eyebrow.center::after{content:''; height:1px; width:36px; background:var(--gold); opacity:0.6;}
+  .eyebrow.center{justify-content:center;}
+  .section-head{text-align:center; max-width:640px; margin:0 auto 56px;}
+  .section-head h2{font-size:clamp(30px,4vw,44px); color:var(--navy); margin-bottom:14px;}
+  .section-head p{color:var(--text-muted); font-size:16px;}
+  section{padding:96px 0;}
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    padding:15px 34px; border-radius:2px; font-size:13.5px;
+    letter-spacing:0.14em; text-transform:uppercase; font-weight:600;
+    cursor:pointer; border:1px solid transparent; transition:all .3s ease;
+  }
+  .btn-gold{background:linear-gradient(135deg,var(--gold-light),var(--gold)); color:var(--navy-deep);}
+  .btn-gold:hover{transform:translateY(-2px); box-shadow:0 14px 28px -10px rgba(201,152,47,0.55);}
+  .btn-outline{border-color:rgba(255,255,255,0.55); color:#fff;}
+  .btn-outline:hover{background:rgba(255,255,255,0.12); border-color:#fff;}
+  .btn-navy{background:var(--navy); color:#fdf9ee;}
+  .btn-navy:hover{background:var(--navy-deep); transform:translateY(-2px);}
+
+  /* ===== NAVBAR ===== */
+  .navbar{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(250,246,236,0.92); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:12px 32px; max-width:1180px; margin:0 auto;}
+  .nav-logo{display:flex; align-items:center; gap:12px;}
+  .nav-logo img{height:52px; width:auto;}
+  .nav-logo .brand-text{display:flex; flex-direction:column; line-height:1.1;}
+  .nav-logo .brand-text .b1{font-family:'Cormorant Garamond',serif; font-size:19px; font-weight:600; color:var(--navy);}
+  .nav-logo .brand-text .b2{font-size:9px; letter-spacing:0.22em; color:var(--gold); text-transform:uppercase;}
+  .nav-links{display:flex; align-items:center; gap:38px; list-style:none;}
+  .nav-links a{font-size:13px; letter-spacing:0.06em; text-transform:uppercase; font-weight:500; color:var(--navy); position:relative; padding:4px 0;}
+  .nav-links a::after{content:''; position:absolute; left:0; bottom:-2px; width:0; height:1px; background:var(--gold); transition:width .3s ease;}
+  .nav-links a:hover::after{width:100%;}
+  .nav-cta{display:flex; align-items:center; gap:22px;}
+  .nav-cta .btn{padding:11px 24px; font-size:11.5px;}
+  .nav-toggle{display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none;}
+  .nav-toggle span{width:24px; height:2px; background:var(--navy);}
+
+  /* ===== HERO ===== */
+ /*================ HERO =================*/
+
+.team-hero{
+    position:relative;
+    min-height: 45vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background-image:url("images/service bg.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    padding:120px 20px 60px;
+    text-align:center;
+  }
+  .team-hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(rgba(16,31,60,0.85), rgba(16,31,60,0.65));
+  }
+  .team-hero-inner{
+    position:relative;
+    z-index:5;
+    color:#fff;
+  }
+  .team-hero h1{
+    font-size:clamp(28px, 4.5vw, 52px);
+    color:#fff;
+    margin-bottom:12px;
+    line-height: 1.2;
+  }
+  .team-hero h1 em{
+    color:#FFD700;
+    font-style:italic;
+  }
+  .team-hero p{
+    color:#f5f5f5;
+    font-size:clamp(15px, 1.8vw, 18px);
+    max-width:600px;
+    margin:0 auto;
+  }
+  /* ===== PACKAGES ===== */
+  .pkg-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:28px;
+}
+
+.pkg-card{
+    position:relative;
+    background:var(--card);
+    border-radius:18px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+    transition:all .45s ease;
+}
+
+/* Hover Effect */
+.pkg-card:hover{
+
+    transform:translateY(-12px) scale(1.02);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.25);
+
+}
+
+/* Shine Animation */
+
+.pkg-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:rgba(255,255,255,.25);
+
+    transform:skewX(-25deg);
+
+    transition:.8s;
+
+    z-index:2;
+
+}
+
+.pkg-card:hover::before{
+
+    left:170%;
+
+}
+
+/* Image */
+
+.pkg-img{
+
+    height:190px;
+
+    overflow:hidden;
+
+}
+
+.pkg-img img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.6s;
+
+}
+
+.pkg-card:hover .pkg-img img{
+
+    transform:scale(1.12);
+
+}
+
+/* Badge */
+
+.pkg-badge{
+
+    position:absolute;
+
+    top:15px;
+
+    left:15px;
+
+    background:#081b3a;
+
+    color:#FFD700;
+
+    padding:8px 15px;
+
+    border-radius:20px;
+
+    font-size:11px;
+
+    z-index:3;
+
+}
+
+/* Body */
+
+.pkg-body{
+
+    padding:22px;
+
+}
+
+.pkg-body h3{
+
+    margin-bottom:8px;
+
+}
+
+/* Footer */
+
+.pkg-footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:18px;
+
+}
+
+/* Price */
+
+.pkg-price strong{
+
+    font-size:28px;
+
+    color:#081b3a;
+
+}
+
+.pkg-price span{
+
+    display:block;
+
+    color:#777;
+
+    font-size:12px;
+
+}
+
+/* Premium Button */
+
+.pkg-book{
+
+    display:inline-block;
+
+    padding:10px 22px;
+
+    background:linear-gradient(135deg,#FFD700,#F4B400);
+
+    color:#081b3a;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    transition:.35s;
+
+    box-shadow:0 8px 20px rgba(255,215,0,.25);
+
+}
+
+/* Button Hover */
+
+.pkg-book:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 30px rgba(255,215,0,.45);
+
+    color:#000;
+
+}
+
+/* Button Click */
+
+.pkg-book:active{
+
+    transform:scale(.95);
+
+}
+  /* ===== DESTINATIONS ===== */
+  /* ===== DESTINATIONS ===== */
+.dest-section{
+    position: relative;
+    padding: 100px 0;
+    color: #fff;
+    background: url("images/destination-bg.jpg") center center/cover no-repeat;
+    overflow: hidden;
+}
+
+/* Dark overlay so text is readable */
+.dest-section::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 20, 45, 0.65);
+    z-index: 0;
+}
+
+/* Content overlay ke upar rahe */
+.dest-section .container{
+    position: relative;
+    z-index: 1;
+}
+.dest-section{
+    position: relative;
+    padding:100px 0;
+    color:#fff;
+    background:url("images/Beach Desktop Wallpapers.jpeg") center center/cover fixed no-repeat;
+}
+
+.dest-section .eyebrow{
+    color:var(--gold-light);
+}
+
+.dest-section .eyebrow::before{
+    background:var(--gold-light);
+}
+
+.dest-section .section-head h2{
+    color:#fff;
+}
+
+.dest-section .section-head p{
+    color:rgba(255,255,255,.7);
+}
+
+.dest-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:2px;
+}
+
+.dest-card{
+    position:relative;
+    aspect-ratio:1/1.05;
+    overflow:hidden;
+    display:block;
+    text-decoration:none;
+}
+
+.dest-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:.6s ease;
+}
+
+.dest-card:hover img{
+    transform:scale(1.1);
+}
+
+.dest-card::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top,
+    rgba(0,0,0,.75),
+    rgba(0,0,0,.15),
+    transparent);
+}
+
+.dest-label{
+    position:absolute;
+    left:20px;
+    bottom:20px;
+    z-index:2;
+}
+
+.dest-label h4{
+    color:#fff;
+    font-size:24px;
+    margin-bottom:5px;
+    font-family:'Cormorant Garamond',serif;
+}
+
+.dest-label span{
+    color:#FFD700;
+    font-size:12px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+  /* ===== SERVICES ===== */
+  .svc-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:26px;}
+  .svc-card{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:36px 26px; text-align:center; transition:all .3s ease;
+  }
+  .svc-card:hover{border-color:var(--gold); box-shadow:var(--shadow); transform:translateY(-6px);}
+  .svc-icon{width:58px; height:58px; margin:0 auto 22px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:linear-gradient(135deg,#fdf6e3,#f3e3bb);}
+  .svc-icon svg{width:28px; height:28px;}
+  .svc-card h3{font-size:20px; margin-bottom:10px;}
+  .svc-card p{font-size:14px; color:var(--text-muted);}
+
+  /* ===== WHY CHOOSE US ===== */
+  .why-wrap{display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; align-items:center;}
+  .why-visual{position:relative;}
+  .why-visual .frame{border:1px solid var(--gold); position:absolute; inset:-18px; z-index:0; border-radius:var(--radius);}
+  .why-visual img{position:relative; z-index:1; border-radius:var(--radius); box-shadow:var(--shadow);}
+  .why-list{display:flex; flex-direction:column; gap:30px;}
+  .why-item{display:flex; gap:20px;}
+  .why-num{font-family:'Cormorant Garamond',serif; font-size:34px; color:var(--gold); min-width:52px;}
+  .why-item h3{font-size:20px; margin-bottom:6px;}
+  .why-item p{font-size:14.5px; color:var(--text-muted);}
+
+  /* ===== TESTIMONIALS ===== */
+  /* Card Animation */
+
+/* Tablet */
+
+@media(max-width:992px){
+    .gallery-grid{
+        column-count:2;
+    }
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+    .gallery-grid{
+        column-count:1;
+    }
+}
+
+  /* ===== CONTACT ===== */
+  .contact-wrap{display:grid; grid-template-columns:0.85fr 1.15fr; gap:0; background:var(--card); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:1px solid var(--line);}
+  .contact-info{background:var(--navy); color:#fdf9ee; padding:50px 44px;}
+  .contact-info h3{font-size:28px; margin-bottom:14px;}
+  .contact-info p{color:rgba(253,249,238,0.68); font-size:14.5px; margin-bottom:34px;}
+  .contact-row{display:flex; gap:16px; margin-bottom:24px; align-items:flex-start;}
+  .contact-row .ci{width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+  .contact-row .ci svg{width:17px; height:17px; stroke:var(--gold-light);}
+  .contact-row strong{display:block; font-size:14px; margin-bottom:2px;}
+  .contact-row span, .contact-row a{font-size:13.5px; color:rgba(253,249,238,0.72);}
+  /* Contact Section */
+.contact-wrap{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+}
+
+/* Left Side */
+.contact-info{
+    background:#081b3a;
+    color:#fff;
+    padding:50px 40px;
+}
+
+/* Right Side Image */
+.contact-image{
+    width:100%;
+    height:100%;
+    min-height:520px;
+    overflow:hidden;
+    position:relative;
+}
+
+.contact-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform .6s ease;
+}
+
+/* Hover Zoom */
+.contact-wrap:hover .contact-image img{
+    transform:scale(1.08);
+}
+  .field input:focus, .field textarea:focus{outline:none; border-color:var(--gold);}
+  .field.full{margin-bottom:18px;}
+  .field textarea{resize:vertical; min-height:110px;}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--navy-deep); color:rgba(253,249,238,0.75); padding-top:70px;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1.2fr; gap:40px; padding-bottom:50px; border-bottom:1px solid rgba(255,255,255,0.1);}
+  .footer-brand img{height:50px; margin-bottom:16px;}
+  .footer-brand p{font-size:13.5px; color:rgba(253,249,238,0.55); max-width:280px; margin-bottom:20px;}
+  .social-row{display:flex; gap:10px;}
+  .social-row a{width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,0.25); display:flex; align-items:center; justify-content:center; transition:all .3s ease;}
+  .social-row a:hover{background:var(--gold); border-color:var(--gold);}
+  .social-row svg{width:15px; height:15px; stroke:#fdf9ee;}
+  .footer-col h4{font-family:'Cormorant Garamond',serif; font-size:18px; color:#fdf9ee; margin-bottom:18px;}
+  .footer-col ul{list-style:none;}
+  .footer-col li{margin-bottom:11px;}
+  .footer-col a{font-size:13.5px; color:rgba(253,249,238,0.62);}
+  .footer-col a:hover{color:var(--gold-light);}
+  .footer-bottom{display:flex; justify-content:space-between; align-items:center; padding:26px 0; font-size:12.5px; color:rgba(253,249,238,0.45);}
+  .footer-bottom a{color:rgba(253,249,238,0.45);}
+
+  /* ===== RESPONSIVE ===== */
+  @media(max-width:980px){
+    .nav-links{display:none;}
+    .nav-toggle{display:flex;}
+    .hero-inner{grid-template-columns:1fr; text-align:center;}
+    .hero-copy p{margin-left:auto; margin-right:auto;}
+    .hero-actions{justify-content:center;}
+    .hero-stats{justify-content:center;}
+    .pkg-grid{grid-template-columns:repeat(2,1fr);}
+    .dest-grid{grid-template-columns:repeat(2,1fr);}
+    .svc-grid{grid-template-columns:repeat(2,1fr);}
+    .why-wrap{grid-template-columns:1fr;}
+    .testi-grid{grid-template-columns:1fr;}
+    .contact-wrap{grid-template-columns:1fr;}
+    .form-row{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    .gallery-grid{grid-template-columns:repeat(4,1fr);}
+    .gallery-grid .g-item.wide{grid-column:span 4;}
+  }
+  @media(max-width:560px){
+    section{padding:64px 0;}
+    .pkg-grid{grid-template-columns:1fr;}
+    .dest-grid{grid-template-columns:1fr 1fr;}
+    .svc-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);}
+    .gallery-grid .g-item.wide{grid-column:span 2;}
+  }
+
+  /* focus visibility */
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:2px solid var(--gold); outline-offset:2px;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+  /* ================= LAPTOP / TABLET (max-width:1200px) ================= */
+@media (max-width:1200px){
+  .hero-inner{
+      grid-template-columns:1fr 380px;
+      gap:40px;
+  }
+  .hero-gallery{ height:560px; }
+  .hero-copy h1{ font-size:56px; }
+  .pkg-grid, .svc-grid{ grid-template-columns:repeat(3,1fr); }
+  .dest-grid{ grid-template-columns:repeat(3,1fr); }
+}
+
+/* ================= TABLET (max-width:992px) ================= */
+@media (max-width:992px){
+  .nav-links{ display:none; }
+  .nav-toggle{ display:flex; }
+  .hero-inner{
+      grid-template-columns:1fr;
+      text-align:center;
+      gap:36px;
+  }
+  .hero-copy{ order:1; max-width:100%; }
+  .hero-copy p{ margin-left:auto; margin-right:auto; }
+  .hero-gallery{ order:2; height:420px; max-width:520px; margin:0 auto; }
+  .hero-actions{ justify-content:center; }
+  .hero-stats{ justify-content:center; }
+  .pkg-grid{ grid-template-columns:repeat(2,1fr); }
+  .svc-grid{ grid-template-columns:repeat(2,1fr); }
+  .dest-grid{ grid-template-columns:repeat(2,1fr); }
+  .why-wrap{ grid-template-columns:1fr; }
+  .testi-grid{ grid-template-columns:1fr; }
+  .contact-wrap{ grid-template-columns:1fr; }
+  .form-row{ grid-template-columns:1fr; }
+  .footer-grid{ grid-template-columns:1fr 1fr; }
+  .gallery-grid{ grid-template-columns:repeat(4,1fr); }
+  .gallery-grid .g-item.wide{ grid-column:span 4; }
+}
+
+/* ================= MOBILE (max-width:768px) ================= */
+@media (max-width:768px){
+
+  .hero{
+      min-height:auto;
+      padding:110px 20px 60px;
+  }
+
+  .hero-inner{
+      grid-template-columns:1fr;
+      display:flex;
+      flex-direction:column;
+      text-align:center;
+      gap:30px;
+  }
+
+  .hero-copy{ order:1; }
+  .hero-copy .eyebrow{ justify-content:center; }
+  .hero-copy .eyebrow::before{ display:none; }
+
+  .hero-copy h1{
+      font-size:36px;
+      line-height:1.15;
+  }
+
+  .hero-copy p{
+      font-size:16px;
+      margin-left:auto;
+      margin-right:auto;
+  }
+
+  .hero-actions{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:15px;
+  }
+
+  .hero-actions .btn{
+      width:220px;
+      justify-content:center;
+  }
+
+  .hero-gallery{
+      order:2;
+      margin-top:10px;
+      height:340px;
+      width:100%;
+      max-width:340px;
+      margin-left:auto;
+      margin-right:auto;
+  }
+
+  .gallery-track img{
+      height:170px;
+  }
+
+  .hero-stats{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+      margin-top:30px;
+  }
+
+  .hero-stats strong{ font-size:30px; }
+
+  .nav-inner{ padding:10px 20px; }
+  .nav-logo img{ height:42px; }
+
+  .section-head h2{ font-size:26px; }
+  section{ padding:56px 0; }
+
+  .pkg-grid{ grid-template-columns:1fr; gap:20px; }
+  .svc-grid{ grid-template-columns:1fr; gap:20px; }
+  .dest-grid{ grid-template-columns:repeat(2,1fr); }
+  .gallery-grid{ grid-template-columns:repeat(2,1fr); }
+  .gallery-grid .g-item.wide{ grid-column:span 2; }
+  .footer-grid{ grid-template-columns:1fr; gap:32px; }
+  .contact-info, .contact-form{ padding:32px 22px; }
+  .footer-bottom{ flex-direction:column; gap:10px; text-align:center; }
+}
+
+/* ================= SMALL MOBILE (max-width:480px) ================= */
+@media (max-width:480px){
+  .hero-copy h1{ font-size:30px; }
+  .hero-copy p{ font-size:15px; }
+  .hero-gallery{ height:280px; max-width:280px; }
+  .gallery-track img{ height:140px; }
+  .dest-grid{ grid-template-columns:1fr; }
+  .hero-stats{ gap:14px; }
+  .hero-stats strong{ font-size:24px; }
+  .container{ padding:0 18px; }
+  .nav-cta .btn{ padding:9px 16px; font-size:10.5px; }
+}
+
+  /* ================= SCROLL REVEAL ANIMATION ================= */
+  .reveal{
+      opacity:0;
+      transform:translateY(40px);
+      transition:opacity 0.8s cubic-bezier(0.22,1,0.36,1),
+                 transform 0.8s cubic-bezier(0.22,1,0.36,1);
+      will-change:opacity, transform;
+  }
+  .reveal.is-visible{
+      opacity:1;
+      transform:translateY(0);
+  }
+  /* subtle scale-in variant for images / gallery */
+  .gallery-grid .g-item.reveal{
+      transform:translateY(30px) scale(0.94);
+  }
+  .gallery-grid .g-item.reveal.is-visible{
+      transform:translateY(0) scale(1);
+  }
+  @media (prefers-reduced-motion: reduce){
+      .reveal{ opacity:1 !important; transform:none !important; transition:none !important; }
+  }
+
+  /* ================= TYPEWRITER (hero eyebrow) ================= */
+  .hero-copy .eyebrow{
+      display:flex;
+      align-items:center;
+  }
+  .typewriter-cursor{
+      display:inline-block;
+      margin-left:2px;
+      color:#FFD700;
+      animation:blink-cursor 0.8s step-end infinite;
+  }
+  @keyframes blink-cursor{
+      0%, 100%{ opacity:1; }
+      50%{ opacity:0; }
+  }
+
+  /* ================= BUTTON CLICK ANIMATION ================= */
+  .btn{ position:relative; overflow:hidden; }
+  .btn-pulse{
+      animation:btn-pulse-anim 0.45s ease-out;
+  }
+  @keyframes btn-pulse-anim{
+      0%{ transform:scale(1); }
+      35%{ transform:scale(0.93); }
+      100%{ transform:scale(1); }
+  }
+  .btn-ripple{
+      position:absolute;
+      border-radius:50%;
+      background:rgba(255,255,255,0.55);
+      transform:scale(0);
+      animation:btn-ripple-anim 0.6s ease-out forwards;
+      pointer-events:none;
+  }
+  @keyframes btn-ripple-anim{
+      to{ transform:scale(3); opacity:0; }
+  }
+  @media (prefers-reduced-motion: reduce){
+      .typewriter-cursor{ animation:none; }
+      .btn-pulse{ animation:none; }
+  }
+ /* ================= POPUP ================= */
+
+.popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.65);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+    visibility:hidden;
+    transition:.35s ease;
+
+    z-index:999999;
+}
+
+.popup.show{
+    opacity:1;
+    visibility:visible;
+}
+
+.popup-box{
+    width:95%;
+    max-width:650px;
+    background:#fff;
+    border-radius:16px;
+    padding:20px 22px;
+    position:relative;
+    box-sizing:border-box;
+
+    overflow:hidden;
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+
+    transform:scale(.9);
+    transition:.35s ease;
+}
+
+.popup.show .popup-box{
+    transform:scale(1);
+}
+
+/* Heading */
+
+.popup-box h2{
+    margin:0 0 16px;
+    text-align:center;
+    font-size:24px;
+    color:#222;
+}
+
+/* Form Layout */
+
+.popup-form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+/* Inputs */
+
+.popup-box input,
+.popup-box select,
+.popup-box textarea{
+    width:100%;
+    padding:10px 14px;
+    margin-bottom:10px;
+
+    border:1px solid #d9d9d9;
+    border-radius:8px;
+
+    font-size:15px;
+    font-family:inherit;
+
+    box-sizing:border-box;
+    outline:none;
+
+    transition:.3s;
+}
+
+.popup-box input:focus,
+.popup-box select:focus,
+.popup-box textarea:focus{
+
+    border-color:#d7b640;
+    box-shadow:0 0 0 3px rgba(215,182,64,.15);
+
+}
+
+.popup-box textarea{
+
+    min-height:70px;
+    resize:none;
+
+}
+
+.popup-box input::placeholder,
+.popup-box textarea::placeholder{
+
+    color:#888;
+
+}
+
+/* Full Width */
+
+.popup-box textarea,
+.popup-box button,
+.popup-box .btn{
+
+    grid-column:1/-1;
+
+}
+
+/* Button */
+
+.popup-box .btn,
+.popup-box button,
+.popup-box input[type="submit"]{
+
+    width:100%;
+    padding:12px;
+    margin-top:5px;
+
+}
+
+/* Close */
+
+.closePopup{
+
+    position:absolute;
+    top:10px;
+    right:16px;
+
+    font-size:28px;
+    cursor:pointer;
+
+    color:#666;
+
+    transition:.3s;
+
+}
+
+.closePopup:hover{
+
+    color:#d7b640;
+    transform:rotate(90deg);
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .popup-box{
+
+        width:95%;
+        padding:18px;
+
+    }
+
+    .popup-form-row{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .popup-box h2{
+
+        font-size:22px;
+
+    }
+
+}
+/* ===== PAGE TRANSITION ===== */
+body{
+    animation: pageIn .5s ease;
+}
+
+@keyframes pageIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+/* NAV DROPDOWN */
+.nav-dropdown{ position:relative; }
+.dropdown-toggle{ display:flex; align-items:center; gap:5px; cursor:pointer; }
+.dropdown-toggle .caret{ font-size:10px; transition:transform .25s ease; }
+.nav-dropdown.open .dropdown-toggle .caret{ transform:rotate(180deg); }
+.dropdown-menu{
+    position:absolute; top:calc(100% + 14px); left:50%;
+    transform:translateX(-50%) translateY(8px);
+    background:#fff; border:1px solid var(--line,#e7ddc7); border-radius:6px;
+    min-width:170px; box-shadow:0 18px 40px -18px rgba(16,31,60,0.35);
+    list-style:none; padding:8px 0; opacity:0; visibility:hidden;
+    transition:opacity .22s ease, transform .22s ease, visibility .22s ease; z-index:200;
+}
+.nav-dropdown:hover .dropdown-menu, .nav-dropdown.open .dropdown-menu{
+    opacity:1; visibility:visible; transform:translateX(-50%) translateY(0);
+}
+.dropdown-menu li{ list-style:none; }
+.dropdown-menu a{
+    display:block; padding:10px 20px; font-size:12.5px; text-transform:none;
+    color:var(--navy,#101f3c); white-space:nowrap;
+}
+.dropdown-menu a:hover{ background:rgba(201,152,47,0.12); color:var(--gold,#c9982f); }
+.dropdown-menu a::after{ display:none; }
+.pkg-card.pkg-hidden{ display:none !important; }
+.pkg-filter-note{ text-align:center; font-size:13px; color:var(--text-muted,#5c6172); margin-top:-30px; margin-bottom:34px; }
+.pkg-filter-note button{ border:none; background:none; color:var(--gold,#c9982f); font-weight:600; cursor:pointer; text-decoration:underline; font-size:13px; margin-left:6px; }
+
+/* TEAM SECTION */
+.team-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:26px; }
+.team-card{ background:#fff; border:1px solid var(--line,#e7ddc7); border-radius:6px; padding:34px 22px; text-align:center; transition:all .3s ease; }
+.team-card:hover{ transform:translateY(-6px); box-shadow:0 20px 50px -25px rgba(16,31,60,0.35); border-color:var(--gold,#c9982f); }
+.team-avatar{ width:84px; height:84px; margin:0 auto 20px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond', serif; font-size:30px; font-weight:700; color:#fff; background:linear-gradient(135deg, var(--gold,#c9982f), var(--navy,#101f3c)); }
+.team-card h3{ font-size:19px; margin-bottom:4px; }
+.team-role{ font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold,#c9982f); font-weight:600; margin-bottom:12px; display:block; }
+.team-card p{ font-size:13.5px; color:var(--text-muted,#5c6172); }
+
+@media(max-width:980px){
+  .dropdown-menu{ position:static; transform:none; opacity:1; visibility:visible; box-shadow:none; border:none; background:rgba(16,31,60,0.03); max-height:0; overflow:hidden; padding:0; transition:max-height .3s ease, padding .3s ease; }
+  /* .open class ke saath-saath mobile me :hover par bhi max-height active kar di */
+  .nav-dropdown.open .dropdown-menu, .nav-dropdown:hover .dropdown-menu { max-height:200px; padding:6px 0 6px 14px; }
+  .team-grid{ grid-template-columns:repeat(2,1fr); }
+}
+@media(max-width:560px){ .team-grid{ grid-template-columns:1fr; } }
+  
+</style>
+<style>
+  /* ================= SERVICES PAGE HERO ================= */
+  .svc-hero{
+      position:relative;
+      min-height:640px;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      padding-top:90px;
+      padding-bottom:100px;
+  }
+  .svc-hero svg.bg{
+      position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  }
+  .svc-hero::before{
+      content:'';
+      position:absolute; inset:0;
+      background:linear-gradient(180deg, rgba(10,20,40,0.55) 0%, rgba(10,20,40,0.25) 45%, rgba(10,20,40,0.72) 100%);
+  }
+  .svc-hero-inner{
+      position:relative; z-index:3; max-width:640px;
+      padding:0 60px;
+  }
+  .svc-hero .eyebrow{ color:var(--gold-light); }
+  .svc-hero .eyebrow::before{ background:var(--gold-light); }
+  .svc-hero h1{
+      font-size:clamp(48px,7vw,84px);
+      color:#fff;
+      line-height:0.95;
+      margin-bottom:22px;
+      font-weight:600;
+      letter-spacing:0.01em;
+  }
+  .svc-hero p{
+      color:rgba(255,255,255,0.82);
+      font-size:17px;
+      max-width:380px;
+      margin-bottom:26px;
+  }
+  .svc-hero-divider{
+      display:flex; align-items:center; gap:14px;
+  }
+  .svc-hero-divider .line{ width:60px; height:1px; background:var(--gold); }
+  .svc-hero-divider svg{ width:20px; height:20px; }
+
+  .svc-hero-curve{
+      position:absolute; left:0; right:0; bottom:-2px; z-index:2; width:100%; height:auto; display:block;
+  }
+
+  /* ================= TAILORED SECTION ================= */
+  .tailored-section{ padding:70px 0 90px; text-align:center; }
+  .tailored-section .section-head{ margin-bottom:50px; }
+  .tailored-grid{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:24px;
+      max-width:1200px;
+      margin:0 auto;
+  }
+  .tailored-card{
+      background:#fff;
+      border:1px solid var(--line,#e7ddc7);
+      border-radius:10px;
+      padding:32px 20px 28px;
+      transition:all .3s ease;
+  }
+  .tailored-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 20px 45px -25px rgba(16,31,60,0.35);
+      border-color:var(--gold);
+  }
+  .tailored-icon{
+      width:64px; height:64px;
+      border-radius:50%;
+      background:var(--navy);
+      display:flex; align-items:center; justify-content:center;
+      margin:0 auto 20px;
+  }
+  .tailored-icon svg{ width:26px; height:26px; stroke:#fff; }
+  .tailored-card h3{
+      font-size:14px;
+      letter-spacing:0.06em;
+      text-transform:uppercase;
+      color:var(--gold);
+      font-weight:700;
+      margin-bottom:10px;
+      font-family:'Jost', sans-serif;
+  }
+  .tailored-card p{
+      font-size:13.5px;
+      color:var(--text-muted,#5c6172);
+      line-height:1.6;
+  }
+
+  /* ================= STATS BAND ================= */
+.stats-band{
+
+    position:relative;
+
+    padding:80px 0 70px;
+
+    text-align:center;
+
+    color:#fff;
+
+    overflow:hidden;
+
+    background:url("images/Beach Desktop Wallpapers.jpeg") center center/cover no-repeat;
+
+    background-attachment:fixed;
+
+}
+ 
+.stats-band-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:1;
+
+    background:
+    linear-gradient(rgba(10,20,40,.65),rgba(10,20,40,.70)),
+    linear-gradient(120deg,
+    rgba(215,182,64,.12),
+    transparent 45%);
+
+}
+  .stats-band .container{ position:relative; z-index:2; }
+  .stats-band::before, .stats-band::after{
+      content:'';
+      position:absolute; left:0; right:0; height:60px; z-index:2;
+      background:var(--cream);
+  }
+  .stats-band::before{ top:-1px; border-radius:0 0 50% 50%/0 0 100% 100%; }
+  .stats-band::after{ bottom:-1px; border-radius:50% 50% 0 0/100% 100% 0 0; }
+  .stats-band h2{
+      font-family:'Cormorant Garamond', serif;
+      font-size:clamp(22px,3vw,32px);
+      letter-spacing:0.04em;
+      margin-bottom:16px;
+      color:#fff;
+      font-weight:500;
+  }
+  .stats-band-divider{
+      width:60px; height:1px; background:var(--gold); margin:0 auto 50px;
+  }
+  .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      max-width:900px;
+      margin:0 auto;
+      gap:20px;
+  }
+  .stat-item svg{ width:30px; height:30px; stroke:var(--gold-light); margin-bottom:14px; }
+  .stat-item strong{
+      display:block;
+      font-family:'Cormorant Garamond', serif;
+      font-size:36px;
+      font-weight:600;
+      color:#fff;
+      margin-bottom:4px;
+  }
+  .stat-item span{
+      font-size:12px;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,0.65);
+  }
+
+  /* ================= WHY TRAVELERS CHOOSE US ================= */
+  .why-travelers{ padding:80px 0 90px; text-align:center; }
+  .why-travelers .section-head{ margin-bottom:50px; }
+  .why-travelers-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:40px;
+      max-width:1000px;
+      margin:0 auto;
+  }
+  .why-t-item svg{ width:30px; height:30px; stroke:var(--gold); margin-bottom:16px; }
+  .why-t-item h4{
+      font-family:'Cormorant Garamond', serif;
+      font-size:19px;
+      font-weight:600;
+      margin-bottom:8px;
+      color:var(--navy);
+  }
+  .why-t-item p{
+      font-size:13.5px;
+      color:var(--text-muted,#5c6172);
+      line-height:1.6;
+  }
+
+  /* ================= DETAILED SERVICE CARDS ================= */
+  .svc-detail-section{ padding:90px 0; background:var(--cream); }
+  .svc-detail-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      align-items:center;
+      gap:0;
+      margin-bottom:70px;
+      position:relative;
+  }
+  .svc-detail-row:last-child{ margin-bottom:0; }
+  .svc-detail-text{
+      background:#fff;
+      padding:46px 50px;
+      border-radius:14px;
+      position:relative;
+      z-index:2;
+      margin-right:-60px;
+      box-shadow:0 25px 60px -30px rgba(16,31,60,0.25);
+  }
+  .svc-detail-text .tag-line{
+      font-size:13px;
+      font-style:italic;
+      font-family:'Cormorant Garamond', serif;
+      color:var(--navy);
+      margin-bottom:6px;
+  }
+  .svc-detail-text h3{
+      font-size:clamp(24px,3vw,32px);
+      color:var(--navy);
+      margin-bottom:10px;
+  }
+  .svc-detail-text .underline{
+      width:50px; height:2px; background:var(--gold); margin-bottom:18px;
+  }
+  .svc-detail-text > p.lead{
+      font-size:14.5px;
+      color:var(--text-muted,#5c6172);
+      margin-bottom:20px;
+      line-height:1.7;
+  }
+  .svc-check-list{
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:11px;
+  }
+  .svc-check-list li{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-size:13.5px;
+      color:var(--navy);
+  }
+  .svc-check-list li svg{ width:16px; height:16px; stroke:var(--gold); flex-shrink:0; }
+
+ .svc-detail-photo{
+    position:relative;
+    overflow:hidden;
+    border-radius:22px;
+    box-shadow:0 18px 40px rgba(0,0,0,.18);
+    animation:floatImage 5s ease-in-out infinite;
+}
+
+.svc-detail-photo img{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+    transition:.6s ease;
+}
+
+.svc-detail-photo:hover img{
+    transform:scale(1.08);
+    filter:brightness(1.08);
+}
+
+.svc-detail-photo::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        120deg,
+        transparent 30%,
+        rgba(255,255,255,.35) 50%,
+        transparent 70%
+    );
+    transform:translateX(-120%);
+    transition:.8s;
+}
+
+.svc-detail-photo:hover::before{
+    transform:translateX(120%);
+}
+
+@keyframes floatImage{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-8px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+  .svc-detail-row.flip{ grid-template-columns:1fr 1fr; }
+  .svc-detail-row.flip .svc-detail-text{
+      order:2;
+      margin-right:0;
+      margin-left:-60px;
+  }
+  .svc-detail-row.flip .svc-detail-photo{
+      order:1;
+      border-radius:12px 50% 12px 12px / 12px 60% 12px 12px;
+  }
+  .svc-detail-photo svg{ width:100%; height:100%; display:block; }
+
+  .svc-icon-badge{
+      position:absolute;
+      top:36px;
+      right:-32px;
+      width:86px; height:86px;
+      border-radius:50%;
+      background:#fff;
+      border:1px solid var(--line,#e7ddc7);
+      display:flex; align-items:center; justify-content:center;
+      z-index:3;
+      box-shadow:0 18px 35px -18px rgba(16,31,60,0.35);
+  }
+  .svc-detail-row.flip .svc-icon-badge{ right:auto; left:-32px; }
+  .svc-icon-badge svg{ width:34px; height:34px; stroke:var(--navy); }
+
+  /* ================= CTA STRIP ================= */
+  .svc-cta{
+      background:var(--navy);
+      text-align:center;
+      padding:70px 0;
+  }
+  .svc-cta h2{
+      color:#fff;
+      font-size:clamp(26px,3.2vw,38px);
+      margin-bottom:16px;
+  }
+  .svc-cta p{
+      color:rgba(255,255,255,0.7);
+      font-size:15px;
+      margin-bottom:28px;
+  }
+
+  /* ================= RESPONSIVE ================= */
+  @media(max-width:1100px){
+      .tailored-grid{ grid-template-columns:repeat(3,1fr); }
+      .stats-grid{ grid-template-columns:repeat(2,1fr); gap:40px; }
+      .why-travelers-grid{ grid-template-columns:repeat(2,1fr); gap:34px; }
+      .svc-detail-row, .svc-detail-row.flip{
+          grid-template-columns:1fr;
+      }
+      .svc-detail-text, .svc-detail-row.flip .svc-detail-text{
+          margin:0 0 -30px 0;
+          order:2;
+          text-align:left;
+      }
+      .svc-detail-photo, .svc-detail-row.flip .svc-detail-photo{
+          order:1;
+          border-radius:14px !important;
+          height:320px;
+      }
+      .svc-icon-badge, .svc-detail-row.flip .svc-icon-badge{
+          top:-30px; right:24px; left:auto;
+      }
+  }
+  @media(max-width:768px){
+      .svc-hero{ min-height:520px; padding-bottom:80px; }
+      .svc-hero-inner{ padding:0 28px; }
+      .tailored-grid{ grid-template-columns:repeat(2,1fr); }
+      .stats-grid{ grid-template-columns:repeat(2,1fr); }
+      .why-travelers-grid{ grid-template-columns:1fr 1fr; }
+      .svc-detail-text{ padding:32px 26px; }
+  }
+  @media(max-width:560px){
+      .tailored-grid{ grid-template-columns:1fr; }
+      .why-travelers-grid{ grid-template-columns:1fr; }
+      .stats-grid{ grid-template-columns:1fr 1fr; gap:30px; }
+  }
+  /* Service Icon Images */
+.svc-icon {
+    width: 64px; 
+    height: 64px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    border-radius: 50%;
+    transition: transform 0.4s ease;
+}
+
+.svc-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Hover effect for service cards */
+.svc-card:hover .svc-icon {
+    transform: scale(1.15) rotate(5deg);
+}
+
+/* Tailored Section Icons */
+.tailored-icon {
+    width: 64px; 
+    height: 64px;
+    margin: 0 auto 20px;
+    transition: transform 0.4s ease;
+}
+.tailored-icon img {
+    width: 100%;
+    height: 100%;
+}
+.tailored-card:hover .tailored-icon {
+    transform: translateY(-5px);
+}
+</style>
+
+</head>
+<body>
+
+<header class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images\logo.png" alt="The Dream Vyana logo">
+      <span class="brand-text">
+        <span class="b1">The Dream Vyana</span>
+        <span class="b2">Turning Dreams Into Destinations</span>
+      </span>
+    </a>
+    <nav>
+     <ul class="nav-links">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="services.html" style="color:var(--gold);">Service</a></li>
+  <li class="nav-dropdown">
+    <a  class="dropdown-toggle">Package <span class="caret">&#9662;</span></a>
+    <ul class="dropdown-menu">
+      <li><a href="packages.html?region=international" class="filter-link" data-cat="international">International</a></li>
+      <li><a href="packages.html?region=domestic" class="filter-link" data-cat="domestic">Domestic</a></li>
+    </ul>
+  </li>
+  <li><a href="team.html">Team</a></li>
+  <li><a href="#about">About</a></li>
+  <li><a href="#contact">Contact</a></li>
+</ul>
+    </nav>
+    <div class="nav-cta">
+      <a href="#" class="btn btn-gold openPopup">Plan My Trip</a>
+    </div>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ===================== SERVICES HERO ===================== -->
+<section class="team-hero">
+  <div class="team-hero-inner">
+    <div class="eyebrow center" style="color:#FFD700;">Our Services</div>
+    <h1>Our <em>Customer</em> Service</h1>
+    <p>“People don't care how much you know until they know how much you care”</p>
+  </div>
+</section>
+
+<!-- ===================== TAILORED EXPERIENCES ===================== -->
+<section class="tailored-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow center">Experiences Tailored For You</div>
+      <h2>From planning your dream vacation to making every moment memorable — we take care of it all.</h2>
+    </div>
+    <div class="tailored-grid reveal-stagger">
+
+      <div class="tailored-card reveal">
+        <div class="tailored-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M9 20l-5.5-2V4L9 6m0 14l6-2m-6 2V6m6 12l5.5 2V6L15 4m0 14V4M9 6l6 0"/></svg>
+        </div>
+        <h3>Tour Packages</h3>
+        <p>Handpicked packages for domestic &amp; international destinations.</p>
+      </div>
+
+      <div class="tailored-card reveal">
+        <div class="tailored-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M2.5 19.5l19-8-19-8 4.5 8-4.5 8z"/></svg>
+        </div>
+        <h3>Flight Bookings</h3>
+        <p>Best flight options at competitive prices worldwide.</p>
+      </div>
+
+      <div class="tailored-card reveal">
+        <div class="tailored-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg>
+        </div>
+        <h3>Hotel Reservations</h3>
+        <p>Comfortable stays handpicked for a perfect experience.</p>
+      </div>
+
+      <div class="tailored-card reveal">
+        <div class="tailored-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M9 20l-5.5-2V4L9 6m0 14l6-2m-6 2V6m6 12l5.5 2V6L15 4m0 14V4M9 6l6 0"/><circle cx="17" cy="7" r="3"/></svg>
+        </div>
+        <h3>Custom Travel</h3>
+        <p>Personalized itineraries curated according to your preferences.</p>
+      </div>
+
+      <div class="tailored-card reveal">
+        <div class="tailored-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>
+        </div>
+        <h3>Travel Support</h3>
+        <p>24/7 assistance to support you at every step of your journey.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STATS BAND ===================== -->
+<section class="stats-band">
+  
+  <div class="stats-band-overlay"></div>
+  <div class="container">
+    <h2>We Plan. You Pack. Memories Follow.</h2>
+    <div class="stats-band-divider"></div>
+    <div class="stats-grid reveal-stagger">
+      <div class="stat-item reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <strong>50+</strong>
+        <span>Happy Travelers</span>
+      </div>
+      <div class="stat-item reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20 15 15 0 010-20z"/></svg>
+        <strong>100+</strong>
+        <span>Destinations</span>
+      </div>
+      <div class="stat-item reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>
+        <strong>50+</strong>
+        <span>Packages</span>
+      </div>
+      <div class="stat-item reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <strong>24/7</strong>
+        <span>Support</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY TRAVELERS CHOOSE US ===================== -->
+<section class="why-travelers">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow center">Why Travelers Choose Us</div>
+    </div>
+    <div class="why-travelers-grid reveal-stagger">
+
+      <div class="why-t-item reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17l-5.5 4L8 13.5 3 9l6.5-.5z"/></svg>
+        <h4>Best Price Guarantee</h4>
+        <p>We offer the most competitive prices.</p>
+      </div>
+
+      <div class="why-t-item reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+        <h4>Expert Guidance</h4>
+        <p>Our travel experts are always here to help.</p>
+      </div>
+
+      <div class="why-t-item reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg>
+        <h4>Trusted &amp; Reliable</h4>
+        <p>Thousands of happy travelers trust us.</p>
+      </div>
+
+      <div class="why-t-item reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <h4>Memorable Experiences</h4>
+        <p>We create journeys that stay forever in your heart.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DETAILED SERVICES ===================== -->
+<section class="svc-detail-section" id="services">
+  <div class="container">
+
+    <!-- Flight Bookings -->
+    <div class="svc-detail-row">
+      <div class="svc-detail-text reveal">
+        <h3>Flight Bookings</h3>
+        <div class="underline"></div>
+        <p class="lead">Fly to your dream destinations with ease. We help you find the best routes and fares, so you can travel more and worry less.</p>
+        <ul class="svc-check-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Domestic &amp; International Flights</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Best Price Guarantee</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Flexible Rescheduling</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> 24/7 Assistance</li>
+        </ul>
+      </div>
+      <div class="svc-detail-photo reveal">
+        <div class="svc-detail-photo reveal">
+    <img src="images/flite.jpg" alt="Flight Booking">
+</div>
+</div>
+      <div class="svc-icon-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M2.5 19.5l19-8-19-8 4.5 8-4.5 8z"/></svg>
+      </div>
+    </div>
+
+    <!-- Hotel Reservations -->
+    <div class="svc-detail-row flip">
+      <div class="svc-detail-photo reveal"> <div class="svc-detail-photo reveal">
+    <img src="images/hotel.jpg" alt="Flight Booking">
+</div>
+</div>
+      <div class="svc-detail-text reveal">
+        <h3>Hotel Reservations</h3>
+        <div class="underline"></div>
+        <p class="lead">Stay in comfort, wherever you go. From luxury resorts to cozy stays, we've got the perfect room for you.</p>
+        <ul class="svc-check-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Wide Range of Options</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Best Price Guarantee</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Verified &amp; Trusted Hotels</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Hassle-free Booking</li>
+        </ul>
+      </div>
+      <div class="svc-icon-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg>
+      </div>
+    </div>
+
+    <!-- Custom Travel -->
+    <div class="svc-detail-row">
+      <div class="svc-detail-text reveal">
+        <h3>Custom Travel</h3>
+        <div class="underline"></div>
+        <p class="lead"><em>Your journey, your way.</em> We design personalized itineraries that match your style, budget and expectations.</p>
+        <ul class="svc-check-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Tailor-made Itineraries</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Unique Experiences</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Honeymoon &amp; Family Trips</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Group &amp; Corporate Travel</li>
+        </ul>
+      </div>
+      <div class="svc-detail-photo reveal"> <div class="svc-detail-photo reveal">
+    <img src="images/customtravel.jpg" alt="Flight Booking">
+</div>
+</div>
+      <div class="svc-icon-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M9 20l-5.5-2V4L9 6m0 14l6-2m-6 2V6m6 12l5.5 2V6L15 4m0 14V4M9 6l6 0"/></svg>
+      </div>
+    </div>
+
+    <!-- Travel Support -->
+    <div class="svc-detail-row flip">
+      <div class="svc-detail-photo reveal"> <div class="svc-detail-photo reveal">
+    <img src="images/24hsupport.png" alt="Flight Booking">
+</div>
+</div>
+      <div class="svc-detail-text reveal">
+        <h3>Travel Support</h3>
+        <div class="underline"></div>
+        <p class="lead">We're with you, every step of the way. From the moment you plan until you return home, our support team is always ready to assist you.</p>
+        <ul class="svc-check-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> 24/7 Customer Support</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Trip Assistance</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Emergency Help</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Peace of Mind</li>
+        </ul>
+      </div>
+      <div class="svc-icon-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== CTA STRIP ===================== -->
+<section class="svc-cta">
+  <div class="container">
+    <h2>Ready to plan your next journey?</h2>
+    <p>Tell us where you dream of going — our travel desk replies within a few hours.</p>
+    <a href="#" class="btn btn-gold openPopup">Plan My Trip</a>
+  </div>
+</section>
+
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images\logo.png" alt="The Dream Vyana logo">
+        <p>The Dream Vyana plans journeys across mountains, coastlines and cities — turning every dream destination into a real itinerary.</p>
+        <div class="social-row">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#packages">Packages</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Hotel Booking</a></li>
+          <li><a href="#services">Flight Booking</a></li>
+          <li><a href="#services">Cab Service</a></li>
+          <li><a href="#services">Tour Packages</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+          <li><a href="mailto:hello@thedreamvyana.com">hello@thedreamvyana.com</a></li>
+          <li><a href="https://wa.me/919876543210">WhatsApp Us</a></li>
+          <li><a href="#contact">Solan, Himachal Pradesh</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 The Dream Vyana. All rights reserved.</span>
+      <span><a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== BOOKING POPUP ===================== -->
+
+<div id="bookingPopup" class="popup">
+
+    <div class="popup-box">
+
+        <span class="closePopup">&times;</span>
+
+        <h2>Plan Your Dream Trip</h2>
+
+     <form id="bookingForm">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <input type="tel" placeholder="Phone Number" required>
+            <input type="text" placeholder="Destination">
+
+            <div class="popup-form-row">
+                <select name="duration" required>
+                    <option value="">Trip Duration</option>
+                    <option value="1-3-days">1 - 3 Days</option>
+                    <option value="4-6-days">4 - 6 Days</option>
+                    <option value="1-week">1 Week</option>
+                    <option value="2-weeks">2 Weeks</option>
+                    <option value="3-weeks-plus">3+ Weeks</option>
+                </select>
+
+                <select name="persons" required>
+                    <option value="">No. of Persons</option>
+                    <option value="1">1 Person</option>
+                    <option value="2">2 Persons</option>
+                    <option value="3">3 Persons</option>
+                    <option value="4">4 Persons</option>
+                    <option value="5plus">5+ Persons</option>
+                </select>
+            </div>
+
+            <select name="budget" required>
+                <option value="">Select Budget Range</option>
+                <option value="10k-20k">₹10,000 - ₹20,000</option>
+                <option value="20k-30k">₹20,000 - ₹30,000</option>
+                <option value="30k-40k">₹30,000 - ₹40,000</option>
+                <option value="40k-50k">₹40,000 - ₹50,000</option>
+                <option value="50k-60k">₹50,000 - ₹60,000</option>
+                <option value="60k-70k">₹60,000 - ₹70,000</option>
+                <option value="70k-80k">₹70,000 - ₹80,000</option>
+                <option value="80k-90k">₹80,000 - ₹90,000</option>
+                <option value="90k-above">₹90,000 & Above</option>
+            </select>
+
+            <textarea placeholder="Tell us about your trip..."></textarea>
+            <button type="submit" class="btn btn-gold">
+                Send Request
+            </button>
+        </form>
+
+    </div>
+
+</div>
+
+<script>
+  // mobile nav toggle
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');
+  if(toggle){
+    toggle.addEventListener('click', () => {
+      const open = links.style.display === 'flex';
+      links.style.display = open ? 'none' : 'flex';
+      links.style.cssText += open ? '' : 'position:fixed;top:76px;left:0;right:0;background:#faf6ec;flex-direction:column;padding:24px 32px;gap:20px;border-bottom:1px solid #e7ddc7;';
+    });
+  }
+</script>
+<script>
+  // ===== SCROLL REVEAL ANIMATION (repeats every time) =====
+  (function(){
+    var staggerContainers = document.querySelectorAll('.reveal-stagger');
+    staggerContainers.forEach(function(container){
+      var items = container.querySelectorAll(':scope > .reveal');
+      items.forEach(function(el, i){
+        el.style.transitionDelay = (i * 0.12) + 's';
+      });
+    });
+
+    var revealEls = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var observer = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            entry.target.classList.add('is-visible');
+          } else {
+            entry.target.classList.remove('is-visible');
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+      revealEls.forEach(function(el){ observer.observe(el); });
+    } else {
+      revealEls.forEach(function(el){ el.classList.add('is-visible'); });
+    }
+  })();
+
+  // ===== TYPEWRITER LOOP (hero eyebrow) =====
+  (function(){
+    var el = document.getElementById('typewriter-text');
+    if(!el) return;
+    var phrases = ['The Dream Vyana Travel Co.'];
+    var phraseIndex = 0, charIndex = 0, deleting = false;
+    var typeSpeed = 90, deleteSpeed = 45, pauseAfterType = 1600, pauseAfterDelete = 400;
+
+    function tick(){
+      var current = phrases[phraseIndex];
+      if(!deleting){
+        charIndex++;
+        el.textContent = current.slice(0, charIndex);
+        if(charIndex === current.length){
+          deleting = true;
+          setTimeout(tick, pauseAfterType);
+          return;
+        }
+        setTimeout(tick, typeSpeed);
+      } else {
+        charIndex--;
+        el.textContent = current.slice(0, charIndex);
+        if(charIndex === 0){
+          deleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          setTimeout(tick, pauseAfterDelete);
+          return;
+        }
+        setTimeout(tick, deleteSpeed);
+      }
+    }
+    tick();
+  })();
+
+  // ===== BUTTON CLICK ANIMATION =====
+ (function () {
+
+    document.querySelectorAll('.btn').forEach(function(btn){
+
+        btn.addEventListener('click', function(e){
+
+            btn.classList.remove('btn-pulse');
+            void btn.offsetWidth;
+            btn.classList.add('btn-pulse');
+
+            var rect = btn.getBoundingClientRect();
+            var ripple = document.createElement('span');
+            var size = Math.max(rect.width, rect.height) * 1.2;
+
+            ripple.className = 'btn-ripple';
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = (e.clientX - rect.left - size/2) + 'px';
+            ripple.style.top = (e.clientY - rect.top - size/2) + 'px';
+
+            btn.appendChild(ripple);
+
+            setTimeout(function(){
+                ripple.remove();
+            },650);
+
+        });
+
+    });
+
+})();
+document.addEventListener("DOMContentLoaded", function(){
+
+    const popup = document.querySelector(".popup");
+    const closePopup = document.querySelector(".closePopup");
+
+    document.querySelectorAll(".openPopup").forEach(function(btn){
+
+        btn.addEventListener("click",function(e){
+
+            e.preventDefault();
+            popup.classList.add("show");
+
+        });
+
+    });
+
+    closePopup.addEventListener("click",function(){
+
+        popup.classList.remove("show");
+
+    });
+
+    popup.addEventListener("click",function(e){
+
+        if(e.target===popup){
+            popup.classList.remove("show");
+        }
+
+    });
+
+    document.addEventListener("keydown",function(e){
+
+        if(e.key==="Escape"){
+            popup.classList.remove("show");
+        }
+
+    });
+
+});
+
+
+window.addEventListener("load",()=>{
+
+    document.body.classList.add("page-loaded");
+
+});
+
+
+
+</script>
+</body>
+</html>
