@@ -364,6 +364,70 @@
 .pkg-title-link:hover{
     color:var(--gold, #d7b640);
 }
+/* ================= SUCCESS POPUP ================= */
+.success-popup{
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background:rgba(0,0,0,.65);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    visibility:hidden;
+    transition:.35s ease;
+    z-index:1000000;
+}
+.success-popup.show{
+    opacity:1;
+    visibility:visible;
+}
+.success-box{
+    background:#fff;
+    border-radius:16px;
+    padding:44px 34px;
+    max-width:380px;
+    width:90%;
+    text-align:center;
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+    transform:scale(.9);
+    transition:.35s ease;
+}
+.success-popup.show .success-box{
+    transform:scale(1);
+}
+.success-icon{
+    font-size:50px;
+    margin-bottom:14px;
+}
+.success-box h2{
+    margin-bottom:8px;
+    color:#222;
+    font-size:24px;
+}
+.success-box p{
+    color:#555;
+    margin-bottom:22px;
+    font-size:14.5px;
+    line-height:1.6;
+}
+.success-box button{
+    background:linear-gradient(135deg,#e8c979,#d7b640);
+    color:#101f3c;
+    border:none;
+    padding:12px 34px;
+    border-radius:30px;
+    font-weight:700;
+    cursor:pointer;
+    font-size:12.5px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    transition:.3s;
+}
+.success-box button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 22px rgba(215,182,64,.4);
+}
 </style>
 </head>
 <body>
@@ -747,11 +811,13 @@
       <!-- Uttarakhand / Shimla Packages -->
       <div class="pkg-card actual-package" data-actual-region="uttarakhand" data-main-type="domestic" data-type="family">
         <div class="pkg-img">
+          <a href="uttharakhand1st.html">
           <img src="images/uttarakhand.jpg" alt="Char Dham">
           <span class="pkg-badge">25% Off</span>
+          </a>
         </div>
         <div class="pkg-body">
-          <h3><a href="package-detail.html?pkg=sacred-char-dham-yatra-packages-8-nights-9-days&region=uttarakhand" class="pkg-title-link">Sacred Char Dham Yatra Packages 8 Nights 9 Days</a></h3>
+          <h3><a href="uttharakhand1st.html" class="pkg-title-link">Visit Uttrakhand Tourist Places for 8 Nights / 9 Days </a></h3>
           <div class="pkg-meta"><span>Uttarakhand</span><span class="dot"></span><span>9 Days · 8 Nights</span></div>
           <div class="pkg-footer">
             <div class="pkg-price"><strong>₹28,500</strong><span>On Request</span></div>
@@ -1073,54 +1139,71 @@
 </section>
 
 <!-- ===================== ENQUIRY POPUP ===================== -->
-<div class="popup" id="bookingPopup">
-  <div class="popup-box">
-    <span class="closePopup">&times;</span>
-    <h2>Plan My Custom Trip</h2>
-    <form id="bookingForm">
-      <input type="text" placeholder="Full Name" required>
-      <input type="email" placeholder="Email Address" required>
-      <input type="tel" placeholder="Phone Number" required>
-      <input type="text" placeholder="Destination">
+<div id="bookingPopup" class="popup">
 
-      <div class="popup-form-row">
-        <select name="duration" required>
-          <option value="">Trip Duration</option>
-          <option value="1-3-days">1 - 3 Days</option>
-          <option value="4-6-days">4 - 6 Days</option>
-          <option value="1-week">1 Week</option>
-          <option value="2-weeks">2 Weeks</option>
-          <option value="3-weeks-plus">3+ Weeks</option>
-        </select>
+    <div class="popup-box">
 
-        <select name="persons" required>
-          <option value="">No. of Persons</option>
-          <option value="1">1 Person</option>
-          <option value="2">2 Persons</option>
-          <option value="3">3 Persons</option>
-          <option value="4">4 Persons</option>
-          <option value="5plus">5+ Persons</option>
-        </select>
-      </div>
+        <span class="closePopup">&times;</span>
 
-      <select name="budget" required>
-        <option value="">Select Budget Range</option>
-        <option value="10k-20k">₹10,000 - ₹20,000</option>
-        <option value="20k-30k">₹20,000 - ₹30,000</option>
-        <option value="30k-40k">₹30,000 - ₹40,000</option>
-        <option value="40k-50k">₹40,000 - ₹50,000</option>
-        <option value="50k-60k">₹50,000 - ₹60,000</option>
-        <option value="60k-70k">₹60,000 - ₹70,000</option>
-        <option value="70k-80k">₹70,000 - ₹80,000</option>
-        <option value="80k-90k">₹80,000 - ₹90,000</option>
-        <option value="90k-above">₹90,000 & Above</option>
-      </select>
+        <h2>Plan Your Dream Trip</h2>
 
-      <textarea placeholder="Tell us about your trip..."></textarea>
-      <button type="submit" class="btn btn-gold">Send Request</button>
-    </form>
-  </div>
+     <form id="bookingForm">
+            <input type="text" name="data[Full_Name]"  placeholder="Full Name" required>
+            <input type="email"  name="data[Email]" placeholder="Email Address" required>
+            <input type="tel"  name="data[Mobile_Number]" placeholder="Phone Number" required>
+            <input type="text" name="data[Destination]" placeholder="Destination">
+
+            <div class="popup-form-row">
+                <select  name="data[Trip_Duration]">
+                    <option value="">Trip Duration</option>
+                    <option value="1-3-days">1 - 3 Days</option>
+                    <option value="4-6-days">4 - 6 Days</option>
+                    <option value="1-week">1 Week</option>
+                    <option value="2-weeks">2 Weeks</option>
+                    <option value="3-weeks-plus">3+ Weeks</option>
+                </select>
+
+                <select  name="data[No_Of_Person]">
+                    <option value="">No. of Persons</option>
+                    <option value="1">1 Person</option>
+                    <option value="2">2 Persons</option>
+                    <option value="3">3 Persons</option>
+                    <option value="4">4 Persons</option>
+                    <option value="5plus">5+ Persons</option>
+                </select>
+            </div>
+
+            <select  required name="data[Budget]">
+                <option value="">Select Budget Range</option>
+                <option value="10k-20k">₹10,000 - ₹20,000</option>
+                <option value="20k-30k">₹20,000 - ₹30,000</option>
+                <option value="30k-40k">₹30,000 - ₹40,000</option>
+                <option value="40k-50k">₹40,000 - ₹50,000</option>
+                <option value="50k-60k">₹50,000 - ₹60,000</option>
+                <option value="60k-70k">₹60,000 - ₹70,000</option>
+                <option value="70k-80k">₹70,000 - ₹80,000</option>
+                <option value="80k-90k">₹80,000 - ₹90,000</option>
+                <option value="90k-above">₹90,000 & Above</option>
+            </select>
+
+            <textarea placeholder="Tell us about your trip..." name="data[message]"></textarea>
+            <button type="submit" class="btn btn-gold">
+                Send Request
+            </button>
+        </form>
+
+    </div>
+
 </div>
+<div id="successPopup" class="success-popup">
+    <div class="success-box">
+        <div class="success-icon">✅</div>
+        <h2>Thank You!</h2>
+        <p>Your booking request has been received successfully.</p>
+        <button onclick="closeSuccess()">OK</button>
+    </div>
+</div>
+
 
 <!-- ===================== FOOTER ===================== -->
 <footer>
@@ -1153,6 +1236,67 @@
 </footer>
 
 <script>
+
+// ===== BOOKING FORM: SUBMIT VIA FETCH TO SHEETDB =====
+document.addEventListener("DOMContentLoaded", function(){
+
+    const bookingForm = document.getElementById("bookingForm");
+    const bookingPopup = document.getElementById("bookingPopup");
+    const successPopup = document.getElementById("successPopup");
+    const SHEETDB_URL = "https://sheetdb.io/api/v1/2mwbbtcaof2jx";
+
+    if(bookingForm){
+        bookingForm.addEventListener("submit", function(e){
+
+            e.preventDefault();
+
+            const formData = new FormData(bookingForm);
+            const payload = { data: {} };
+
+            formData.forEach(function(value, key){
+                const match = key.match(/^data\[(.+)\]$/);
+                const cleanKey = match ? match[1] : key;
+                payload.data[cleanKey] = value;
+            });
+
+            const submitBtn = bookingForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = "Sending...";
+
+            fetch(SHEETDB_URL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+            })
+            .then(function(response){
+                if(!response.ok){ throw new Error("Network response was not ok"); }
+                return response.json();
+            })
+            .then(function(){
+                bookingForm.reset();
+                if(bookingPopup) bookingPopup.classList.remove("show");
+                if(successPopup) successPopup.classList.add("show");
+            })
+            .catch(function(err){
+                alert("Something went wrong while sending your request. Please try again or contact us directly.");
+                console.error(err);
+            })
+            .finally(function(){
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            });
+
+        });
+    }
+
+});
+
+function closeSuccess(){
+    const successPopup = document.getElementById("successPopup");
+    if(successPopup) successPopup.classList.remove("show");
+}
+
   // Popup Toggle Logic
   const popup = document.getElementById('bookingPopup');
   const closeButton = document.querySelector('.closePopup');
