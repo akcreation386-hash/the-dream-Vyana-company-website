@@ -559,14 +559,14 @@
         <ul>
           <li><a href="index.html">Home Base</a></li>
           <li><a href="packages.html">All Packages</a></li>
-          <li><a href="index.html#contact">Get In Touch</a></li>
+          <li><a href="contact us.html">Get In Touch</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Reach Us</h4>
         <ul>
-          <li>Solan, Himachal Pradesh, India</li>
-          <li>hello@thedreamvyana.com</li>
+          <li>Mandi, Himachal Pradesh, India</li>
+          <li>thedreamvyana@gmail.com</li>
         </ul>
       </div>
     </div>
@@ -582,16 +582,16 @@
     <span class="closePopup">&times;</span>
     <h2>Plan Your Kerala Tour</h2>
     <form id="bookingForm">
-      <input type="text" placeholder="Full Name" required>
-      <input type="email" placeholder="Email Address" required>
-      <input type="tel" placeholder="Phone Number" required>
-      <input type="text" value="Kerala Hills, Wildlife & Backwaters Tour (7N / 8D)" readonly style="background: var(--cream); font-weight:600;">
+      <input type="text" name="data[Full_Name]"  placeholder="Full Name" required>
+            <input type="email"  name="data[Email]" placeholder="Email Address" required>
+            <input type="tel"  name="data[Mobile_Number]" placeholder="Phone Number" required>
+      <input type="text" name="data[Destination]" value="Kerala Hills, Wildlife & Backwaters Tour (7N / 8D)" readonly style="background: var(--cream); font-weight:600;">
 
       <div class="popup-form-row">
-        <select name="duration" required>
+        <select name="data[Trip_Duration]" required>
           <option value="7-nights-8-days">7 Nights / 8 Days</option>
         </select>
-        <select name="persons" required>
+        <select name="data[No_Of_Persons]" required>
           <option value="">No. of Persons</option>
           <option value="1">1 Person</option>
           <option value="2">2 Persons</option>
@@ -601,20 +601,88 @@
         </select>
       </div>
 
-      <select name="budget" required>
+      <select name="data[Budget]" required>
         <option value="">Select Budget Range</option>
         <option value="20k-30k">₹20,000 - ₹30,000</option>
         <option value="30k-40k">₹30,000 - ₹40,000</option>
         <option value="40k-above">Above ₹40,000</option>
       </select>
 
-      <textarea placeholder="Tell us about your preferred hotel category, houseboat upgrade, or any custom dates..."></textarea>
+      <textarea name="data[Message]" placeholder="Tell us about your preferred hotel category, houseboat upgrade, or any custom dates..."></textarea>
       <button type="submit" class="btn btn-gold">Send Custom Request</button>
     </form>
   </div>
 </div>
-
+<div id="successPopup" class="success-popup">
+    <div class="success-box">
+        <div class="success-icon">✅</div>
+        <h2>Thank You!</h2>
+        <p>Your booking request has been received successfully.</p>
+        <button onclick="closeSuccess()">OK</button>
+    </div>
+</div>
 <script>
+
+// ===== BOOKING FORM: SUBMIT VIA FETCH TO SHEETDB =====
+document.addEventListener("DOMContentLoaded", function(){
+
+    const bookingForm = document.getElementById("bookingForm");
+    const bookingPopup = document.getElementById("bookingPopup");
+    const successPopup = document.getElementById("successPopup");
+    const SHEETDB_URL = "https://sheetdb.io/api/v1/2mwbbtcaof2jx";
+
+    if(bookingForm){
+        bookingForm.addEventListener("submit", function(e){
+
+            e.preventDefault();
+
+            const formData = new FormData(bookingForm);
+            const payload = { data: {} };
+
+            formData.forEach(function(value, key){
+                const match = key.match(/^data\[(.+)\]$/);
+                const cleanKey = match ? match[1] : key;
+                payload.data[cleanKey] = value;
+            });
+
+            const submitBtn = bookingForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = "Sending...";
+
+            fetch(SHEETDB_URL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+            })
+            .then(function(response){
+                if(!response.ok){ throw new Error("Network response was not ok"); }
+                return response.json();
+            })
+            .then(function(){
+                bookingForm.reset();
+                if(bookingPopup) bookingPopup.classList.remove("show");
+                if(successPopup) successPopup.classList.add("show");
+            })
+            .catch(function(err){
+                alert("Something went wrong while sending your request. Please try again or contact us directly.");
+                console.error(err);
+            })
+            .finally(function(){
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            });
+
+        });
+    }
+
+});
+
+function closeSuccess(){
+    const successPopup = document.getElementById("successPopup");
+    if(successPopup) successPopup.classList.remove("show");
+}
+
   // Slider Gallery Logic
   let currentSlide = 0;
   const slides = document.querySelectorAll('.slide');

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Golden Triangle Tour with Pushkar (06 Nights / 07 Days) — The Dream Vyana</title>
+<title>Nainital Honeymoon Package (04 Nights / 05 Days) — The Dream Vyana</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -34,14 +34,14 @@
   a{color:inherit; text-decoration:none;}
   img{max-width:100%; display:block;}
   .container{max-width:1180px; margin:0 auto; padding:0 32px;}
-  
+
   .eyebrow{
     display:flex; align-items:center; gap:14px;
     font-size:12.5px; letter-spacing:0.32em; text-transform:uppercase;
     color:var(--gold); font-weight:600; margin-bottom:16px;
   }
   .eyebrow::before{content:''; height:1px; width:36px; background:var(--gold); opacity:0.6;}
-  
+
   .btn{
     display:inline-flex; align-items:center; gap:10px;
     padding:14px 30px; border-radius:30px; font-size:13px;
@@ -49,12 +49,12 @@
     cursor:pointer; border:1px solid transparent; transition:all .3s ease;
   }
   .btn-gold{
-    background:linear-gradient(135deg,var(--gold-light),var(--gold)); 
+    background:linear-gradient(135deg,var(--gold-light),var(--gold));
     color:var(--navy-deep);
     box-shadow:0 8px 20px rgba(255,215,0,.25);
   }
   .btn-gold:hover{
-    transform:translateY(-2px); 
+    transform:translateY(-2px);
     box-shadow:0 15px 30px rgba(255,215,0,.45);
     color: #000;
   }
@@ -80,7 +80,7 @@
 
   /* ===== PAGE HEADER ===== */
   .page-header {
-    background: linear-gradient(rgba(16,31,60,0.85), rgba(10,20,40,0.9)), url('images/rajasthan.jpeg') center/cover no-repeat fixed;
+    background: linear-gradient(rgba(16,31,60,0.85), rgba(10,20,40,0.9)), url('images/nainital-hero.jpg') center/cover no-repeat fixed;
     padding: 180px 0 100px;
     text-align: center;
     color: #fff;
@@ -88,7 +88,7 @@
   .page-header h1 { font-size: clamp(34px, 5vw, 52px); margin-bottom: 12px; font-weight: 700; }
   .page-header p { color: var(--gold-light); font-size: 16px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; }
 
-  /* ===== DETAILS GRID LAYOUT ===== */
+  /* ===== DETAILS GRID ===== */
   .details-section { padding: 80px 0; }
   .details-grid {
     display: grid;
@@ -96,7 +96,7 @@
     gap: 40px;
   }
 
-  /* Quick Info Cards */
+  /* Quick Info Strip */
   .quick-info-strip {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -110,7 +110,7 @@
   .info-item h4 { font-size: 14px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
   .info-item p { font-size: 20px; font-weight: 600; color: var(--navy); }
 
-  /* Content Containers */
+  /* Content Blocks */
   .details-block {
     background: var(--card);
     padding: 35px;
@@ -121,7 +121,7 @@
   .details-block h2 { font-size: 28px; margin-bottom: 20px; color: var(--navy); border-bottom: 1px solid var(--cream); padding-bottom: 10px; }
   .details-block p { color: var(--text-muted); font-size: 16px; line-height: 1.8; }
 
-  /* ===== PREMIUM CUSTOM CAROUSEL ===== */
+  /* ===== CUSTOM SLIDER GALLERY ===== */
   .gallery-slider-container {
     position: relative;
     width: 100%;
@@ -172,7 +172,7 @@
   }
   .slider-btn.prev { left: 20px; }
   .slider-btn.next { right: 20px; }
-  
+
   .slide-counter {
     position: absolute;
     bottom: 20px;
@@ -187,7 +187,7 @@
     z-index: 10;
   }
 
-  /* Vertical Step Map Itinerary */
+  /* Timeline Itinerary Layout */
   .timeline { position: relative; padding: 10px 0; margin-top: 20px; }
   .timeline::before {
     content: ''; position: absolute; top: 0; left: 20px; height: 100%; width: 1px;
@@ -209,7 +209,7 @@
   .timeline-content h3 { font-size: 18px; margin-bottom: 8px; color: var(--navy); font-family: 'Jost', sans-serif; font-weight: 600; }
   .timeline-content p { font-size: 14.5px; color: var(--text-muted); }
 
-  /* Grids mapping */
+  /* Inclusions / Exclusions */
   .inc-exc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
   .inc-box ul, .exc-box ul { list-style: none; }
   .inc-box li, .exc-box li { position: relative; padding-left: 28px; margin-bottom: 12px; font-size: 15px; }
@@ -220,7 +220,7 @@
     content: '✕'; position: absolute; left: 0; color: #cc3333; font-weight: bold; font-size: 14px;
   }
 
-  /* Floating Conversion Sidebar */
+  /* Sticky Sidebar */
   .sidebar-sticky { position: sticky; top: 110px; }
   .booking-side-card {
     background: var(--navy);
@@ -237,7 +237,7 @@
   .booking-side-card li { display: flex; justify-content: space-between; font-size: 14.5px; margin-bottom: 12px; color: rgba(255,255,255,0.85); }
   .booking-side-card li strong { color: #fff; }
 
-  /* ===== BOOKING MODAL POPUP ===== */
+  /* ===== POPUP FOR BOOKING ===== */
   .popup{
     position:fixed; top:0; left:0; width:100%; height:100%;
     background:rgba(0,0,0,.65); display:flex; justify-content:center; align-items:center;
@@ -267,8 +267,13 @@
   /* ===== FOOTER ===== */
   footer{background:var(--navy-deep); color:rgba(253,249,238,0.75); padding:70px 0 30px;}
   .footer-grid{display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:40px; padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,0.1);}
+  .footer-brand img{height:50px; margin-bottom:16px;}
+  .footer-brand p{font-size:13.5px; color:rgba(253,249,238,0.55); max-width:280px;}
   .footer-col h4{font-family:'Cormorant Garamond',serif; font-size:18px; color:#fdf9ee; margin-bottom:18px;}
   .footer-col ul{list-style:none;}
+  .footer-col li{margin-bottom:11px;}
+  .footer-col a{font-size:13.5px; color:rgba(253,249,238,0.62);}
+  .footer-col a:hover { color: var(--gold-light); }
   .footer-bottom{text-align:center; padding-top:25px; font-size:12.5px; color:rgba(253,249,238,0.45);}
 
   @media(max-width:992px){
@@ -282,6 +287,7 @@
     .quick-info-strip { grid-template-columns: 1fr; text-align: center; }
     .gallery-slider-container { height: 260px; }
   }
+
   body{ animation: pageIn .5s ease; }
   @keyframes pageIn{ from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
    /* NAV DROPDOWN */
@@ -322,7 +328,6 @@
 
 @media(max-width:980px){
   .dropdown-menu{ position:static; transform:none; opacity:1; visibility:visible; box-shadow:none; border:none; background:rgba(16,31,60,0.03); max-height:0; overflow:hidden; padding:0; transition:max-height .3s ease, padding .3s ease; }
-  /* .open class ke saath-saath mobile me :hover par bhi max-height active kar di */
   .nav-dropdown.open .dropdown-menu, .nav-dropdown:hover .dropdown-menu { max-height:200px; padding:6px 0 6px 14px; }
   .team-grid{ grid-template-columns:repeat(2,1fr); }
 }
@@ -431,9 +436,9 @@
 <!-- ===================== PAGE HEADER ===================== -->
 <section class="page-header">
   <div class="container">
-    <div class="eyebrow" style="justify-content: center; margin-bottom: 5px;">Mughal Splendour & Holy Ghats</div>
-    <h1>Golden Triangle Tour with Pushkar</h1>
-    <p>06 Nights / 07 Days Family & Spiritual Circuit</p>
+    <div class="eyebrow" style="justify-content: center; margin-bottom: 5px;">Uttarakhand Hills & Lakes</div>
+    <h1>Nainital Honeymoon Package</h1>
+    <p>04 Nights / 05 Days Family Package</p>
   </div>
 </section>
 
@@ -441,39 +446,39 @@
 <section class="details-section">
   <div class="container">
     <div class="details-grid">
-      
+
       <!-- Left Column: Details & Itinerary -->
       <div class="main-content-flow">
-        
+
         <!-- Quick Stats Strip -->
         <div class="quick-info-strip">
           <div class="info-item">
             <h4>Duration</h4>
-            <p>6 Nights / 7 Days</p>
+            <p>4 Nights / 5 Days</p>
           </div>
           <div class="info-item">
-            <h4>Route Map</h4>
-            <p>Delhi - Agra - Jaipur - Pushkar</p>
+            <h4>Location</h4>
+            <p>Delhi - Nainital - Ranikhet</p>
           </div>
           <div class="info-item">
-            <h4>Vibe</h4>
-            <p>Royal Forts & Holy Lakes</p>
+            <h4>Theme</h4>
+            <p>Lakes & Hill Retreat</p>
           </div>
         </div>
 
-        <!-- INFINITE GALLERY SLIDER BLOCK -->
+        <!-- IMAGE GALLERY CAROUSEL BLOCK -->
         <div class="details-block" style="padding-bottom: 25px;">
-          <h2>Tour Highlights Gallery</h2>
+          <h2>Package Image Gallery</h2>
           <div class="gallery-slider-container">
             <div class="slider-btn prev" onclick="moveSlide(-1)">◀</div>
             <div class="slider-btn next" onclick="moveSlide(1)">▶</div>
             <div class="slide-counter" id="slide-counter">1 / 4</div>
-            
+
             <div class="slider-wrapper" id="slider-wrapper">
-              <div class="slide"><img src="image_agent_tag_6745411188287356937" alt="Jaipur Pink City Heritage"></div>
-              <div class="slide"><img src="images/whychooseus.jpeg" alt="Iconic Taj Mahal Agra"></div>
-              <div class="slide"><img src="image_agent_tag_6745411188287357704" alt="Sacred Pushkar Lake Ghats"></div>
-              <div class="slide"><img src="images/rajasthan.jpeg" alt="Delhi Red Fort Monument"></div>
+              <div class="slide"><img src="images/nainital-naini-lake.jpg" alt="Naini Lake Boating Nainital"></div>
+              <div class="slide"><img src="images/nainital-mall-road.jpg" alt="Mall Road Nainital Shopping"></div>
+              <div class="slide"><img src="images/bhimtal-sattal.jpg" alt="Bhimtal and Sattal Lakes"></div>
+              <div class="slide"><img src="images/ranikhet-hills.jpg" alt="Ranikhet Hill Station View"></div>
             </div>
           </div>
         </div>
@@ -482,10 +487,10 @@
         <div class="details-block">
           <h2>Package Description</h2>
           <p>
-            Venture into the heart of India's royal, historical, and spiritual heritage with our **Golden Triangle Tour with Pushkar**. This carefully designed 7-day circuit effortlessly elevates the standard dynamic trio of Delhi, Agra, and Jaipur by introducing you to the ancient and peaceful spiritual oasis of Pushkar.
+            Discover the charm of the Kumaon Hills with our exclusive Nainital Honeymoon Package. Set around the pear-shaped Naini Lake, this getaway blends misty hill views, peaceful lakeside towns, and a touch of old colonial charm that makes it a favourite for couples and families alike.
           </p>
           <p style="margin-top: 15px;">
-            Perfect for families, photographers, and history lovers, this loop guides you from the bustling street bazaars and Mughal architectures of Delhi to the unmatched symmetry of the Taj Mahal in Agra, onward to Jaipur's pink fortresses, and finally settles along the peaceful, sacred ghats of Pushkar Lake—home to the world's rare Lord Brahma Temple.
+            Beyond Nainital itself, the route takes you through the twin-lake beauty of Bhimtal and Sattal and on to the quiet hill town of Ranikhet, known for its orchards, golf course, and sweeping Himalayan panoramas. It's a relaxed hill circuit built for scenic drives, easy walks, and unhurried evenings.
           </p>
         </div>
 
@@ -493,13 +498,13 @@
         <div class="details-block">
           <h2>Day-Wise Detailed Itinerary</h2>
           <div class="timeline">
-            
+
             <!-- Day 1 -->
             <div class="timeline-event">
               <div class="timeline-day">D1</div>
               <div class="timeline-content">
-                <h3>Arrival in Delhi & Luxury Check-in</h3>
-                <p>Touchdown in the historic capital of India! Our representative will welcome you at Delhi Airport or Railway Station and handle your seamless transfer to your luxury hotel. Spend your day unwinding or enjoy an evening walk around Connaught Place's rich colonial architecture. Overnight stay in Delhi.</p>
+                <h3>Arrival in Delhi & Drive to Nainital</h3>
+                <p>Meet our representative on arrival in Delhi and set off on the scenic drive towards Nainital. Break journey at Gajraula, known for a few local heritage stops along the highway. On reaching Nainital, check into your hotel and spend the rest of the day unwinding in the town's calm, lake-side surroundings. Overnight stay in Nainital.</p>
               </div>
             </div>
 
@@ -507,8 +512,8 @@
             <div class="timeline-event">
               <div class="timeline-day">D2</div>
               <div class="timeline-content">
-                <h3>Full Day Sightseeing of Old & New Delhi</h3>
-                <p>Immerse yourself in Delhi's rich historical timeline. Walk through the legacy of Mughal rule at the Red Fort, Jama Masjid, and take a rickshaw ride through Chandni Chowk. Later, transition into the structured layout of New Delhi by visiting India Gate, Humayun’s Tomb, the towering Qutub Minar, and driving past the Parliament House. Overnight stay in Delhi.</p>
+                <h3>Bhimtal & Sattal Excursion</h3>
+                <p>After breakfast, head up to Cheena Peak for sweeping panoramic views of the Himalayan range. Spend the day exploring Bhimtal, a peaceful lakeside town, and Sattal, a cluster of seven interconnected lakes framed by dense forest. Return to Nainital in the evening for some leisurely shopping at the local market. Overnight stay in Nainital.</p>
               </div>
             </div>
 
@@ -516,8 +521,8 @@
             <div class="timeline-event">
               <div class="timeline-day">D3</div>
               <div class="timeline-content">
-                <h3>Drive to Agra & Sunset at Taj Mahal</h3>
-                <p>Check out and take a smooth expressway drive to the Mughal stronghold of Agra. Upon check-in, freshen up and head straight to witness the absolute marvel of the world—the Taj Mahal. Spend your evening watching the white marble glow elegantly under the setting sun. Follow this with an exploration of the massive Agra Fort. Overnight stay in Agra.</p>
+                <h3>Day Trip to Ranikhet</h3>
+                <p>After breakfast, drive out to Ranikhet, pausing at Almora en route to take in its old-world hill charm. On reaching Ranikhet, visit the scenic Ranikhet Golf Course, walk through fragrant apple orchards, and seek blessings at the Jhula Devi Temple. Continue on to Majhkhali and Kalika before wrapping up the day at Bhalu Dam. Return to Nainital for an overnight stay.</p>
               </div>
             </div>
 
@@ -525,8 +530,8 @@
             <div class="timeline-event">
               <div class="timeline-day">D4</div>
               <div class="timeline-content">
-                <h3>Fatehpur Sikri Excursion & Drive to Jaipur</h3>
-                <p>Leave Agra after breakfast. En route to the Pink City of Jaipur, halt at the beautifully preserved sandstone ghost city of Fatehpur Sikri, exploring the massive Buland Darwaza and Panch Mahal. Continue your drive to Jaipur and check into your authentic heritage hotel. Overnight stay in Jaipur.</p>
+                <h3>Nainital Local Sightseeing</h3>
+                <p>Dedicate the day to Nainital's best-loved viewpoints and spots. Trek up to Tiffin Top (Dorothy's Seat) for stunning views of the snow-clad Himalayan and Shivalik ranges, then head to Land's End for a bit of adventure. Take the ropeway up to Snow View Point for another breathtaking vista, followed by relaxed boating on the scenic Naini Lake. Round off the evening with shopping along Mall Road. Overnight stay in Nainital.</p>
               </div>
             </div>
 
@@ -534,26 +539,8 @@
             <div class="timeline-event">
               <div class="timeline-day">D5</div>
               <div class="timeline-content">
-                <h3>Exploring Jaipur's Royal Palaces & Forts</h3>
-                <p>Begin your day with a royal jeep/elephant ride up to the grand Amber Fort. In the afternoon, photograph the stunning multi-windowed facade of Hawa Mahal (Palace of Winds). Explore the City Palace museum complex and look at the astronomical precision of Jantar Mantar. Spend your evening shopping for handcrafted gems and block-printed textiles. Overnight stay in Jaipur.</p>
-              </div>
-            </div>
-
-            <!-- Day 6 -->
-            <div class="timeline-event">
-              <div class="timeline-day">D6</div>
-              <div class="timeline-content">
-                <h3>Drive to Sacred Pushkar & Evening Lake Aarti</h3>
-                <p>Drive towards the ancient, sacred town of Pushkar, wrapped beautifully around a sacred lake. Upon arrival, check into your resort and later visit the legendary Brahma Temple, one of the incredibly rare temples in the world dedicated to Lord Brahma. In the evening, walk along the sacred Pushkar Lake Ghats to experience a deeply moving traditional evening prayer (Aarti). Overnight stay in Pushkar.</p>
-              </div>
-            </div>
-
-            <!-- Day 7 -->
-            <div class="timeline-event">
-              <div class="timeline-day">D7</div>
-              <div class="timeline-content">
-                <h3>Pushkar Rose Gardens & Return Drive to Delhi</h3>
-                <p>After breakfast, take a peaceful morning stroll through Pushkar's vast, aromatic rose gardens—which export exotic fragrances worldwide. Check out from your hotel and embark on your scenic return drive to Delhi. Our professional driver will ensure a timely drop-off at Delhi Airport or the Railway Station for your journey home.</p>
+                <h3>Nainital to Delhi Departure</h3>
+                <p>After breakfast, check out from the hotel as your Nainital getaway comes to a close. Our driver will take you back to Delhi by road, marking a comfortable and relaxed end to your hill-station holiday.</p>
               </div>
             </div>
 
@@ -567,22 +554,21 @@
             <div class="inc-box">
               <h4 style="color: var(--pine); font-size: 16px; margin-bottom: 15px; font-weight:700;">What's Included</h4>
               <ul>
-                <li>Premium Accommodation across all 4 iconic cities</li>
-                <li>Daily Buffet Breakfasts & Gourmet Dinners</li>
-                <li>Dedicated Private AC Sedan or SUV for the whole circuit</li>
-                <li>Complimentary Rickshaw ride in Old Delhi's bazaars</li>
-                <li>Folk evening interactions and Pushkar Ghat assistance</li>
-                <li>All toll taxes, parking fees, and driver allowances</li>
+                <li>Accommodation at selected hotels in Nainital</li>
+                <li>Daily Breakfast and Dinner</li>
+                <li>Private transportation in the selected vehicle for the entire circuit</li>
+                <li>Sightseeing as per the day-wise itinerary</li>
+                <li>All state taxes, toll taxes, parking fees, and driver charges</li>
               </ul>
             </div>
             <div class="exc-box">
               <h4 style="color: #cc3333; font-size: 16px; margin-bottom: 15px; font-weight:700;">What's Excluded</h4>
               <ul>
-                <li>Domestic or International Flight tickets</li>
-                <li>Monument entry tickets & camera permissions</li>
-                <li>Local specialized monument guide charges</li>
-                <li>Personal expenses like laundry, liquor, and tips</li>
-                <li>Any optional activity or meal not listed in Inclusions</li>
+                <li>Airfare / Train ticket charges</li>
+                <li>Entry and camera fees at sightseeing places</li>
+                <li>Guide service fees</li>
+                <li>Personal expenses (Laundry, tips, room service)</li>
+                <li>Sightseeing of any place not mentioned in the itinerary</li>
               </ul>
             </div>
           </div>
@@ -590,21 +576,21 @@
 
       </div>
 
-      <!-- Right Column: Sticky Pricing & Custom Budget Card -->
+      <!-- Right Column: Sticky Pricing & Action Widget -->
       <div class="sidebar-sticky">
         <div class="booking-side-card">
-          <div class="eyebrow" style="color: var(--gold-light); justify-content: center; letter-spacing: 2px;">Premium Fixed Rates</div>
+          <div class="eyebrow" style="color: var(--gold-light); justify-content: center; letter-spacing: 2px;">Special Route Pricing</div>
           <div class="price-tag">
-            <h3>₹23,400</h3>
-            <span>per person / On Request</span>
+            <h3>On Request</h3>
+            <span>per person / customised pricing</span>
           </div>
           <ul>
-            <li>Hotels Range: <strong>Handpicked 3-Star & 4-Star Premium</strong></li>
-            <li>Transport Type: <strong>Private AC Cab</strong></li>
-            <li>Meals Sequence: <strong>Breakfast + Dinner (MAPAI)</strong></li>
-            <li>Customizable: <strong>100% Tailor-made Changes Allowed</strong></li>
+            <li>Hotels Type: <strong>Standard / Deluxe Hill Hotels</strong></li>
+            <li>Transport: <strong>Private dedicated AC Sedan/SUV</strong></li>
+            <li>Meals Plan: <strong>MAP (Breakfast & Dinner)</strong></li>
+            <li>Tour Guide: <strong>Available on Demand</strong></li>
           </ul>
-          <button class="btn btn-gold openPopup" style="width: 100%; justify-content: center;">Enquire / Book Loop</button>
+          <button class="btn btn-gold openPopup" style="width: 100%; justify-content: center;">Enquire / Book Now</button>
         </div>
       </div>
 
@@ -629,7 +615,7 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Reach Us</h4>
+        <h4>Head Office</h4>
         <ul>
           <li>Mandi, Himachal Pradesh, India</li>
           <li>thedreamvyana@gmail.com</li>
@@ -646,18 +632,14 @@
 <div id="bookingPopup" class="popup">
   <div class="popup-box">
     <span class="closePopup">&times;</span>
-    <h2>Plan Your Royal Journey</h2>
+    <h2>Plan Your Hill Getaway</h2>
     <form id="bookingForm">
      <input type="text" name="data[Full_Name]"  placeholder="Full Name" required>
             <input type="email"  name="data[Email]" placeholder="Email Address" required>
             <input type="tel"  name="data[Mobile_Number]" placeholder="Phone Number" required>
-      <input type="text" name="data[Destination]" value="Golden Triangle Tour with Pushkar (06N / 07D)" readonly style="background: var(--cream); font-weight:600;">
+      <input type="text" name="data[Destination]" value="Nainital Honeymoon Package" readonly style="background: var(--cream); font-weight:600;">
 
-      <div class="popup-form-row">
-        <select name="data[Trip_Duration]" required>
-          <option value="6-nights-7-days">6 Nights / 7 Days</option>
-        </select>
-        <select name="data[No_Of_Persons]" required>
+      <select name="data[No_Of_Persons]" required>
           <option value="">No. of Persons</option>
           <option value="1">1 Person</option>
           <option value="2">2 Persons</option>
@@ -665,15 +647,14 @@
           <option value="4">4 Persons</option>
           <option value="5plus">5+ Persons</option>
         </select>
-      </div>
 
       <select name="data[Budget]" required>
-        <option value="20k-30k">₹20,000 - ₹30,000</option>
-        <option value="30k-above">Above ₹30,000</option>
+        <option value="15k-25k">₹15,000 - ₹25,000</option>
+        <option value="25k-above">Above ₹25,000</option>
       </select>
 
-      <textarea name="data[Message]" placeholder="Tell us if you have preferences for a camel ride, specific dates, or senior citizen assistance..."></textarea>
-      <button type="submit" class="btn btn-gold">Send Custom Request</button>
+      <textarea name="data[Message]" placeholder="Tell us if you need specific hotel upgrades, guides, or dates..."></textarea>
+      <button type="submit" class="btn btn-gold">Send Booking Request</button>
     </form>
   </div>
 </div>
@@ -686,7 +667,6 @@
     </div>
 </div>
 <script>
-  
 // ===== BOOKING FORM: SUBMIT VIA FETCH TO SHEETDB =====
 document.addEventListener("DOMContentLoaded", function(){
 
@@ -760,21 +740,21 @@ function closeSuccess(){
 
   function moveSlide(direction) {
     currentSlide += direction;
-    
-    // Infinite loop bound checks
+
+    // Circular bounds check
     if (currentSlide >= totalSlides) {
       currentSlide = 0;
     } else if (currentSlide < 0) {
       currentSlide = totalSlides - 1;
     }
-    
+
     sliderWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
     updateCounter();
   }
-  
+
   updateCounter();
 
-  // Popup Window Actions Setup
+  // Popup Interactions setup
   const popup = document.getElementById('bookingPopup');
   const closeBtn = document.querySelector('.closePopup');
 
@@ -795,7 +775,7 @@ function closeSuccess(){
     }
   });
 
-  // Mobile nav toggler setup
+  // Mobile menu setup
   const toggle = document.querySelector('.nav-toggle');
   const links = document.querySelector('.nav-links');
   if(toggle){
